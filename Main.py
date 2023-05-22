@@ -1,4 +1,5 @@
 from textProcessing import textProcessing
+from ChatGPT import ChatGPT
 
 import yaml
 
@@ -13,7 +14,16 @@ def fileImport(fileName):
     return None
 
 
-stopWords = ["new"]
 data = fileImport("openapi.yaml")
-x = textProcessing(stopWords)
-x.procces(data)
+x = textProcessing()
+descriptions = x.procces(data)
+lista = []
+cont = 1
+for path, endpoint in descriptions.items():
+    for method, description in endpoint.items():
+        lista.append('' + str(cont) + "-" + description)
+        cont += 1
+        # print(description)
+# print(lista)
+chat = ChatGPT()
+chat.agrupar(lista)

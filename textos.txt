@@ -1,0 +1,17 @@
+Agrupa los siguientes textos según su relación semántica. Cada texto debe pertenecer a un unico grupo.
+Vector de textos:
+(Add a new pet to the store,
+Multiple status values can be provided with comma separated strings,
+Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing,
+Returns a single pet,
+delete a pet,
+Returns a map of status codes to quantities,
+Place a new order in the store,
+For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions,
+For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors,
+This can only be done by the logged in user,
+Creates list of users with given input array)
+
+
+Proporciona un vector que en cada posicion indique al numero de grupo al que pertenece.
+Asignale a cada grupo un nombre que represente los textos que agrupa

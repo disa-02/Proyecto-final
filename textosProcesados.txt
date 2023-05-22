@@ -1,0 +1,18 @@
+Agrupa los siguientes textos según su relación semántica. Cada texto solo puede pertenecer a un unico grupo. Por cada grupo proporciona un vector donde se indique con "1" si un tema pertenece a ese grupo 
+Textos:
+(Add a new pet to the store,
+Multiple status values can be provided with comma separated strings,
+Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing,
+Returns a single pet,
+delete a pet,
+Returns a map of status codes to quantities,
+Place a new order in the store,
+For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions,
+For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors,
+This can only be done by the logged in user,
+Creates list of users with given input array)
+
+La respuesta esperada es unicamente una lista con:
+    nombre de grupo, vector con 1 indicando la pertenencia a cada tema en cada grupo.
+El nombre del grupo debe ser un nombre representativo teniendo en cuenta la semantica del grupo
+No agregues ningun comentario o aclaracion, solo lo pedido

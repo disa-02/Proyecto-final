@@ -1,27 +1,26 @@
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 
 class textProcessing:
 
-    def __init__(self, stopWords):
+    def __init__(self):
         self.descriptions = {}
         self.pathInfo = {}
-        self.stopWords = stopWords
 
     def _extractDescriptions(self, data):
         paths = data.get("paths", {})
-        # descriptions = {}  # Almacena las descripciones de los metodos
-        # pathInfo = {}  # Almacena todos los items de los metodos que no tienen informacion
         for path, endpoint in paths.items():
             infoDescriptions = {}
             methodInfo = {}
             for method, info in endpoint.items():
                 description = info.get("description")
                 infoDescriptions[method] = description
-                if (description == None):
+                if (description == None or description == ''):
                     methodInfo[method] = info.items()
                     self.pathInfo[path] = methodInfo
             self.descriptions[path] = infoDescriptions
-        # return descriptions, pathInfo
 
     def _completeDescriptions(self):
         for path, endpoint in self.pathInfo.items():
@@ -33,19 +32,29 @@ class textProcessing:
     def _delStopWords(self):
         for path, endpoint in self.descriptions.items():
             for method, description in endpoint.items():
-                desc = ''
                 if (description != None):
-                    for word in description.split(' '):
-                        if (word not in self.stopWords):
-                            desc += word + ' '
-            self.descriptions[path][method] = desc
+                    # Tokenizacion
+                    text = word_tokenize(description)
+                    # Eliminacion de las stopWords
+                    for word in text:
+                        if (word in stopwords.words('english')):
+                            text.remove(word)
+                self.descriptions[path][method] = text
+
+    def _joinDescriptions(self):
+        for path, endpoint in self.descriptions.items():
+            for method, description in endpoint.items():
+                description = ' '.join(description)
+                self.descriptions[path][method] = description
 
     def procces(self, data):
+        nltk.download('stopwords')
+        nltk.download('punkt')
         self._extractDescriptions(data)
-        print(self.descriptions)
-        print()
-        print(self.pathInfo)
         self._completeDescriptions()
+        # for path, endpoint in self.descriptions.items():
+        #     for method, description in endpoint.items():
+        #         print(description)
         self._delStopWords()
-        print()
-        print(self.descriptions)
+        self._joinDescriptions()
+        return self.descriptions
