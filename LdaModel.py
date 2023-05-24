@@ -1,37 +1,52 @@
 from gensim import corpora
 from gensim.models import LdaModel
-from gensim.utils import simple_preprocess
 
-# Paso 1: Preprocesamiento de los documentos
-documents = ["Este es el primer documento.",
-             "Este documento habla sobre tópicos de extracción.",
-             "El tercer documento es otro ejemplo."]
+# Lista de listas de palabras
+documentos = [
+    ['Description', 'generated', 'chatGPT'],
+    ['Add', 'new', 'pet', 'the', 'store'],
+    ['Multiple', 'status', 'values', 'be',
+        'provided', 'comma', 'separated', 'strings'],
+    ['Multiple', 'tags', 'be', 'provided', 'comma', 'separated', 'strings',
+        '.', 'Use', 'tag1', ',', 'tag2', ',', 'tag3', 'testing', '.'],
+    ['Returns', 'single', 'pet'],
+    ['Description', 'generated', 'chatGPT'],
+    ['delete', 'pet'],
+    ['Description', 'generated', 'chatGPT'],
+    ['Returns', 'map', 'status', 'codes', 'quantities'],
+    ['Place', 'new', 'order', 'the', 'store'],
+    ['For', 'valid', 'response', 'try', 'integer', 'IDs', 'value', '<', '=',
+        '5', '>', '10', '.', 'Other', 'values', 'generate', 'exceptions', '.'],
+    ['For', 'valid', 'response', 'try', 'integer', 'IDs', 'value', '<', '1000',
+        '.', 'Anything', '1000', 'nonintegers', 'generate', 'API', 'errors'],
+    ['This', 'only', 'done', 'the', 'logged', 'user', '.'],
+    ['Creates', 'list', 'users', 'given', 'input', 'array'],
+    ['Description', 'generated', 'chatGPT'],
+    ['Description', 'generated', 'chatGPT'],
+    ['Description', 'generated', 'chatGPT'],
+    ['This', 'only', 'done', 'the', 'logged', 'user', '.'],
+    ['This', 'only', 'done', 'the', 'logged', 'user', '.']
+]
 
-# Tokenización y limpieza básica de los documentos
-tokenized_docs = [simple_preprocess(doc) for doc in documents]
+# Crear el diccionario de palabras
+diccionario = corpora.Dictionary(documentos)
 
-# Paso 2: Creación del diccionario y la bolsa de palabras
-dictionary = corpora.Dictionary(tokenized_docs)
-bow_corpus = [dictionary.doc2bow(doc) for doc in tokenized_docs]
+# Crear la representación de los documentos en forma de bolsa de palabras (bag of words)
+corpus = [diccionario.doc2bow(doc) for doc in documentos]
 
-# Paso 3: Entrenamiento del modelo LDA
-lda_model = LdaModel(bow_corpus, num_topics=2, id2word=dictionary, passes=10)
+# Entrenar el modelo LDA
+num_topics = 4  # Número de tópicos esperados
+lda_model = LdaModel(corpus, num_topics=num_topics,
+                     id2word=diccionario, passes=10)
 
-# Paso 4: Extracción de tópicos para un documento nuevo
-new_doc = "Este es un documento nuevo sobre tópicos de extracción"
-new_doc_tokens = simple_preprocess(new_doc)
-new_doc_bow = dictionary.doc2bow(new_doc_tokens)
+# Obtener los tópicos y sus palabras clave
+topics = lda_model.print_topics(num_topics=num_topics)
+for topic in topics:
+    print(topic)
 
-topic_distribution = lda_model.get_document_topics(new_doc_bow)
-
-# Paso 5: Mostrar los tópicos y su distribución
-for topic in topic_distribution:
-    topic_id = topic[0]
-    topic_prob = topic[1]
-    topic_keywords = lda_model.show_topic(topic_id)
-
-    print("Tópico {}: {}".format(topic_id, topic_prob))
-    print("Palabras clave:")
-    for keyword, prob in topic_keywords:
-        print("- {} (probabilidad: {})".format(keyword, prob))
+for i, doc in enumerate(corpus):
+    topics = lda_model.get_document_topics(doc)
+    print(f"Documento {i+1}:")
+    for topic in topics:
+        print(f"Tópico {topic[0]}: {topic[1]}")
     print()
