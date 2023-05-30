@@ -12,9 +12,10 @@ def agrupar(lista):
                 identificador de cada tema, no debe haber strings en este atributo.
                 Intenta que en las agrupaciones no queden grupos con un unico tema.
                 Lista de temas:  """ + " ".join(["".join(text) for text in lista])
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": prompt}
-        ])
-    return completion.choices[0].message.content
+    print(prompt)
+    # completion = openai.ChatCompletion.create(
+    #     model="gpt-3.5-turbo",
+    #     messages=[
+    #         {"role": "user", "content": prompt}
+    #     ])
+    # return completion.choices[0].message.content

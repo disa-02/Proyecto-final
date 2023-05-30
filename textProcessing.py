@@ -1,6 +1,8 @@
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import CountVectorizer
+import spac
 
 
 descriptions = {}
@@ -13,11 +15,12 @@ def _extractDescriptions(data):
         infoDescriptions = {}
         methodInfo = {}
         for method, info in endpoint.items():
-            description = info.get("description")
-            infoDescriptions[method] = description
-            if (description == None or description == ''):
-                methodInfo[method] = info.items()
-                pathInfo[path] = methodInfo
+            if isinstance(info, dict):
+                description = info.get("description")
+                infoDescriptions[method] = description
+                if (description == None or description == ''):
+                    methodInfo[method] = info.items()
+                    pathInfo[path] = methodInfo
         descriptions[path] = infoDescriptions
 
 
@@ -49,6 +52,15 @@ def _joinDescriptions():
             descriptions[path][method] = description
 
 
+def _extract_main_topic():
+    for path, endpoint in descriptions.items():
+        for method, description in endpoint.items():
+            text = spac.text(description)
+            text = ' '.join(text)
+            # print(text)
+            descriptions[path][method] = text
+
+
 def procces(data):
     nltk.download('stopwords')
     nltk.download('punkt')
@@ -58,8 +70,9 @@ def procces(data):
     #     for method, description in endpoint.items():
     #         print(description)
     _delStopWords()
-    for path, endpoint in descriptions.items():
-        for method, description in endpoint.items():
-            print(description)
+    # for path, endpoint in descriptions.items():
+    #     for method, description in endpoint.items():
+    # print(description)
     _joinDescriptions()
+    # _extract_main_topic()
     return descriptions
