@@ -1,6 +1,7 @@
 import textProcessing
 import ChatGPTChunks
 import ChatGPTChunks2
+import ChatGPTChunks3
 import Files
 
 
@@ -17,7 +18,7 @@ for description in descriptions:
             lista.append('' + str(cont) + "-" + description)
             cont += 1
             # print(description)
-# print("\n".join(lista))
-respuesta = ChatGPTChunks2.agrupar(lista)
+print("\n".join(lista))
+respuesta = ChatGPTChunks3.agrupar(lista)
 print("Respuesta: \n")
 print(respuesta)

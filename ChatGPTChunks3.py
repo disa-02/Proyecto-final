@@ -7,16 +7,20 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 openai.api_key = "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"
 
 main_enunciado = """Dado los siguientes temas. Agrupa sus elementos según su relación semántica. 
-                Los temas no pueden pertenecer a mas de un grupo. 
-                Dar la respuesta en un json  donde cada atributo sea el nombre de grupo y el valor una lista de los temas. 
+                Intenta que en las agrupaciones no queden grupos con un unico tema.
+                Lista de temas:  """
+respuesta = """Se debe cumplir estrictamente el siguiente formato de respuesta: 
+            Dar la respuesta en un json  donde cada atributo sea el nombre de grupo y el valor una lista de los temas.
+            La lista de temas debe empezar con [ y finalizar con ]. 
+            El json debe empezar con { y finalizar con }.
+            El json no debe tener espacios.
+            Ejemplo de formato de respuesta: {atributo1:[1,3,5,7],atributo2:[2,4,6]}
+            """
+restricciones = """Restricciones:
                 El nombre de grupo debe ser representativo a los temas que agrupa. 
                 La lista de temas debe ser unicamente numerica y cada numero debe corresponder al 
                 identificador de cada tema, no debe haber strings en este atributo.
-                La lista de temas debe empezar con [ y finalizar con ].
-                El json debe empezar con { y finalizar con }.
-                No utilices saltos de lineas ni espacios en la respuesta.
-                Intenta que en las agrupaciones no queden grupos con un unico tema.
-                Lista de temas:  """
+                Los temas no pueden pertenecer a mas de un grupo."""
 
 
 def createChunks(lista):
@@ -60,7 +64,7 @@ def agrupar(lista):
     finalResponse = []
 
     # Primera consulta
-    prompt = main_enunciado + documents[0]
+    prompt = main_enunciado + documents[0] + respuesta + restricciones
     response = consultar(prompt)
     documents.pop(0)
     finalResponse.append(response)
@@ -72,7 +76,7 @@ def agrupar(lista):
         grupos.update(set(newGroups))
         print(grupos)
         print("\n")
-        prompt = main_enunciado + document + """Considerar que ya existen los siguientes grupos como atributos del json.
+        prompt = main_enunciado + document + respuesta + restricciones + """Considerar que ya existen los siguientes grupos como atributos del json.
                                             Analizar si un tema puede pertenecer a uno de estos grupos o es necesario agruparlo en uno nuevo.
                                             Debes tener en cuenta la relacion semantica de cada tema """ + ' '.join(grupos)
         response = consultar(prompt)
