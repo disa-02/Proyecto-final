@@ -28,16 +28,12 @@ def analizar_oracion(oracion):
     # Procesar la oración con el modelo cargado
     doc = nlp(oracion)
 
-    print("aca")
     # Filtrar palabras irrelevantes (stop words)
     palabras_filtradas = [token.lemma_.lower(
     ) for token in doc if not token.is_stop and not token.is_punct]
 
-    print("esooos")
     # Calcular la frecuencia de las palabras
     frecuencia = FreqDist(palabras_filtradas)
-    print("sisis")
     # Obtener las palabras más relevantes
     palabras_relevantes = [palabra for palabra, _ in frecuencia.most_common(5)]
-    print("ahi sale")
     return palabras_relevantes

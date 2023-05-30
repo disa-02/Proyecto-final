@@ -13,17 +13,17 @@ info:
   x-origin:
     - format: openapi
       url: https://apidapp.s3.amazonaws.com/ApiDapp-Start-swagger-7/ApiDapp-Start-swagger+(7).json
-      version: "3.0"
+      version: '3.0'
   x-providerName: apidapp.com
 paths:
   /:
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -37,20 +37,20 @@ paths:
                 type: string
     x-amazon-apigateway-any-method:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
   /account:
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -65,11 +65,11 @@ paths:
     post:
       description: Create new account
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -77,7 +77,7 @@ paths:
                 type: string
       security:
         - Key2: []
-  "/account/{id}":
+  '/account/{id}':
     get:
       description: Get account balance
       parameters:
@@ -87,11 +87,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -108,11 +108,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -128,11 +128,11 @@ paths:
     get:
       description: Access detailed block information
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -142,11 +142,11 @@ paths:
         - Key2: []
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -158,7 +158,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-  "/block/{id}":
+  '/block/{id}':
     get:
       description: Get information about particular block
       parameters:
@@ -168,11 +168,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -189,11 +189,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -205,7 +205,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-  "/block/{id}/transaction":
+  '/block/{id}/transaction':
     get:
       description: Get transaction count within block
       parameters:
@@ -215,11 +215,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -236,11 +236,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -252,7 +252,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-  "/block/{id}/transaction/{index}":
+  '/block/{id}/transaction/{index}':
     get:
       description: Get information about particular transaction within block
       parameters:
@@ -267,11 +267,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -294,11 +294,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -314,11 +314,11 @@ paths:
     get:
       description: Get a list of supported blockchains
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -328,11 +328,11 @@ paths:
         - Key2: []
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -344,7 +344,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-  "/blockchain/{id}":
+  '/blockchain/{id}':
     get:
       description: Get information about blockchain woth given id
       parameters:
@@ -354,11 +354,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -375,11 +375,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -394,11 +394,11 @@ paths:
   /contract:
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -413,13 +413,13 @@ paths:
     post:
       description: Create a new smart contract
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
-  "/contract/{id}":
+  '/contract/{id}':
     get:
       description: Get contract balance
       parameters:
@@ -429,11 +429,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -450,11 +450,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -475,11 +475,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -490,11 +490,11 @@ paths:
   /echo:
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -508,29 +508,29 @@ paths:
                 type: string
     x-amazon-apigateway-any-method:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
   /erc20:
     get:
       description: Get token information such as name, total amount in circulation, etc
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -544,13 +544,13 @@ paths:
                 type: string
     post:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
-  "/erc20/{address}":
+  '/erc20/{address}':
     get:
       description: Get information amout token balance in the account
       parameters:
@@ -560,11 +560,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
     options:
       parameters:
@@ -575,11 +575,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -600,11 +600,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
   /key:
     get:
@@ -615,19 +615,19 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -641,13 +641,13 @@ paths:
                 type: string
     post:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
-  "/key/{key}":
+  '/key/{key}':
     delete:
       parameters:
         - in: path
@@ -656,11 +656,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
     options:
       parameters:
@@ -671,11 +671,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -690,11 +690,11 @@ paths:
   /transaction:
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -709,11 +709,11 @@ paths:
     post:
       description: Create a new transaction. Transfer Ether between accounts
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -721,7 +721,7 @@ paths:
                 type: string
       security:
         - Key2: []
-  "/transaction/{hash}":
+  '/transaction/{hash}':
     get:
       description: Get information about transaction by the transaction hash value
       parameters:
@@ -731,11 +731,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -752,11 +752,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -768,7 +768,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-  "/transaction/{hash}/receipt":
+  '/transaction/{hash}/receipt':
     get:
       description: Get receipt detail information
       parameters:
@@ -778,11 +778,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -799,11 +799,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -819,11 +819,11 @@ paths:
     get:
       description: Get API version info
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Origin:
@@ -831,11 +831,11 @@ paths:
                 type: string
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -851,19 +851,19 @@ paths:
     get:
       description: Get current account balance
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -878,28 +878,28 @@ paths:
     post:
       description: Create personal wallet
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
   /wallet/account:
     get:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
     options:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -913,13 +913,13 @@ paths:
                 type: string
     post:
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
-  "/wallet/account/{id}":
+  '/wallet/account/{id}':
     get:
       description: Get account balance
       parameters:
@@ -929,11 +929,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
     options:
       parameters:
@@ -944,11 +944,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -960,7 +960,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-  "/wallet/account/{id}/contract":
+  '/wallet/account/{id}/contract':
     post:
       parameters:
         - in: path
@@ -969,13 +969,13 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
-  "/wallet/account/{id}/erc20":
+  '/wallet/account/{id}/erc20':
     post:
       parameters:
         - in: path
@@ -984,13 +984,13 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
-  "/wallet/account/{id}/pay":
+  '/wallet/account/{id}/pay':
     options:
       parameters:
         - description: Automatically added
@@ -1000,11 +1000,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
           headers:
             Access-Control-Allow-Headers:
@@ -1025,11 +1025,11 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Empty"
+                $ref: '#/components/schemas/Empty'
           description: 200 response
 components:
   schemas:

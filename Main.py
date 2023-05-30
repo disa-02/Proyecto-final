@@ -1,24 +1,20 @@
 import textProcessing
 import ChatGPTChunks
-import ChatGPTChunks2
-import ChatGPTChunks3
 import Files
+from tqdm import tqdm
 
 
 data = Files.filesImport("./openApiDescriptions")
 descriptions = []
-for d in data:
+print("\nProcesando documentos:")
+for d in tqdm(data, desc="Documento"):
     descriptions.append(textProcessing.procces(d))
 lista = []
 cont = 1
-# print(descriptions)
 for description in descriptions:
     for path, endpoint in description.items():
         for method, description in endpoint.items():
             lista.append('' + str(cont) + "-" + description)
             cont += 1
-            # print(description)
-print("\n".join(lista))
-respuesta = ChatGPTChunks3.agrupar(lista)
-print("Respuesta: \n")
-print(respuesta)
+# respuesta = ChatGPTChunks.agrupar(lista)
+Files.saveFile(str(respuesta), "AgrupacionDeDescripciones.json", "./outs/")

@@ -63,7 +63,6 @@ def _extract_main_topic():
         for method, description in endpoint.items():
             text = spac.analizar_oracion(description)
             text = ' '.join(text)
-            # print(text)
             descriptions[path][method] = text
 
 
@@ -72,10 +71,6 @@ def generar_resumen(numero_oraciones):
         for method, description in endpoint.items():
             # Tokenizar el texto en oraciones
             oraciones = sent_tokenize(description)
-
-            # # Tokenizar el texto en palabras y filtrar las palabras irrelevantes
-            # palabras = word_tokenize(texto.lower())
-            # palabras_filtradas = [palabra for palabra in palabras if palabra.isalnum() and palabra not in stopwords.words('spanish')]
 
             # Calcular la frecuencia de las palabras
             frecuencia = FreqDist(description)
@@ -116,14 +111,8 @@ def analizar_oracion():
 def procces(data):
     _extractDescriptions(data)
     _completeDescriptions()
-    # for path, endpoint in descriptions.items():
-    #     for method, description in endpoint.items():
-    #         print(description)
     _delStopWords()
-
     _joinDescriptions()
-
     generar_resumen(1)
-
     _extract_main_topic()
     return descriptions
