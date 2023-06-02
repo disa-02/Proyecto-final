@@ -1,3 +1,4 @@
+import Files
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -38,51 +39,43 @@ def _completeDescriptions():
             descriptions[path][method] = desc
 
 
-def _delStopWords():
-    for path, endpoint in descriptions.items():
-        for method, description in endpoint.items():
-            if (description != None):
-                # Tokenizacion
-                text = word_tokenize(description)
-                # Eliminacion de las stopWords
-                for word in text:
-                    if (word in stopwords.words('english')):
-                        text.remove(word)
-            descriptions[path][method] = text
+def _delStopWords(path, method, description):
+    if (description != None):
+        # Tokenizacion
+        text = word_tokenize(description)
+        # Eliminacion de las stopWords
+        for word in text:
+            if (word in stopwords.words('english')):
+                text.remove(word)
+        descriptions[path][method] = text
 
 
-def _joinDescriptions():
-    for path, endpoint in descriptions.items():
-        for method, description in endpoint.items():
-            description = ' '.join(description)
-            descriptions[path][method] = description
+def _joinDescriptions(path, method, description):
+    description = ' '.join(descriptions)
+    descriptions[path][method] = description
 
 
-def _extract_main_topic():
-    for path, endpoint in descriptions.items():
-        for method, description in endpoint.items():
-            text = spac.analizar_oracion(description)
-            text = ' '.join(text)
-            descriptions[path][method] = text
+def _extract_main_topic(path, method, description):
+    text = spac.analizar_oracion(description)
+    text = ' '.join(text)
+    descriptions[path][method] = text
 
 
-def generar_resumen(numero_oraciones):
-    for path, endpoint in descriptions.items():
-        for method, description in endpoint.items():
-            # Tokenizar el texto en oraciones
-            oraciones = sent_tokenize(description)
+def generar_resumen(numero_oraciones, path, method, description):
+    # Tokenizar el texto en oraciones
+    oraciones = sent_tokenize(description)
 
-            # Calcular la frecuencia de las palabras
-            frecuencia = FreqDist(description)
+    # Calcular la frecuencia de las palabras
+    frecuencia = FreqDist(description)
 
-            # Ordenar las oraciones según la suma de las frecuencias de las palabras en cada oración
-            oraciones_ordenadas = sorted(oraciones, key=lambda oracion: sum(
-                frecuencia[palabra] for palabra in word_tokenize(oracion.lower()) if palabra.isalnum()), reverse=True)
+    # Ordenar las oraciones según la suma de las frecuencias de las palabras en cada oración
+    oraciones_ordenadas = sorted(oraciones, key=lambda oracion: sum(
+        frecuencia[palabra] for palabra in word_tokenize(oracion.lower()) if palabra.isalnum()), reverse=True)
 
-            # Tomar las primeras n oraciones como resumen
-            resumen = ' '.join(oraciones_ordenadas[:numero_oraciones])
+    # Tomar las primeras n oraciones como resumen
+    resumen = ' '.join(oraciones_ordenadas[:numero_oraciones])
 
-            descriptions[path][method] = resumen
+    descriptions[path][method] = resumen
 
 
 def analizar_oracion():
@@ -111,8 +104,10 @@ def analizar_oracion():
 def procces(data):
     _extractDescriptions(data)
     _completeDescriptions()
-    _delStopWords()
-    _joinDescriptions()
-    generar_resumen(1)
-    _extract_main_topic()
+    for path, endpoint in descriptions.items():
+        for method, description in endpoint.items():
+            # _delStopWords(path, method, description)
+            # _joinDescriptions(path, method, description)
+            # generar_resumen(1, path, method, description)
+            _extract_main_topic(path, method, description)
     return descriptions
