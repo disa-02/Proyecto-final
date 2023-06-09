@@ -7,6 +7,7 @@ import json
 from tqdm import tqdm
 import Files
 import spac
+import json
 
 openai.api_key = "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"
 
@@ -34,6 +35,14 @@ def getResponseGroups(response):
     return groups
 
 
+def verificarAtributos(response):
+    atributos = JsonProcessing.getAttributes(response)
+    for element in atributos:
+        if "group" in element or "grupo" in element:
+            return True
+    return False
+
+
 def consultar(prompt):
     condition = True
     response = ''
@@ -46,7 +55,8 @@ def consultar(prompt):
                 ])
             response = (completion.choices[0].message.content)
             if (JsonProcessing.contiene_json(response)):
-                condition = False
+                if (not verificarAtributos(response)):
+                    condition = False
             print("Condition=" + str(condition))
         except openai.error.RateLimitError as error:
             print("error de tiempo")
@@ -57,7 +67,6 @@ def consultar(prompt):
 def generarResponseFinal(finalResponse):
     resp = {}
     for response in finalResponse:
-        print(response)
         response_data = json.loads(response)
         for key, value in response_data.items():
             if key in resp:
@@ -72,7 +81,7 @@ def saveFiles(finalResponse):
     cont = 0
     for response in finalResponse:
         Files.saveFile(response, "response_" + str(cont) +
-                       ".json", "./outs/responses/")
+                       ".json", "./outs/responses/", "w")
         cont = cont + 1
 
 
@@ -84,14 +93,14 @@ def agrupar(lista):
     # Primera consulta
     cont = 0
     prompt = main_enunciado + documents[0]
-    Files.saveFile(prompt, "prompt_" + str(cont) + ".txt", "./outs/prompts/")
+    Files.saveFile(prompt, "prompt_" + str(cont) +
+                   ".txt", "./outs/prompts/", "w")
     response = consultar(prompt)
     documents.pop(0)
     finalResponse.append(response)
 
     # Resto de consultas
     grupos = set()
-    agrupaciones = {}
     for document in tqdm(documents, desc="Consulta"):
         # Obtengo los grupos de la consulta anterior
         newGroups = getResponseGroups(response)
@@ -99,14 +108,14 @@ def agrupar(lista):
 
         prompt = main_enunciado + document + """Considerar que ya existen los siguientes grupos como atributos del json.
                                             Analizar si un tema puede pertenecer a uno de estos grupos o es necesario agruparlo en uno nuevo.
-                                            Debes tener en cuenta la relacion semantica de cada tema: """ + ' '.join(grupos)
+                                            Debes tener en cuenta la relacion semantica de cada tema: """ + ' '.join(f'{i+1}-{elem}' for i, elem in enumerate(grupos))
         cont = cont + 1
         Files.saveFile(prompt, "prompt_" + str(cont) +
-                       ".txt", "./outs/prompts/")
+                       ".txt", "./outs/prompts/", "w")
         response = consultar(prompt)
         finalResponse.append(response)
 
     saveFiles(finalResponse)
-    Files.saveFile(agrupaciones, "agrupaciones.json", "./outs/")
+    # Files.saveFile(str(agrupaciones), "agrupaciones.json", "./outs/", "w")
     finalResponse = generarResponseFinal(finalResponse)
     return finalResponse

@@ -197,86 +197,86 @@
 197-gets the face task
 198-the age creates new face
 199-gets the face_age task
-200-description generated with chatgpt
+200-endpoint pet método put permitir
 201-add new pet to the
 202-multiple status values can be
 203-multiple tag can be provided
 204-returns single pet
-205-description generated with chatgpt
+205-mascota endpoint permitir crear id
 206-deletir pet
-207-description generated with chatgpt
+207-endpoint permitir subir imagen mascota
 208-returns map of status codes
 209-placir new order in the
 210- for valid response try
 211-1000 for valid response try
 212-this can only be done
 213-creat list of users with
-214-description generated with chatgpt
-215-description generated with chatgpt
-216-description generated with chatgpt
+214-usuario contraseña parámetro respuesta endpoint
+215-sesión endpoint permitir cerrar usuario
+216-usuario nombre error endpoint tipo
 217-this can only be done
 218-this can only be done
-219-description generated with chatgpt
-220-description generated with chatgpt
-221-description generated with chatgpt
+219-acceso endpoint utilizado método control
+220-endpoint objetivo devolver respuesta exitoso
+221-acceso endpoint account devolver respuesta
 222-create new account
 223-get account balance
-224-description generated with chatgpt
+224-endpoint permitir obtener opción disponible
 225-access detailed block information
-226-description generated with chatgpt
+226-endpoint block poseer respuesta exitoso
 227-get information about particular block
-228-description generated with chatgpt
+228-endpoint blockid función recibir parámetro
 229-get transaction count within block
-230-description generated with chatgpt
+230-endpoint blockidtransaction permitir obtener opción
 231-get information about particular transaction
-232-description generated with chatgpt
+232-transacción endpoint permitir obtener información
 233-get list of supported blockchains
-234-description generated with chatgpt
+234-blockchain endpoint permitir solicitud opción
 235-get information about blockchain woth
-236-description generated with chatgpt
-237-description generated with chatgpt
+236-endpoint permitir petición options ruta
+237-endpoint manejar opción contrato devolver
 238-create new smart contract
 239-get contract balance
-240-description generated with chatgpt
+240-endpoint permitir solicitud opción contrato
 241-call the contract
-242-description generated with chatgpt
-243-description generated with chatgpt
+242-endpoint echo permitir opción retornar
+243-endpoint echo permitir solicitud método
 244-get token information such as
-245-description generated with chatgpt
-246-description generated with chatgpt
+245-endpoint erc20 utilizar enviar opción
+246-endpoint permitir solicitud post acción
 247-get information amout token balance
-248-description generated with chatgpt
+248-endpoint erc20address permitir enviar solicitud
 249-transfer tokens to another account
-250-description generated with chatgpt
-251-description generated with chatgpt
-252-description generated with chatgpt
-253-description generated with chatgpt
-254-description generated with chatgpt
-255-description generated with chatgpt
+250-endpoint key permitir solicitud get
+251-endpoint permitir configuración opción clave
+252-endpoint key utilizar método post
+253-endpoint permitir eliminar elemento diccionario
+254-endpoint recibir clave parámetro obligatorio
+255-endpoint transaction permitir opción transacción
 256-create new transaction transfer ether
 257-transaction get information about by
-258-description generated with chatgpt
+258-utilizar información endpoint acceder transacción
 259-get receipt detail information
-260-description generated with chatgpt
+260-endpoint encargar devolver recibo vacío
 261-get api version info
-262-description generated with chatgpt
+262-endpoint version permitir obtener información
 263-get current account balance
-264-description generated with chatgpt
+264-respuesta endpoint wallet tipo options
 265-create personal wallet
-266-description generated with chatgpt
-267-description generated with chatgpt
-268-description generated with chatgpt
+266-endpoint wallet account permitir obtener
+267-endpoint wallet account permitir efectuar
+268-endpoint permitir crear billetera electrónico
 269-get account balance
-270-description generated with chatgpt
-271-description generated with chatgpt
-272-description generated with chatgpt
-273-description generated with chatgpt
+270-endpoint permitir acceder billetera id
+271-endpoint permitir crear contrato billetera
+272-endpoint permitir crear erc20 id
+273-endpoint permitir pago billetera específico
 274-the send payment from account
-275-description generated with chatgpt
+275-endpoint realizar introspección token bearer
 276-this endpoint requires your json
 277-this endpoint requires your json
 278-this endpoint requires your json
-279-description generated with chatgpt
+279-endpoint api v2 auth introspect
 280- the for project to
 281- the attachment this an
 282-delete specific existing attachment
@@ -476,86 +476,86 @@
 476-gets the face task
 477-the age creates new face
 478-gets the face_age task
-479-description generated with chatgpt
+479-endpoint pet método put permitir
 480-add new pet to the
 481-multiple status values can be
 482-multiple tag can be provided
 483-returns single pet
-484-description generated with chatgpt
+484-mascota endpoint permitir crear id
 485-deletir pet
-486-description generated with chatgpt
+486-endpoint permitir subir imagen mascota
 487-returns map of status codes
 488-placir new order in the
 489- for valid response try
 490-1000 for valid response try
 491-this can only be done
 492-creat list of users with
-493-description generated with chatgpt
-494-description generated with chatgpt
-495-description generated with chatgpt
+493-usuario contraseña parámetro respuesta endpoint
+494-sesión endpoint permitir cerrar usuario
+495-usuario nombre error endpoint tipo
 496-this can only be done
 497-this can only be done
-498-description generated with chatgpt
-499-description generated with chatgpt
-500-description generated with chatgpt
+498-acceso endpoint utilizado método control
+499-endpoint objetivo devolver respuesta exitoso
+500-acceso endpoint account devolver respuesta
 501-create new account
 502-get account balance
-503-description generated with chatgpt
+503-endpoint permitir obtener opción disponible
 504-access detailed block information
-505-description generated with chatgpt
+505-endpoint block poseer respuesta exitoso
 506-get information about particular block
-507-description generated with chatgpt
+507-endpoint blockid función recibir parámetro
 508-get transaction count within block
-509-description generated with chatgpt
+509-endpoint blockidtransaction permitir obtener opción
 510-get information about particular transaction
-511-description generated with chatgpt
+511-transacción endpoint permitir obtener información
 512-get list of supported blockchains
-513-description generated with chatgpt
+513-blockchain endpoint permitir solicitud opción
 514-get information about blockchain woth
-515-description generated with chatgpt
-516-description generated with chatgpt
+515-endpoint permitir petición options ruta
+516-endpoint manejar opción contrato devolver
 517-create new smart contract
 518-get contract balance
-519-description generated with chatgpt
+519-endpoint permitir solicitud opción contrato
 520-call the contract
-521-description generated with chatgpt
-522-description generated with chatgpt
+521-endpoint echo permitir opción retornar
+522-endpoint echo permitir solicitud método
 523-get token information such as
-524-description generated with chatgpt
-525-description generated with chatgpt
+524-endpoint erc20 utilizar enviar opción
+525-endpoint permitir solicitud post acción
 526-get information amout token balance
-527-description generated with chatgpt
+527-endpoint erc20address permitir enviar solicitud
 528-transfer tokens to another account
-529-description generated with chatgpt
-530-description generated with chatgpt
-531-description generated with chatgpt
-532-description generated with chatgpt
-533-description generated with chatgpt
-534-description generated with chatgpt
+529-endpoint key permitir solicitud get
+530-endpoint permitir configuración opción clave
+531-endpoint key utilizar método post
+532-endpoint permitir eliminar elemento diccionario
+533-endpoint recibir clave parámetro obligatorio
+534-endpoint transaction permitir opción transacción
 535-create new transaction transfer ether
 536-transaction get information about by
-537-description generated with chatgpt
+537-utilizar información endpoint acceder transacción
 538-get receipt detail information
-539-description generated with chatgpt
+539-endpoint encargar devolver recibo vacío
 540-get api version info
-541-description generated with chatgpt
+541-endpoint version permitir obtener información
 542-get current account balance
-543-description generated with chatgpt
+543-respuesta endpoint wallet tipo options
 544-create personal wallet
-545-description generated with chatgpt
-546-description generated with chatgpt
-547-description generated with chatgpt
+545-endpoint wallet account permitir obtener
+546-endpoint wallet account permitir efectuar
+547-endpoint permitir crear billetera electrónico
 548-get account balance
-549-description generated with chatgpt
-550-description generated with chatgpt
-551-description generated with chatgpt
-552-description generated with chatgpt
+549-endpoint permitir acceder billetera id
+550-endpoint permitir crear contrato billetera
+551-endpoint permitir crear erc20 id
+552-endpoint permitir pago billetera específico
 553-the send payment from account
-554-description generated with chatgpt
+554-endpoint realizar introspección token bearer
 555-this endpoint requires your json
 556-this endpoint requires your json
 557-this endpoint requires your json
-558-description generated with chatgpt
+558-endpoint api v2 auth introspect
 559- the for project to
 560- the attachment this an
 561-delete specific existing attachment
@@ -755,86 +755,86 @@
 755-gets the face task
 756-the age creates new face
 757-gets the face_age task
-758-description generated with chatgpt
+758-endpoint pet método put permitir
 759-add new pet to the
 760-multiple status values can be
 761-multiple tag can be provided
 762-returns single pet
-763-description generated with chatgpt
+763-mascota endpoint permitir crear id
 764-deletir pet
-765-description generated with chatgpt
+765-endpoint permitir subir imagen mascota
 766-returns map of status codes
 767-placir new order in the
 768- for valid response try
 769-1000 for valid response try
 770-this can only be done
 771-creat list of users with
-772-description generated with chatgpt
-773-description generated with chatgpt
-774-description generated with chatgpt
+772-usuario contraseña parámetro respuesta endpoint
+773-sesión endpoint permitir cerrar usuario
+774-usuario nombre error endpoint tipo
 775-this can only be done
 776-this can only be done
-777-description generated with chatgpt
-778-description generated with chatgpt
-779-description generated with chatgpt
+777-acceso endpoint utilizado método control
+778-endpoint objetivo devolver respuesta exitoso
+779-acceso endpoint account devolver respuesta
 780-create new account
 781-get account balance
-782-description generated with chatgpt
+782-endpoint permitir obtener opción disponible
 783-access detailed block information
-784-description generated with chatgpt
+784-endpoint block poseer respuesta exitoso
 785-get information about particular block
-786-description generated with chatgpt
+786-endpoint blockid función recibir parámetro
 787-get transaction count within block
-788-description generated with chatgpt
+788-endpoint blockidtransaction permitir obtener opción
 789-get information about particular transaction
-790-description generated with chatgpt
+790-transacción endpoint permitir obtener información
 791-get list of supported blockchains
-792-description generated with chatgpt
+792-blockchain endpoint permitir solicitud opción
 793-get information about blockchain woth
-794-description generated with chatgpt
-795-description generated with chatgpt
+794-endpoint permitir petición options ruta
+795-endpoint manejar opción contrato devolver
 796-create new smart contract
 797-get contract balance
-798-description generated with chatgpt
+798-endpoint permitir solicitud opción contrato
 799-call the contract
-800-description generated with chatgpt
-801-description generated with chatgpt
+800-endpoint echo permitir opción retornar
+801-endpoint echo permitir solicitud método
 802-get token information such as
-803-description generated with chatgpt
-804-description generated with chatgpt
+803-endpoint erc20 utilizar enviar opción
+804-endpoint permitir solicitud post acción
 805-get information amout token balance
-806-description generated with chatgpt
+806-endpoint erc20address permitir enviar solicitud
 807-transfer tokens to another account
-808-description generated with chatgpt
-809-description generated with chatgpt
-810-description generated with chatgpt
-811-description generated with chatgpt
-812-description generated with chatgpt
-813-description generated with chatgpt
+808-endpoint key permitir solicitud get
+809-endpoint permitir configuración opción clave
+810-endpoint key utilizar método post
+811-endpoint permitir eliminar elemento diccionario
+812-endpoint recibir clave parámetro obligatorio
+813-endpoint transaction permitir opción transacción
 814-create new transaction transfer ether
 815-transaction get information about by
-816-description generated with chatgpt
+816-utilizar información endpoint acceder transacción
 817-get receipt detail information
-818-description generated with chatgpt
+818-endpoint encargar devolver recibo vacío
 819-get api version info
-820-description generated with chatgpt
+820-endpoint version permitir obtener información
 821-get current account balance
-822-description generated with chatgpt
+822-respuesta endpoint wallet tipo options
 823-create personal wallet
-824-description generated with chatgpt
-825-description generated with chatgpt
-826-description generated with chatgpt
+824-endpoint wallet account permitir obtener
+825-endpoint wallet account permitir efectuar
+826-endpoint permitir crear billetera electrónico
 827-get account balance
-828-description generated with chatgpt
-829-description generated with chatgpt
-830-description generated with chatgpt
-831-description generated with chatgpt
+828-endpoint permitir acceder billetera id
+829-endpoint permitir crear contrato billetera
+830-endpoint permitir crear erc20 id
+831-endpoint permitir pago billetera específico
 832-the send payment from account
-833-description generated with chatgpt
+833-endpoint realizar introspección token bearer
 834-this endpoint requires your json
 835-this endpoint requires your json
 836-this endpoint requires your json
-837-description generated with chatgpt
+837-endpoint api v2 auth introspect
 838- the for project to
 839- the attachment this an
 840-delete specific existing attachment
@@ -1034,86 +1034,86 @@
 1034-gets the face task
 1035-the age creates new face
 1036-gets the face_age task
-1037-description generated with chatgpt
+1037-endpoint pet método put permitir
 1038-add new pet to the
 1039-multiple status values can be
 1040-multiple tag can be provided
 1041-returns single pet
-1042-description generated with chatgpt
+1042-mascota endpoint permitir crear id
 1043-deletir pet
-1044-description generated with chatgpt
+1044-endpoint permitir subir imagen mascota
 1045-returns map of status codes
 1046-placir new order in the
 1047- for valid response try
 1048-1000 for valid response try
 1049-this can only be done
 1050-creat list of users with
-1051-description generated with chatgpt
-1052-description generated with chatgpt
-1053-description generated with chatgpt
+1051-usuario contraseña parámetro respuesta endpoint
+1052-sesión endpoint permitir cerrar usuario
+1053-usuario nombre error endpoint tipo
 1054-this can only be done
 1055-this can only be done
-1056-description generated with chatgpt
-1057-description generated with chatgpt
-1058-description generated with chatgpt
+1056-acceso endpoint utilizado método control
+1057-endpoint objetivo devolver respuesta exitoso
+1058-acceso endpoint account devolver respuesta
 1059-create new account
 1060-get account balance
-1061-description generated with chatgpt
+1061-endpoint permitir obtener opción disponible
 1062-access detailed block information
-1063-description generated with chatgpt
+1063-endpoint block poseer respuesta exitoso
 1064-get information about particular block
-1065-description generated with chatgpt
+1065-endpoint blockid función recibir parámetro
 1066-get transaction count within block
-1067-description generated with chatgpt
+1067-endpoint blockidtransaction permitir obtener opción
 1068-get information about particular transaction
-1069-description generated with chatgpt
+1069-transacción endpoint permitir obtener información
 1070-get list of supported blockchains
-1071-description generated with chatgpt
+1071-blockchain endpoint permitir solicitud opción
 1072-get information about blockchain woth
-1073-description generated with chatgpt
-1074-description generated with chatgpt
+1073-endpoint permitir petición options ruta
+1074-endpoint manejar opción contrato devolver
 1075-create new smart contract
 1076-get contract balance
-1077-description generated with chatgpt
+1077-endpoint permitir solicitud opción contrato
 1078-call the contract
-1079-description generated with chatgpt
-1080-description generated with chatgpt
+1079-endpoint echo permitir opción retornar
+1080-endpoint echo permitir solicitud método
 1081-get token information such as
-1082-description generated with chatgpt
-1083-description generated with chatgpt
+1082-endpoint erc20 utilizar enviar opción
+1083-endpoint permitir solicitud post acción
 1084-get information amout token balance
-1085-description generated with chatgpt
+1085-endpoint erc20address permitir enviar solicitud
 1086-transfer tokens to another account
-1087-description generated with chatgpt
-1088-description generated with chatgpt
-1089-description generated with chatgpt
-1090-description generated with chatgpt
-1091-description generated with chatgpt
-1092-description generated with chatgpt
+1087-endpoint key permitir solicitud get
+1088-endpoint permitir configuración opción clave
+1089-endpoint key utilizar método post
+1090-endpoint permitir eliminar elemento diccionario
+1091-endpoint recibir clave parámetro obligatorio
+1092-endpoint transaction permitir opción transacción
 1093-create new transaction transfer ether
 1094-transaction get information about by
-1095-description generated with chatgpt
+1095-utilizar información endpoint acceder transacción
 1096-get receipt detail information
-1097-description generated with chatgpt
+1097-endpoint encargar devolver recibo vacío
 1098-get api version info
-1099-description generated with chatgpt
+1099-endpoint version permitir obtener información
 1100-get current account balance
-1101-description generated with chatgpt
+1101-respuesta endpoint wallet tipo options
 1102-create personal wallet
-1103-description generated with chatgpt
-1104-description generated with chatgpt
-1105-description generated with chatgpt
+1103-endpoint wallet account permitir obtener
+1104-endpoint wallet account permitir efectuar
+1105-endpoint permitir crear billetera electrónico
 1106-get account balance
-1107-description generated with chatgpt
-1108-description generated with chatgpt
-1109-description generated with chatgpt
-1110-description generated with chatgpt
+1107-endpoint permitir acceder billetera id
+1108-endpoint permitir crear contrato billetera
+1109-endpoint permitir crear erc20 id
+1110-endpoint permitir pago billetera específico
 1111-the send payment from account
-1112-description generated with chatgpt
+1112-endpoint realizar introspección token bearer
 1113-this endpoint requires your json
 1114-this endpoint requires your json
 1115-this endpoint requires your json
-1116-description generated with chatgpt
+1116-endpoint api v2 auth introspect
 1117- the for project to
 1118- the attachment this an
 1119-delete specific existing attachment
@@ -1313,86 +1313,86 @@
 1313-gets the face task
 1314-the age creates new face
 1315-gets the face_age task
-1316-description generated with chatgpt
+1316-endpoint pet método put permitir
 1317-add new pet to the
 1318-multiple status values can be
 1319-multiple tag can be provided
 1320-returns single pet
-1321-description generated with chatgpt
+1321-mascota endpoint permitir crear id
 1322-deletir pet
-1323-description generated with chatgpt
+1323-endpoint permitir subir imagen mascota
 1324-returns map of status codes
 1325-placir new order in the
 1326- for valid response try
 1327-1000 for valid response try
 1328-this can only be done
 1329-creat list of users with
-1330-description generated with chatgpt
-1331-description generated with chatgpt
-1332-description generated with chatgpt
+1330-usuario contraseña parámetro respuesta endpoint
+1331-sesión endpoint permitir cerrar usuario
+1332-usuario nombre error endpoint tipo
 1333-this can only be done
 1334-this can only be done
-1335-description generated with chatgpt
-1336-description generated with chatgpt
-1337-description generated with chatgpt
+1335-acceso endpoint utilizado método control
+1336-endpoint objetivo devolver respuesta exitoso
+1337-acceso endpoint account devolver respuesta
 1338-create new account
 1339-get account balance
-1340-description generated with chatgpt
+1340-endpoint permitir obtener opción disponible
 1341-access detailed block information
-1342-description generated with chatgpt
+1342-endpoint block poseer respuesta exitoso
 1343-get information about particular block
-1344-description generated with chatgpt
+1344-endpoint blockid función recibir parámetro
 1345-get transaction count within block
-1346-description generated with chatgpt
+1346-endpoint blockidtransaction permitir obtener opción
 1347-get information about particular transaction
-1348-description generated with chatgpt
+1348-transacción endpoint permitir obtener información
 1349-get list of supported blockchains
-1350-description generated with chatgpt
+1350-blockchain endpoint permitir solicitud opción
 1351-get information about blockchain woth
-1352-description generated with chatgpt
-1353-description generated with chatgpt
+1352-endpoint permitir petición options ruta
+1353-endpoint manejar opción contrato devolver
 1354-create new smart contract
 1355-get contract balance
-1356-description generated with chatgpt
+1356-endpoint permitir solicitud opción contrato
 1357-call the contract
-1358-description generated with chatgpt
-1359-description generated with chatgpt
+1358-endpoint echo permitir opción retornar
+1359-endpoint echo permitir solicitud método
 1360-get token information such as
-1361-description generated with chatgpt
-1362-description generated with chatgpt
+1361-endpoint erc20 utilizar enviar opción
+1362-endpoint permitir solicitud post acción
 1363-get information amout token balance
-1364-description generated with chatgpt
+1364-endpoint erc20address permitir enviar solicitud
 1365-transfer tokens to another account
-1366-description generated with chatgpt
-1367-description generated with chatgpt
-1368-description generated with chatgpt
-1369-description generated with chatgpt
-1370-description generated with chatgpt
-1371-description generated with chatgpt
+1366-endpoint key permitir solicitud get
+1367-endpoint permitir configuración opción clave
+1368-endpoint key utilizar método post
+1369-endpoint permitir eliminar elemento diccionario
+1370-endpoint recibir clave parámetro obligatorio
+1371-endpoint transaction permitir opción transacción
 1372-create new transaction transfer ether
 1373-transaction get information about by
-1374-description generated with chatgpt
+1374-utilizar información endpoint acceder transacción
 1375-get receipt detail information
-1376-description generated with chatgpt
+1376-endpoint encargar devolver recibo vacío
 1377-get api version info
-1378-description generated with chatgpt
+1378-endpoint version permitir obtener información
 1379-get current account balance
-1380-description generated with chatgpt
+1380-respuesta endpoint wallet tipo options
 1381-create personal wallet
-1382-description generated with chatgpt
-1383-description generated with chatgpt
-1384-description generated with chatgpt
+1382-endpoint wallet account permitir obtener
+1383-endpoint wallet account permitir efectuar
+1384-endpoint permitir crear billetera electrónico
 1385-get account balance
-1386-description generated with chatgpt
-1387-description generated with chatgpt
-1388-description generated with chatgpt
-1389-description generated with chatgpt
+1386-endpoint permitir acceder billetera id
+1387-endpoint permitir crear contrato billetera
+1388-endpoint permitir crear erc20 id
+1389-endpoint permitir pago billetera específico
 1390-the send payment from account
-1391-description generated with chatgpt
+1391-endpoint realizar introspección token bearer
 1392-this endpoint requires your json
 1393-this endpoint requires your json
 1394-this endpoint requires your json
-1395-description generated with chatgpt
+1395-endpoint api v2 auth introspect
 1396- the for project to
 1397- the attachment this an
 1398-delete specific existing attachment
@@ -1592,83 +1592,83 @@
 1592-gets the face task
 1593-the age creates new face
 1594-gets the face_age task
-1595-description generated with chatgpt
+1595-endpoint pet método put permitir
 1596-add new pet to the
 1597-multiple status values can be
 1598-multiple tag can be provided
 1599-returns single pet
-1600-description generated with chatgpt
+1600-mascota endpoint permitir crear id
 1601-deletir pet
-1602-description generated with chatgpt
+1602-endpoint permitir subir imagen mascota
 1603-returns map of status codes
 1604-placir new order in the
 1605- for valid response try
 1606-1000 for valid response try
 1607-this can only be done
 1608-creat list of users with
-1609-description generated with chatgpt
-1610-description generated with chatgpt
-1611-description generated with chatgpt
+1609-usuario contraseña parámetro respuesta endpoint
+1610-sesión endpoint permitir cerrar usuario
+1611-usuario nombre error endpoint tipo
 1612-this can only be done
 1613-this can only be done
-1614-description generated with chatgpt
-1615-description generated with chatgpt
-1616-description generated with chatgpt
+1614-acceso endpoint utilizado método control
+1615-endpoint objetivo devolver respuesta exitoso
+1616-acceso endpoint account devolver respuesta
 1617-create new account
 1618-get account balance
-1619-description generated with chatgpt
+1619-endpoint permitir obtener opción disponible
 1620-access detailed block information
-1621-description generated with chatgpt
+1621-endpoint block poseer respuesta exitoso
 1622-get information about particular block
-1623-description generated with chatgpt
+1623-endpoint blockid función recibir parámetro
 1624-get transaction count within block
-1625-description generated with chatgpt
+1625-endpoint blockidtransaction permitir obtener opción
 1626-get information about particular transaction
-1627-description generated with chatgpt
+1627-transacción endpoint permitir obtener información
 1628-get list of supported blockchains
-1629-description generated with chatgpt
+1629-blockchain endpoint permitir solicitud opción
 1630-get information about blockchain woth
-1631-description generated with chatgpt
-1632-description generated with chatgpt
+1631-endpoint permitir petición options ruta
+1632-endpoint manejar opción contrato devolver
 1633-create new smart contract
 1634-get contract balance
-1635-description generated with chatgpt
+1635-endpoint permitir solicitud opción contrato
 1636-call the contract
-1637-description generated with chatgpt
-1638-description generated with chatgpt
+1637-endpoint echo permitir opción retornar
+1638-endpoint echo permitir solicitud método
 1639-get token information such as
-1640-description generated with chatgpt
-1641-description generated with chatgpt
+1640-endpoint erc20 utilizar enviar opción
+1641-endpoint permitir solicitud post acción
 1642-get information amout token balance
-1643-description generated with chatgpt
+1643-endpoint erc20address permitir enviar solicitud
 1644-transfer tokens to another account
-1645-description generated with chatgpt
-1646-description generated with chatgpt
-1647-description generated with chatgpt
-1648-description generated with chatgpt
-1649-description generated with chatgpt
-1650-description generated with chatgpt
+1645-endpoint key permitir solicitud get
+1646-endpoint permitir configuración opción clave
+1647-endpoint key utilizar método post
+1648-endpoint permitir eliminar elemento diccionario
+1649-endpoint recibir clave parámetro obligatorio
+1650-endpoint transaction permitir opción transacción
 1651-create new transaction transfer ether
 1652-transaction get information about by
-1653-description generated with chatgpt
+1653-utilizar información endpoint acceder transacción
 1654-get receipt detail information
-1655-description generated with chatgpt
+1655-endpoint encargar devolver recibo vacío
 1656-get api version info
-1657-description generated with chatgpt
+1657-endpoint version permitir obtener información
 1658-get current account balance
-1659-description generated with chatgpt
+1659-respuesta endpoint wallet tipo options
 1660-create personal wallet
-1661-description generated with chatgpt
-1662-description generated with chatgpt
-1663-description generated with chatgpt
+1661-endpoint wallet account permitir obtener
+1662-endpoint wallet account permitir efectuar
+1663-endpoint permitir crear billetera electrónico
 1664-get account balance
-1665-description generated with chatgpt
-1666-description generated with chatgpt
-1667-description generated with chatgpt
-1668-description generated with chatgpt
+1665-endpoint permitir acceder billetera id
+1666-endpoint permitir crear contrato billetera
+1667-endpoint permitir crear erc20 id
+1668-endpoint permitir pago billetera específico
 1669-the send payment from account
-1670-description generated with chatgpt
+1670-endpoint realizar introspección token bearer
 1671-this endpoint requires your json
 1672-this endpoint requires your json
 1673-this endpoint requires your json
-1674-description generated with chatgpt
+1674-endpoint api v2 auth introspect

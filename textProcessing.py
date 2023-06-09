@@ -4,7 +4,8 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.probability import FreqDist
 from nltk.tokenize import sent_tokenize, word_tokenize
-
+import ChatGptDescriptions
+import json
 
 from sklearn.feature_extraction.text import CountVectorizer
 import spac
@@ -32,11 +33,15 @@ def _extractDescriptions(data):
 
 
 def _completeDescriptions():
+    Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w")
     for path, endpoint in pathInfo.items():
         for method, description in endpoint.items():
             # desc = request to chatGPT
-            desc = "Description generated with chatGPT"
+            prompt = str(path) + ": " + str(method) + ": " + str(description)
+            desc = ChatGptDescriptions.generateDescription(prompt)
             descriptions[path][method] = desc
+            Files.saveFile("path: " + str(path) + ":\n" + "endpoint: " + str(method) + "\n" + json.dumps(dict(description)) + "\n\n" + "Descripcion generada: " +
+                           desc + "\n\n", "DescripcionesGeneradas.txt", "./outs/", "a")
 
 
 def _delStopWords(path, method, description):
@@ -103,6 +108,7 @@ def analizar_oracion():
 
 def procces(data):
     _extractDescriptions(data)
+    print(len(pathInfo))
     _completeDescriptions()
     for path, endpoint in descriptions.items():
         for method, description in endpoint.items():

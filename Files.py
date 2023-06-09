@@ -25,7 +25,12 @@ def filesImport(folderDir):
     return fileList
 
 
-def saveFile(text, name, dir):
-    newFile = open(dir + name, "w")
+def saveFile(text, name, dir, mode):
+    newFile = open(dir + name, mode)
     newFile.write(text)
     newFile.close()
+
+
+def deleteFile(path):
+    if (os.path.exists(path)):
+        os.remove(path)

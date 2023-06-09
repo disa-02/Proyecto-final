@@ -3,6 +3,7 @@ import ChatGPTChunks
 import Files
 from tqdm import tqdm
 
+
 # Importacion de los documentos
 data = Files.filesImport("./openApiDescriptions")
 descriptions = []
@@ -20,8 +21,9 @@ for description in descriptions:
         for method, description in endpoint.items():
             lista.append('' + str(cont) + "-" + description)
             cont += 1
-Files.saveFile("\n".join(lista), "DescripcionesProcesadas.txt", "./outs/")
+Files.saveFile("\n".join(lista), "DescripcionesProcesadas.txt", "./outs/", "w")
 
 # Consultas al chatGpt
 respuesta = ChatGPTChunks.agrupar(lista)
-Files.saveFile(str(respuesta), "AgrupacionDeDescripciones.json", "./outs/")
+Files.saveFile(
+    str(respuesta), "AgrupacionDeDescripciones.json", "./outs/", "w")

@@ -28,7 +28,8 @@ def analizar_oracion(oracion):
     # Calcular la frecuencia de las palabras
     frecuencia = FreqDist(palabras_filtradas)
     # Obtener las palabras más relevantes
-    palabras_relevantes = [palabra for palabra, _ in frecuencia.most_common(5)]
+    palabras_relevantes = [palabra for palabra,
+                           _ in frecuencia.most_common(5)]
     return palabras_relevantes
 
 

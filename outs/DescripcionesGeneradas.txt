@@ -1,0 +1,252 @@
+path: /pet:
+endpoint: put
+{"tags": ["pet"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Pet"}}, "application/xml": {"schema": {"$ref": "#/components/schemas/Pet"}}, "application/x-www-form-urlencoded": {"schema": {"$ref": "#/components/schemas/Pet"}}}, "required": true}, "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Pet"}}, "application/xml": {"schema": {"$ref": "#/components/schemas/Pet"}}}}, "400": null, "404": null, "405": null}, "security": [{"petstore_auth": ["write:pets", "read:pets"]}]}
+
+Descripcion generada: El endpoint /pet con el método put permite modificar una mascota existente en la base de datos, con la información de su petición en formato JSON o XML y que se requiere autenticación para poder acceder a su escritura y lectura.
+
+path: /pet/{petId}:
+endpoint: post
+{"tags": ["pet"], "description": "", "parameters": [{"name": "petId", "in": "path", "required": true, "schema": {"type": "integer", "format": "int64"}}, {"name": "name", "in": "query", "schema": {"type": "string"}}, {"name": "status", "in": "query", "schema": {"type": "string"}}], "responses": {"405": null}, "security": [{"petstore_auth": ["write:pets", "read:pets"]}]}
+
+Descripcion generada: Este endpoint permite crear una nueva mascota a partir del id de la mascota y los parametros opcionales de nombre y estado enviados a traves de una peticion POST, con seguridad requerida por autenticacion del usuario mediante write y read de mascotas.
+
+path: /pet/{petId}/uploadImage:
+endpoint: post
+{"tags": ["pet"], "description": "", "operationId": "uploadFile", "parameters": [{"name": "petId", "in": "path", "description": "ID of pet to update", "required": true, "schema": {"type": "integer", "format": "int64"}}, {"name": "additionalMetadata", "in": "query", "description": "Additional Metadata", "required": false, "schema": {"type": "string"}}], "requestBody": {"content": {"application/octet-stream": {"schema": {"type": "string", "format": "binary"}}}}, "responses": {"200": {"description": "successful operation", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/ApiResponse"}}}}}, "security": [{"petstore_auth": ["write:pets", "read:pets"]}]}
+
+Descripcion generada: Este endpoint permite subir una imagen para una mascota existente, identificada por su ID, y opcionalmente agregar metadatos adicionales.
+
+path: /user/login:
+endpoint: get
+{"tags": ["user"], "summary": "Logs user into the system", "description": "", "operationId": "loginUser", "parameters": [{"name": "username", "in": "query", "description": "The user name for login", "required": false, "schema": {"type": "string"}}, {"name": "password", "in": "query", "description": "The password for login in clear text", "required": false, "schema": {"type": "string"}}], "responses": {"200": {"description": "successful operation", "headers": {"X-Rate-Limit": {"description": "calls per hour allowed by the user", "schema": {"type": "integer", "format": "int32"}}, "X-Expires-After": {"description": "date in UTC when token expires", "schema": {"type": "string", "format": "date-time"}}}, "content": {"application/xml": {"schema": {"type": "string"}}, "application/json": {"schema": {"type": "string"}}}}, "400": {"description": "Invalid username/password supplied"}}}
+
+Descripcion generada: El endpoint /user/login permite al usuario iniciar sesión en el sistema mediante un método GET, solicitando el nombre de usuario y la contraseña en texto claro como parámetros de consulta opcionales, y devuelve una respuesta exitosa en formatos xml o json junto con información sobre la tasa de llamadas y la fecha de vencimiento del token de autenticación, o una respuesta de error 400 en caso de que los parámetros de usuario y contraseña sean inválidos.
+
+path: /user/logout:
+endpoint: get
+{"tags": ["user"], "summary": "Logs out current logged in user session", "description": "", "operationId": "logoutUser", "parameters": [], "responses": {"default": {"description": "successful operation"}}}
+
+Descripcion generada: Este endpoint permite cerrar la sesión del usuario que ha iniciado sesión en la aplicación.
+
+path: /user/{username}:
+endpoint: get
+{"tags": ["user"], "summary": "Get user by user name", "description": "", "operationId": "getUserByName", "parameters": [{"name": "username", "in": "path", "description": "The name that needs to be fetched. Use user1 for testing. ", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"description": "successful operation", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/User"}}, "application/xml": {"schema": {"$ref": "#/components/schemas/User"}}}}, "400": {"description": "Invalid username supplied"}, "404": {"description": "User not found"}}}
+
+Descripcion generada: Este endpoint de tipo GET, perteneciente a la ruta /user/{username}, permite obtener información de un usuario dado su nombre de usuario como parámetro obligatorio en la URL y devuelve una respuesta exitosa en formato JSON o XML, o un error 400 si se ingresa un nombre de usuario inválido o un error 404 si el usuario no existe.
+
+path: /:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint es utilizado para dar acceso a los métodos de control de acceso HTTP (Access-Control) y devuelve una respuesta vacía en caso de que la solicitud haya sido exitosa (200).
+
+path: /:
+endpoint: x-amazon-apigateway-any-method
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint tiene como objetivo devolver una respuesta exitosa con un cuerpo vacío en formato JSON cuando se solicita cualquier método HTTP.
+
+path: /account:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/account" devuelve una respuesta exitosa en formato JSON y permite el acceso a los encabezados de control de acceso de la aplicación.
+
+path: /account/{id}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite obtener las opciones disponibles para realizar operaciones en una cuenta específica identificada por su ID.
+
+path: /block:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/block" posee una respuesta exitosa de tipo JSON vacío, con permisos de acceso controlados mediante headers.
+
+path: /block/{id}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/block/{id}" tiene la función de recibir parámetros mediante el método OPTIONS para poder manipular información relacionada con el bloque identificado por el "id" proporcionado.
+
+path: /block/{id}/transaction:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/block/{id}/transaction" permite obtener opciones de transacciones de un bloque específico identificado por su ID de manera automática.
+
+path: /block/{id}/transaction/{index}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}, {"description": "Automatically added", "in": "path", "name": "index", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite obtener información de una transacción específica en un bloque determinado, identificados por el id y el índice de la transacción.
+
+path: /blockchain:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/blockchain" permite realizar solicitudes de opciones relacionadas con la tecnología blockchain y retorna una respuesta en formato JSON con una descripción y cabeceras de acceso.
+
+path: /blockchain/{id}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar una petición OPTIONS a una ruta específica de la blockchain, identificada por un ID único como parámetro en la URL.
+
+path: /contract:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint maneja opciones de contratos y devuelve una respuesta con código 200, incluyendo una estructura de datos vacía en formato JSON.
+
+path: /contract/{id}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar una solicitud de opciones para un contrato específico identificado por su id.
+
+path: /echo:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /echo permite realizar opciones para retornar una respuesta en formato JSON con un esquema vacío al realizar una petición exitosa (200 response). Además, se incluyen cabeceras con permisos de acceso para controlar la recepción y entrega de información.
+
+path: /echo:
+endpoint: x-amazon-apigateway-any-method
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint "echo" permite una solicitud de cualquier método y devuelve una respuesta vacía en formato JSON con un código de estado 200 exitoso.
+
+path: /erc20:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /erc20 es utilizado para enviar opciones de configuración y devuelve una respuesta exitosa con formato JSON vacío.
+
+path: /erc20:
+endpoint: post
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint permite realizar una solicitud POST para realizar una acción en un token ERC20 y responderá con un código 200 en caso de éxito.
+
+path: /erc20/{address}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "address", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /erc20/{address} permite enviar una solicitud OPTIONS para obtener información sobre los métodos HTTP soportados en la dirección de contrato inteligente proporcionada en la ruta.
+
+path: /key:
+endpoint: get
+{"parameters": [{"in": "query", "name": "token", "required": false, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: El endpoint "/key" permite realizar una solicitud GET y devuelve un objeto vacío si se proporciona un token en los parámetros de la consulta.
+
+path: /key:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite la configuración de opciones para una clave específica, con una respuesta exitosa de tipo JSON vacío.
+
+path: /key:
+endpoint: post
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: El endpoint "/key" utiliza el método "post" para enviar un cuerpo de solicitud y devuelve una respuesta vacía ("Empty") con código de estado 200 si la petición es exitosa.
+
+path: /key/{key}:
+endpoint: delete
+{"parameters": [{"in": "path", "name": "key", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint permite eliminar un elemento de un diccionario utilizando su clave como parámetro en la ruta, devolviendo una respuesta exitosa si la operación fue realizada correctamente.
+
+path: /key/{key}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "key", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint recibe una clave como parámetro obligatorio en la URL, y devuelve una respuesta 200 en formato JSON vacío junto con headers que permiten el control de CORS.
+
+path: /transaction:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/transaction" permite opciones de transacciones y retorna una respuesta vacía (Empty) en formato JSON en caso de ser exitosa la operación.
+
+path: /transaction/{hash}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "hash", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint se utiliza para acceder a información sobre una transacción utilizando su hash como parámetro y retornará una respuesta vacía en formato JSON si se encuentra la información.
+
+path: /transaction/{hash}/receipt:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "hash", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint se encarga de devolver un recibo (vacío) de la transacción cuyo identificador es ingresado como parámetro en la URL.
+
+path: /version:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /version permite obtener información de la versión de la API mediante una solicitud de opciones, devolviendo una respuesta en formato JSON.
+
+path: /wallet:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/wallet" es de tipo "options" y devuelve una respuesta exitosa en formato JSON con status code 200 y una respuesta vacía, junto con headers que permiten el control de acceso a la API desde diferentes orígenes.
+
+path: /wallet/account:
+endpoint: get
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: El endpoint "/wallet/account" permite obtener la información de una cuenta de billetera y devuelve una respuesta vacía en formato JSON.
+
+path: /wallet/account:
+endpoint: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /wallet/account permite efectuar una solicitud OPTIONS para obtener información sobre la cuenta del usuario y los métodos de acceso permitidos.
+
+path: /wallet/account:
+endpoint: post
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint permite crear una cuenta de billetera electrónica, y devuelve una respuesta exitosa en formato JSON.
+
+path: /wallet/account/{id}:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite acceder a la cuenta de una billetera a través de un ID específico, y devuelve un código de respuesta 200 indicando que no hay contenido en ella.
+
+path: /wallet/account/{id}/contract:
+endpoint: post
+{"parameters": [{"in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: El endpoint permite crear un contrato para la cuenta de una billetera específica mediante una solicitud POST, identificando dicha cuenta a través de su ID en la URL.
+
+path: /wallet/account/{id}/erc20:
+endpoint: post
+{"parameters": [{"in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint permite crear una cuenta ERC20 para el ID de la billetera proporcionado a través de una solicitud Post, y devuelve una respuesta 200 vacía en caso de éxito.
+
+path: /wallet/account/{id}/pay:
+endpoint: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar pagos desde una cuenta de billetera específica, identificada por el parámetro "id".
+
+path: /api/auth/introspect:
+endpoint: get
+{"deprecated": true, "operationId": "getAuthIntrospect", "responses": {"200": {"$ref": "#/components/responses/IntrospectResponse"}, "401": {"$ref": "#/components/responses/UnauthorizedErrorResponse"}, "500": {"$ref": "#/components/responses/InternalServerErrorResponse"}, "default": {"$ref": "#/components/responses/GenericErrorResponse"}}, "security": [{"jwtsa": []}], "summary": "Performs introspection of the provided Bearer JWT token", "tags": ["auth"]}
+
+Descripcion generada: Este endpoint realiza una introspección del token Bearer JWT proporcionado.
+
+path: /api/v2/auth/introspect:
+endpoint: get
+{"operationId": "getAuthIntrospectV2", "responses": {"200": {"$ref": "#/components/responses/IntrospectV2Response"}, "401": {"$ref": "#/components/responses/UnauthorizedErrorResponse"}, "500": {"$ref": "#/components/responses/InternalServerErrorResponse"}, "default": {"$ref": "#/components/responses/GenericErrorResponse"}}, "security": [{"jwtsa": []}], "summary": "Performs introspection of the provided Bearer JWT token", "tags": ["auth"]}
+
+Descripcion generada: El endpoint /api/v2/auth/introspect: get realiza una introspección del token Bearer JWT proporcionado.
+
