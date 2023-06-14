@@ -40,7 +40,7 @@ def _completeDescriptions():
             prompt = str(path) + ": " + str(method) + ": " + str(description)
             desc = ChatGptDescriptions.generateDescription(prompt)
             descriptions[path][method] = desc
-            Files.saveFile("path: " + str(path) + ":\n" + "endpoint: " + str(method) + "\n" + json.dumps(dict(description)) + "\n\n" + "Descripcion generada: " +
+            Files.saveFile("path: " + str(path) + ":\n" + "operacion: " + str(method) + "\n" + json.dumps(dict(description)) + "\n\n" + "Descripcion generada: " +
                            desc + "\n\n", "DescripcionesGeneradas.txt", "./outs/", "a")
 
 
@@ -81,29 +81,6 @@ def generar_resumen(numero_oraciones, path, method, description):
     resumen = ' '.join(oraciones_ordenadas[:numero_oraciones])
 
     descriptions[path][method] = resumen
-
-
-def analizar_oracion():
-    for path, endpoint in descriptions.items():
-        for method, description in endpoint.items():
-            # Tokenizar la oración en palabras
-            palabras = word_tokenize(description)
-
-            # Filtrar palabras irrelevantes (stop words)
-            palabras_filtradas = [palabra.lower(
-            ) for palabra in palabras if palabra.lower() not in stopwords.words('spanish')]
-
-            # Etiquetar partes del discurso
-            palabras_etiquetadas = nltk.pos_tag(palabras_filtradas, lang='es')
-
-            # Calcular la frecuencia de las palabras
-            frecuencia = FreqDist(palabras_etiquetadas)
-
-            # Obtener las palabras más relevantes
-            palabras_relevantes = [palabra for palabra,
-                                   _ in frecuencia.most_common(5)]
-
-            descriptions[path][method] = palabras_relevantes
 
 
 def procces(data):

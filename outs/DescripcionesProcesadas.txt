@@ -197,86 +197,86 @@
 197-gets the face task
 198-the age creates new face
 199-gets the face_age task
-200-endpoint pet método put permitir
+200-endpoint permitir actualizar información mascota
 201-add new pet to the
 202-multiple status values can be
 203-multiple tag can be provided
 204-returns single pet
-205-mascota endpoint permitir crear id
+205-endpoint permitir agregar mascota base
 206-deletir pet
-207-endpoint permitir subir imagen mascota
+207-endpoint petpetiduploadimage permitir subir imagen
 208-returns map of status codes
 209-placir new order in the
 210- for valid response try
 211-1000 for valid response try
 212-this can only be done
 213-creat list of users with
-214-usuario contraseña parámetro respuesta endpoint
-215-sesión endpoint permitir cerrar usuario
-216-usuario nombre error endpoint tipo
+214-usuario endpoint permitir iniciar sesión
+215-endpoint permitir cerrar sesión usuario
+216-usuario endpoint permitir obtener información
 217-this can only be done
 218-this can only be done
-219-acceso endpoint utilizado método control
-220-endpoint objetivo devolver respuesta exitoso
-221-acceso endpoint account devolver respuesta
+219-endpoint permitir solicitud opción servidor
+220-endpoint permitir petición http método
+221-endpoint tipo options permitir cliente
 222-create new account
 223-get account balance
-224-endpoint permitir obtener opción disponible
+224-endpoint permitir obtener opción específico
 225-access detailed block information
-226-endpoint block poseer respuesta exitoso
+226-endpoint block permitir solicitud options
 227-get information about particular block
-228-endpoint blockid función recibir parámetro
+228-endpoint blockid permitir solicitud options
 229-get transaction count within block
-230-endpoint blockidtransaction permitir obtener opción
+230-endpoint blockidtransaction permitir obtener transacción
 231-get information about particular transaction
-232-transacción endpoint permitir obtener información
+232-endpoint permitir acceder transacción bloque
 233-get list of supported blockchains
-234-blockchain endpoint permitir solicitud opción
+234-endpoint retornar respuesta vacío formato
 235-get information about blockchain woth
-236-endpoint permitir petición options ruta
-237-endpoint manejar opción contrato devolver
+236-endpoint permitir obtener opción relacionado
+237-respuesta endpoint api proporcionar opción
 238-create new smart contract
 239-get contract balance
-240-endpoint permitir solicitud opción contrato
+240- endpoint permitir obtener opción
 241-call the contract
-242-endpoint echo permitir opción retornar
-243-endpoint echo permitir solicitud método
+242-endpoint echo devolver respuesta vacío
+243-endpoint echo permitir petición método
 244-get token information such as
-245-endpoint erc20 utilizar enviar opción
-246-endpoint permitir solicitud post acción
+245-solicitud endpoint proporcionar opción manejar
+246-endpoint permitir solicitud creación token
 247-get information amout token balance
-248-endpoint erc20address permitir enviar solicitud
+248-endpoint erc20address permitir recibir opción
 249-transfer tokens to another account
-250-endpoint key permitir solicitud get
-251-endpoint permitir configuración opción clave
-252-endpoint key utilizar método post
-253-endpoint permitir eliminar elemento diccionario
-254-endpoint recibir clave parámetro obligatorio
-255-endpoint transaction permitir opción transacción
+250-endpoint key método get devolver
+251-endpoint definir opción disponible respuesta
+252-endpoint permitir agregar clave diccionario
+253-endpoint permitir eliminar elemento específico
+254-endpoint keykey permitir solicitud options
+255-endpoint permitir solicitud opción transacción
 256-create new transaction transfer ether
 257-transaction get information about by
-258-utilizar información endpoint acceder transacción
+258-endpoint devolver respuesta exitoso objeto
 259-get receipt detail information
-260-endpoint encargar devolver recibo vacío
+260-endpoint transactionhashreceipt permitir obtener recibo
 261-get api version info
-262-endpoint version permitir obtener información
+262-endpoint devolver lista opción disponible
 263-get current account balance
-264-respuesta endpoint wallet tipo options
+264-respuesta endpoint opción wallet devolver
 265-create personal wallet
-266-endpoint wallet account permitir obtener
-267-endpoint wallet account permitir efectuar
-268-endpoint permitir crear billetera electrónico
+266-endpoint permitir solicitud get obtener
+267-endpoint wallet account permitir solicitud
+268-endpoint wallet account permitir creación
 269-get account balance
-270-endpoint permitir acceder billetera id
-271-endpoint permitir crear contrato billetera
-272-endpoint permitir crear erc20 id
-273-endpoint permitir pago billetera específico
+270-endpoint permitir opción billetera particular
+271-endpoint permitir creación contrato billetera
+272-respuesta endpoint permitir usuario crear
+273-endpoint wallet accountidpay permitir pago
 274-the send payment from account
 275-endpoint realizar introspección token bearer
 276-this endpoint requires your json
 277-this endpoint requires your json
 278-this endpoint requires your json
-279-endpoint api v2 auth introspect
+279-token endpoint utilizar introspección bearer
 280- the for project to
 281- the attachment this an
 282-delete specific existing attachment
@@ -476,86 +476,86 @@
 476-gets the face task
 477-the age creates new face
 478-gets the face_age task
-479-endpoint pet método put permitir
+479-endpoint permitir actualizar información mascota
 480-add new pet to the
 481-multiple status values can be
 482-multiple tag can be provided
 483-returns single pet
-484-mascota endpoint permitir crear id
+484-endpoint permitir agregar mascota base
 485-deletir pet
-486-endpoint permitir subir imagen mascota
+486-endpoint petpetiduploadimage permitir subir imagen
 487-returns map of status codes
 488-placir new order in the
 489- for valid response try
 490-1000 for valid response try
 491-this can only be done
 492-creat list of users with
-493-usuario contraseña parámetro respuesta endpoint
-494-sesión endpoint permitir cerrar usuario
-495-usuario nombre error endpoint tipo
+493-usuario endpoint permitir iniciar sesión
+494-endpoint permitir cerrar sesión usuario
+495-usuario endpoint permitir obtener información
 496-this can only be done
 497-this can only be done
-498-acceso endpoint utilizado método control
-499-endpoint objetivo devolver respuesta exitoso
-500-acceso endpoint account devolver respuesta
+498-endpoint permitir solicitud opción servidor
+499-endpoint permitir petición http método
+500-endpoint tipo options permitir cliente
 501-create new account
 502-get account balance
-503-endpoint permitir obtener opción disponible
+503-endpoint permitir obtener opción específico
 504-access detailed block information
-505-endpoint block poseer respuesta exitoso
+505-endpoint block permitir solicitud options
 506-get information about particular block
-507-endpoint blockid función recibir parámetro
+507-endpoint blockid permitir solicitud options
 508-get transaction count within block
-509-endpoint blockidtransaction permitir obtener opción
+509-endpoint blockidtransaction permitir obtener transacción
 510-get information about particular transaction
-511-transacción endpoint permitir obtener información
+511-endpoint permitir acceder transacción bloque
 512-get list of supported blockchains
-513-blockchain endpoint permitir solicitud opción
+513-endpoint retornar respuesta vacío formato
 514-get information about blockchain woth
-515-endpoint permitir petición options ruta
-516-endpoint manejar opción contrato devolver
+515-endpoint permitir obtener opción relacionado
+516-respuesta endpoint api proporcionar opción
 517-create new smart contract
 518-get contract balance
-519-endpoint permitir solicitud opción contrato
+519- endpoint permitir obtener opción
 520-call the contract
-521-endpoint echo permitir opción retornar
-522-endpoint echo permitir solicitud método
+521-endpoint echo devolver respuesta vacío
+522-endpoint echo permitir petición método
 523-get token information such as
-524-endpoint erc20 utilizar enviar opción
-525-endpoint permitir solicitud post acción
+524-solicitud endpoint proporcionar opción manejar
+525-endpoint permitir solicitud creación token
 526-get information amout token balance
-527-endpoint erc20address permitir enviar solicitud
+527-endpoint erc20address permitir recibir opción
 528-transfer tokens to another account
-529-endpoint key permitir solicitud get
-530-endpoint permitir configuración opción clave
-531-endpoint key utilizar método post
-532-endpoint permitir eliminar elemento diccionario
-533-endpoint recibir clave parámetro obligatorio
-534-endpoint transaction permitir opción transacción
+529-endpoint key método get devolver
+530-endpoint definir opción disponible respuesta
+531-endpoint permitir agregar clave diccionario
+532-endpoint permitir eliminar elemento específico
+533-endpoint keykey permitir solicitud options
+534-endpoint permitir solicitud opción transacción
 535-create new transaction transfer ether
 536-transaction get information about by
-537-utilizar información endpoint acceder transacción
+537-endpoint devolver respuesta exitoso objeto
 538-get receipt detail information
-539-endpoint encargar devolver recibo vacío
+539-endpoint transactionhashreceipt permitir obtener recibo
 540-get api version info
-541-endpoint version permitir obtener información
+541-endpoint devolver lista opción disponible
 542-get current account balance
-543-respuesta endpoint wallet tipo options
+543-respuesta endpoint opción wallet devolver
 544-create personal wallet
-545-endpoint wallet account permitir obtener
-546-endpoint wallet account permitir efectuar
-547-endpoint permitir crear billetera electrónico
+545-endpoint permitir solicitud get obtener
+546-endpoint wallet account permitir solicitud
+547-endpoint wallet account permitir creación
 548-get account balance
-549-endpoint permitir acceder billetera id
-550-endpoint permitir crear contrato billetera
-551-endpoint permitir crear erc20 id
-552-endpoint permitir pago billetera específico
+549-endpoint permitir opción billetera particular
+550-endpoint permitir creación contrato billetera
+551-respuesta endpoint permitir usuario crear
+552-endpoint wallet accountidpay permitir pago
 553-the send payment from account
 554-endpoint realizar introspección token bearer
 555-this endpoint requires your json
 556-this endpoint requires your json
 557-this endpoint requires your json
-558-endpoint api v2 auth introspect
+558-token endpoint utilizar introspección bearer
 559- the for project to
 560- the attachment this an
 561-delete specific existing attachment
@@ -755,86 +755,86 @@
 755-gets the face task
 756-the age creates new face
 757-gets the face_age task
-758-endpoint pet método put permitir
+758-endpoint permitir actualizar información mascota
 759-add new pet to the
 760-multiple status values can be
 761-multiple tag can be provided
 762-returns single pet
-763-mascota endpoint permitir crear id
+763-endpoint permitir agregar mascota base
 764-deletir pet
-765-endpoint permitir subir imagen mascota
+765-endpoint petpetiduploadimage permitir subir imagen
 766-returns map of status codes
 767-placir new order in the
 768- for valid response try
 769-1000 for valid response try
 770-this can only be done
 771-creat list of users with
-772-usuario contraseña parámetro respuesta endpoint
-773-sesión endpoint permitir cerrar usuario
-774-usuario nombre error endpoint tipo
+772-usuario endpoint permitir iniciar sesión
+773-endpoint permitir cerrar sesión usuario
+774-usuario endpoint permitir obtener información
 775-this can only be done
 776-this can only be done
-777-acceso endpoint utilizado método control
-778-endpoint objetivo devolver respuesta exitoso
-779-acceso endpoint account devolver respuesta
+777-endpoint permitir solicitud opción servidor
+778-endpoint permitir petición http método
+779-endpoint tipo options permitir cliente
 780-create new account
 781-get account balance
-782-endpoint permitir obtener opción disponible
+782-endpoint permitir obtener opción específico
 783-access detailed block information
-784-endpoint block poseer respuesta exitoso
+784-endpoint block permitir solicitud options
 785-get information about particular block
-786-endpoint blockid función recibir parámetro
+786-endpoint blockid permitir solicitud options
 787-get transaction count within block
-788-endpoint blockidtransaction permitir obtener opción
+788-endpoint blockidtransaction permitir obtener transacción
 789-get information about particular transaction
-790-transacción endpoint permitir obtener información
+790-endpoint permitir acceder transacción bloque
 791-get list of supported blockchains
-792-blockchain endpoint permitir solicitud opción
+792-endpoint retornar respuesta vacío formato
 793-get information about blockchain woth
-794-endpoint permitir petición options ruta
-795-endpoint manejar opción contrato devolver
+794-endpoint permitir obtener opción relacionado
+795-respuesta endpoint api proporcionar opción
 796-create new smart contract
 797-get contract balance
-798-endpoint permitir solicitud opción contrato
+798- endpoint permitir obtener opción
 799-call the contract
-800-endpoint echo permitir opción retornar
-801-endpoint echo permitir solicitud método
+800-endpoint echo devolver respuesta vacío
+801-endpoint echo permitir petición método
 802-get token information such as
-803-endpoint erc20 utilizar enviar opción
-804-endpoint permitir solicitud post acción
+803-solicitud endpoint proporcionar opción manejar
+804-endpoint permitir solicitud creación token
 805-get information amout token balance
-806-endpoint erc20address permitir enviar solicitud
+806-endpoint erc20address permitir recibir opción
 807-transfer tokens to another account
-808-endpoint key permitir solicitud get
-809-endpoint permitir configuración opción clave
-810-endpoint key utilizar método post
-811-endpoint permitir eliminar elemento diccionario
-812-endpoint recibir clave parámetro obligatorio
-813-endpoint transaction permitir opción transacción
+808-endpoint key método get devolver
+809-endpoint definir opción disponible respuesta
+810-endpoint permitir agregar clave diccionario
+811-endpoint permitir eliminar elemento específico
+812-endpoint keykey permitir solicitud options
+813-endpoint permitir solicitud opción transacción
 814-create new transaction transfer ether
 815-transaction get information about by
-816-utilizar información endpoint acceder transacción
+816-endpoint devolver respuesta exitoso objeto
 817-get receipt detail information
-818-endpoint encargar devolver recibo vacío
+818-endpoint transactionhashreceipt permitir obtener recibo
 819-get api version info
-820-endpoint version permitir obtener información
+820-endpoint devolver lista opción disponible
 821-get current account balance
-822-respuesta endpoint wallet tipo options
+822-respuesta endpoint opción wallet devolver
 823-create personal wallet
-824-endpoint wallet account permitir obtener
-825-endpoint wallet account permitir efectuar
-826-endpoint permitir crear billetera electrónico
+824-endpoint permitir solicitud get obtener
+825-endpoint wallet account permitir solicitud
+826-endpoint wallet account permitir creación
 827-get account balance
-828-endpoint permitir acceder billetera id
-829-endpoint permitir crear contrato billetera
-830-endpoint permitir crear erc20 id
-831-endpoint permitir pago billetera específico
+828-endpoint permitir opción billetera particular
+829-endpoint permitir creación contrato billetera
+830-respuesta endpoint permitir usuario crear
+831-endpoint wallet accountidpay permitir pago
 832-the send payment from account
 833-endpoint realizar introspección token bearer
 834-this endpoint requires your json
 835-this endpoint requires your json
 836-this endpoint requires your json
-837-endpoint api v2 auth introspect
+837-token endpoint utilizar introspección bearer
 838- the for project to
 839- the attachment this an
 840-delete specific existing attachment
@@ -1034,86 +1034,86 @@
 1034-gets the face task
 1035-the age creates new face
 1036-gets the face_age task
-1037-endpoint pet método put permitir
+1037-endpoint permitir actualizar información mascota
 1038-add new pet to the
 1039-multiple status values can be
 1040-multiple tag can be provided
 1041-returns single pet
-1042-mascota endpoint permitir crear id
+1042-endpoint permitir agregar mascota base
 1043-deletir pet
-1044-endpoint permitir subir imagen mascota
+1044-endpoint petpetiduploadimage permitir subir imagen
 1045-returns map of status codes
 1046-placir new order in the
 1047- for valid response try
 1048-1000 for valid response try
 1049-this can only be done
 1050-creat list of users with
-1051-usuario contraseña parámetro respuesta endpoint
-1052-sesión endpoint permitir cerrar usuario
-1053-usuario nombre error endpoint tipo
+1051-usuario endpoint permitir iniciar sesión
+1052-endpoint permitir cerrar sesión usuario
+1053-usuario endpoint permitir obtener información
 1054-this can only be done
 1055-this can only be done
-1056-acceso endpoint utilizado método control
-1057-endpoint objetivo devolver respuesta exitoso
-1058-acceso endpoint account devolver respuesta
+1056-endpoint permitir solicitud opción servidor
+1057-endpoint permitir petición http método
+1058-endpoint tipo options permitir cliente
 1059-create new account
 1060-get account balance
-1061-endpoint permitir obtener opción disponible
+1061-endpoint permitir obtener opción específico
 1062-access detailed block information
-1063-endpoint block poseer respuesta exitoso
+1063-endpoint block permitir solicitud options
 1064-get information about particular block
-1065-endpoint blockid función recibir parámetro
+1065-endpoint blockid permitir solicitud options
 1066-get transaction count within block
-1067-endpoint blockidtransaction permitir obtener opción
+1067-endpoint blockidtransaction permitir obtener transacción
 1068-get information about particular transaction
-1069-transacción endpoint permitir obtener información
+1069-endpoint permitir acceder transacción bloque
 1070-get list of supported blockchains
-1071-blockchain endpoint permitir solicitud opción
+1071-endpoint retornar respuesta vacío formato
 1072-get information about blockchain woth
-1073-endpoint permitir petición options ruta
-1074-endpoint manejar opción contrato devolver
+1073-endpoint permitir obtener opción relacionado
+1074-respuesta endpoint api proporcionar opción
 1075-create new smart contract
 1076-get contract balance
-1077-endpoint permitir solicitud opción contrato
+1077- endpoint permitir obtener opción
 1078-call the contract
-1079-endpoint echo permitir opción retornar
-1080-endpoint echo permitir solicitud método
+1079-endpoint echo devolver respuesta vacío
+1080-endpoint echo permitir petición método
 1081-get token information such as
-1082-endpoint erc20 utilizar enviar opción
-1083-endpoint permitir solicitud post acción
+1082-solicitud endpoint proporcionar opción manejar
+1083-endpoint permitir solicitud creación token
 1084-get information amout token balance
-1085-endpoint erc20address permitir enviar solicitud
+1085-endpoint erc20address permitir recibir opción
 1086-transfer tokens to another account
-1087-endpoint key permitir solicitud get
-1088-endpoint permitir configuración opción clave
-1089-endpoint key utilizar método post
-1090-endpoint permitir eliminar elemento diccionario
-1091-endpoint recibir clave parámetro obligatorio
-1092-endpoint transaction permitir opción transacción
+1087-endpoint key método get devolver
+1088-endpoint definir opción disponible respuesta
+1089-endpoint permitir agregar clave diccionario
+1090-endpoint permitir eliminar elemento específico
+1091-endpoint keykey permitir solicitud options
+1092-endpoint permitir solicitud opción transacción
 1093-create new transaction transfer ether
 1094-transaction get information about by
-1095-utilizar información endpoint acceder transacción
+1095-endpoint devolver respuesta exitoso objeto
 1096-get receipt detail information
-1097-endpoint encargar devolver recibo vacío
+1097-endpoint transactionhashreceipt permitir obtener recibo
 1098-get api version info
-1099-endpoint version permitir obtener información
+1099-endpoint devolver lista opción disponible
 1100-get current account balance
-1101-respuesta endpoint wallet tipo options
+1101-respuesta endpoint opción wallet devolver
 1102-create personal wallet
-1103-endpoint wallet account permitir obtener
-1104-endpoint wallet account permitir efectuar
-1105-endpoint permitir crear billetera electrónico
+1103-endpoint permitir solicitud get obtener
+1104-endpoint wallet account permitir solicitud
+1105-endpoint wallet account permitir creación
 1106-get account balance
-1107-endpoint permitir acceder billetera id
-1108-endpoint permitir crear contrato billetera
-1109-endpoint permitir crear erc20 id
-1110-endpoint permitir pago billetera específico
+1107-endpoint permitir opción billetera particular
+1108-endpoint permitir creación contrato billetera
+1109-respuesta endpoint permitir usuario crear
+1110-endpoint wallet accountidpay permitir pago
 1111-the send payment from account
 1112-endpoint realizar introspección token bearer
 1113-this endpoint requires your json
 1114-this endpoint requires your json
 1115-this endpoint requires your json
-1116-endpoint api v2 auth introspect
+1116-token endpoint utilizar introspección bearer
 1117- the for project to
 1118- the attachment this an
 1119-delete specific existing attachment
@@ -1313,86 +1313,86 @@
 1313-gets the face task
 1314-the age creates new face
 1315-gets the face_age task
-1316-endpoint pet método put permitir
+1316-endpoint permitir actualizar información mascota
 1317-add new pet to the
 1318-multiple status values can be
 1319-multiple tag can be provided
 1320-returns single pet
-1321-mascota endpoint permitir crear id
+1321-endpoint permitir agregar mascota base
 1322-deletir pet
-1323-endpoint permitir subir imagen mascota
+1323-endpoint petpetiduploadimage permitir subir imagen
 1324-returns map of status codes
 1325-placir new order in the
 1326- for valid response try
 1327-1000 for valid response try
 1328-this can only be done
 1329-creat list of users with
-1330-usuario contraseña parámetro respuesta endpoint
-1331-sesión endpoint permitir cerrar usuario
-1332-usuario nombre error endpoint tipo
+1330-usuario endpoint permitir iniciar sesión
+1331-endpoint permitir cerrar sesión usuario
+1332-usuario endpoint permitir obtener información
 1333-this can only be done
 1334-this can only be done
-1335-acceso endpoint utilizado método control
-1336-endpoint objetivo devolver respuesta exitoso
-1337-acceso endpoint account devolver respuesta
+1335-endpoint permitir solicitud opción servidor
+1336-endpoint permitir petición http método
+1337-endpoint tipo options permitir cliente
 1338-create new account
 1339-get account balance
-1340-endpoint permitir obtener opción disponible
+1340-endpoint permitir obtener opción específico
 1341-access detailed block information
-1342-endpoint block poseer respuesta exitoso
+1342-endpoint block permitir solicitud options
 1343-get information about particular block
-1344-endpoint blockid función recibir parámetro
+1344-endpoint blockid permitir solicitud options
 1345-get transaction count within block
-1346-endpoint blockidtransaction permitir obtener opción
+1346-endpoint blockidtransaction permitir obtener transacción
 1347-get information about particular transaction
-1348-transacción endpoint permitir obtener información
+1348-endpoint permitir acceder transacción bloque
 1349-get list of supported blockchains
-1350-blockchain endpoint permitir solicitud opción
+1350-endpoint retornar respuesta vacío formato
 1351-get information about blockchain woth
-1352-endpoint permitir petición options ruta
-1353-endpoint manejar opción contrato devolver
+1352-endpoint permitir obtener opción relacionado
+1353-respuesta endpoint api proporcionar opción
 1354-create new smart contract
 1355-get contract balance
-1356-endpoint permitir solicitud opción contrato
+1356- endpoint permitir obtener opción
 1357-call the contract
-1358-endpoint echo permitir opción retornar
-1359-endpoint echo permitir solicitud método
+1358-endpoint echo devolver respuesta vacío
+1359-endpoint echo permitir petición método
 1360-get token information such as
-1361-endpoint erc20 utilizar enviar opción
-1362-endpoint permitir solicitud post acción
+1361-solicitud endpoint proporcionar opción manejar
+1362-endpoint permitir solicitud creación token
 1363-get information amout token balance
-1364-endpoint erc20address permitir enviar solicitud
+1364-endpoint erc20address permitir recibir opción
 1365-transfer tokens to another account
-1366-endpoint key permitir solicitud get
-1367-endpoint permitir configuración opción clave
-1368-endpoint key utilizar método post
-1369-endpoint permitir eliminar elemento diccionario
-1370-endpoint recibir clave parámetro obligatorio
-1371-endpoint transaction permitir opción transacción
+1366-endpoint key método get devolver
+1367-endpoint definir opción disponible respuesta
+1368-endpoint permitir agregar clave diccionario
+1369-endpoint permitir eliminar elemento específico
+1370-endpoint keykey permitir solicitud options
+1371-endpoint permitir solicitud opción transacción
 1372-create new transaction transfer ether
 1373-transaction get information about by
-1374-utilizar información endpoint acceder transacción
+1374-endpoint devolver respuesta exitoso objeto
 1375-get receipt detail information
-1376-endpoint encargar devolver recibo vacío
+1376-endpoint transactionhashreceipt permitir obtener recibo
 1377-get api version info
-1378-endpoint version permitir obtener información
+1378-endpoint devolver lista opción disponible
 1379-get current account balance
-1380-respuesta endpoint wallet tipo options
+1380-respuesta endpoint opción wallet devolver
 1381-create personal wallet
-1382-endpoint wallet account permitir obtener
-1383-endpoint wallet account permitir efectuar
-1384-endpoint permitir crear billetera electrónico
+1382-endpoint permitir solicitud get obtener
+1383-endpoint wallet account permitir solicitud
+1384-endpoint wallet account permitir creación
 1385-get account balance
-1386-endpoint permitir acceder billetera id
-1387-endpoint permitir crear contrato billetera
-1388-endpoint permitir crear erc20 id
-1389-endpoint permitir pago billetera específico
+1386-endpoint permitir opción billetera particular
+1387-endpoint permitir creación contrato billetera
+1388-respuesta endpoint permitir usuario crear
+1389-endpoint wallet accountidpay permitir pago
 1390-the send payment from account
 1391-endpoint realizar introspección token bearer
 1392-this endpoint requires your json
 1393-this endpoint requires your json
 1394-this endpoint requires your json
-1395-endpoint api v2 auth introspect
+1395-token endpoint utilizar introspección bearer
 1396- the for project to
 1397- the attachment this an
 1398-delete specific existing attachment
@@ -1592,83 +1592,83 @@
 1592-gets the face task
 1593-the age creates new face
 1594-gets the face_age task
-1595-endpoint pet método put permitir
+1595-endpoint permitir actualizar información mascota
 1596-add new pet to the
 1597-multiple status values can be
 1598-multiple tag can be provided
 1599-returns single pet
-1600-mascota endpoint permitir crear id
+1600-endpoint permitir agregar mascota base
 1601-deletir pet
-1602-endpoint permitir subir imagen mascota
+1602-endpoint petpetiduploadimage permitir subir imagen
 1603-returns map of status codes
 1604-placir new order in the
 1605- for valid response try
 1606-1000 for valid response try
 1607-this can only be done
 1608-creat list of users with
-1609-usuario contraseña parámetro respuesta endpoint
-1610-sesión endpoint permitir cerrar usuario
-1611-usuario nombre error endpoint tipo
+1609-usuario endpoint permitir iniciar sesión
+1610-endpoint permitir cerrar sesión usuario
+1611-usuario endpoint permitir obtener información
 1612-this can only be done
 1613-this can only be done
-1614-acceso endpoint utilizado método control
-1615-endpoint objetivo devolver respuesta exitoso
-1616-acceso endpoint account devolver respuesta
+1614-endpoint permitir solicitud opción servidor
+1615-endpoint permitir petición http método
+1616-endpoint tipo options permitir cliente
 1617-create new account
 1618-get account balance
-1619-endpoint permitir obtener opción disponible
+1619-endpoint permitir obtener opción específico
 1620-access detailed block information
-1621-endpoint block poseer respuesta exitoso
+1621-endpoint block permitir solicitud options
 1622-get information about particular block
-1623-endpoint blockid función recibir parámetro
+1623-endpoint blockid permitir solicitud options
 1624-get transaction count within block
-1625-endpoint blockidtransaction permitir obtener opción
+1625-endpoint blockidtransaction permitir obtener transacción
 1626-get information about particular transaction
-1627-transacción endpoint permitir obtener información
+1627-endpoint permitir acceder transacción bloque
 1628-get list of supported blockchains
-1629-blockchain endpoint permitir solicitud opción
+1629-endpoint retornar respuesta vacío formato
 1630-get information about blockchain woth
-1631-endpoint permitir petición options ruta
-1632-endpoint manejar opción contrato devolver
+1631-endpoint permitir obtener opción relacionado
+1632-respuesta endpoint api proporcionar opción
 1633-create new smart contract
 1634-get contract balance
-1635-endpoint permitir solicitud opción contrato
+1635- endpoint permitir obtener opción
 1636-call the contract
-1637-endpoint echo permitir opción retornar
-1638-endpoint echo permitir solicitud método
+1637-endpoint echo devolver respuesta vacío
+1638-endpoint echo permitir petición método
 1639-get token information such as
-1640-endpoint erc20 utilizar enviar opción
-1641-endpoint permitir solicitud post acción
+1640-solicitud endpoint proporcionar opción manejar
+1641-endpoint permitir solicitud creación token
 1642-get information amout token balance
-1643-endpoint erc20address permitir enviar solicitud
+1643-endpoint erc20address permitir recibir opción
 1644-transfer tokens to another account
-1645-endpoint key permitir solicitud get
-1646-endpoint permitir configuración opción clave
-1647-endpoint key utilizar método post
-1648-endpoint permitir eliminar elemento diccionario
-1649-endpoint recibir clave parámetro obligatorio
-1650-endpoint transaction permitir opción transacción
+1645-endpoint key método get devolver
+1646-endpoint definir opción disponible respuesta
+1647-endpoint permitir agregar clave diccionario
+1648-endpoint permitir eliminar elemento específico
+1649-endpoint keykey permitir solicitud options
+1650-endpoint permitir solicitud opción transacción
 1651-create new transaction transfer ether
 1652-transaction get information about by
-1653-utilizar información endpoint acceder transacción
+1653-endpoint devolver respuesta exitoso objeto
 1654-get receipt detail information
-1655-endpoint encargar devolver recibo vacío
+1655-endpoint transactionhashreceipt permitir obtener recibo
 1656-get api version info
-1657-endpoint version permitir obtener información
+1657-endpoint devolver lista opción disponible
 1658-get current account balance
-1659-respuesta endpoint wallet tipo options
+1659-respuesta endpoint opción wallet devolver
 1660-create personal wallet
-1661-endpoint wallet account permitir obtener
-1662-endpoint wallet account permitir efectuar
-1663-endpoint permitir crear billetera electrónico
+1661-endpoint permitir solicitud get obtener
+1662-endpoint wallet account permitir solicitud
+1663-endpoint wallet account permitir creación
 1664-get account balance
-1665-endpoint permitir acceder billetera id
-1666-endpoint permitir crear contrato billetera
-1667-endpoint permitir crear erc20 id
-1668-endpoint permitir pago billetera específico
+1665-endpoint permitir opción billetera particular
+1666-endpoint permitir creación contrato billetera
+1667-respuesta endpoint permitir usuario crear
+1668-endpoint wallet accountidpay permitir pago
 1669-the send payment from account
 1670-endpoint realizar introspección token bearer
 1671-this endpoint requires your json
 1672-this endpoint requires your json
 1673-this endpoint requires your json
-1674-endpoint api v2 auth introspect
+1674-token endpoint utilizar introspección bearer
