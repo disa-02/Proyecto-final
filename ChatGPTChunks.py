@@ -59,7 +59,7 @@ def consultar(prompt):
                     condition = False
             print("Condition=" + str(condition))
         except openai.error.RateLimitError as error:
-            print("error de tiempo")
+            print("Error de tiempo al agrupar, reintentando ...")
             time.sleep(5)
     return response
 
@@ -98,7 +98,6 @@ def agrupar(lista):
     response = consultar(prompt)
     documents.pop(0)
     finalResponse.append(response)
-
     # Resto de consultas
     grupos = set()
     for document in tqdm(documents, desc="Consulta"):

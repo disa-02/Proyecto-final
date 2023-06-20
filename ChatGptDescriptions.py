@@ -17,7 +17,7 @@ def consultar(prompt):
             response = (completion.choices[0].message.content)
             condition = False
         except openai.error.RateLimitError as error:
-            print("error de tiempo")
+            print("Error de tiempo al generar descripcion, reintentando...")
             time.sleep(5)
     return response
 

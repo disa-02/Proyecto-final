@@ -13,11 +13,9 @@ import spac
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
-descriptions = {}
-pathInfo = {}
 
 
-def _extractDescriptions(data):
+def _extractDescriptions(data, descriptions, pathInfo):
     paths = data.get("paths", {})
     for path, endpoint in paths.items():
         infoDescriptions = {}
@@ -32,7 +30,7 @@ def _extractDescriptions(data):
         descriptions[path] = infoDescriptions
 
 
-def _completeDescriptions():
+def _completeDescriptions(descriptions, pathInfo):
     Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w")
     for path, endpoint in pathInfo.items():
         for method, description in endpoint.items():
@@ -60,7 +58,7 @@ def _joinDescriptions(path, method, description):
     descriptions[path][method] = description
 
 
-def _extract_main_topic(path, method, description):
+def _extract_main_topic(path, method, description, descriptions):
     text = spac.analizar_oracion(description)
     text = ' '.join(text)
     descriptions[path][method] = text
@@ -84,13 +82,15 @@ def generar_resumen(numero_oraciones, path, method, description):
 
 
 def procces(data):
-    _extractDescriptions(data)
+    descriptions = {}
+    pathInfo = {}
+    _extractDescriptions(data, descriptions, pathInfo)
     print(len(pathInfo))
-    _completeDescriptions()
+    _completeDescriptions(descriptions, pathInfo)
     for path, endpoint in descriptions.items():
         for method, description in endpoint.items():
             # _delStopWords(path, method, description)
             # _joinDescriptions(path, method, description)
             # generar_resumen(1, path, method, description)
-            _extract_main_topic(path, method, description)
+            _extract_main_topic(path, method, description, descriptions)
     return descriptions
