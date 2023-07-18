@@ -22,7 +22,7 @@ def filesImport(folderDir):
         data = _fileImport(folderDir + "/" + fileName)
         # print(data)
         fileList.append(data)
-    return fileList
+    return fileList, files
 
 
 def saveFile(text, name, dir, mode):

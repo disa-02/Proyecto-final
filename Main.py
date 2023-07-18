@@ -9,7 +9,7 @@ import KmeansClustering
 
 
 # Importacion de los documentos
-files = Files.filesImport("./openApiDescriptions")
+files, filesNames = Files.filesImport("./openApiDescriptions")
 filesDescriptions = []
 vectorDescriptions = []
 
@@ -44,8 +44,21 @@ print(res)
 # FALTA ESTO
 
 # Clustering
-data,sse = KmeansClustering.cluster(res, 3)
+data,sse = KmeansClustering.cluster(res, 3)#k
 print("Data")
 print(data)
 print("SSE")
 print(sse)
+out = ""
+for i in range(0,3):#k
+    # names = []
+    out = out + "Group " + str(i) + ":\n"
+    for num in range(0,len(data)):
+        if(data[num] == i):
+            out = out + str(filesNames[num]) + "\n"
+            # names.append(filesNames[num])
+    out = out + "\n"
+    # out.append(names)
+
+Files.saveFile(out, "finalOut.txt", "./outs/", "w")
+    
