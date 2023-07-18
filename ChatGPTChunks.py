@@ -61,6 +61,9 @@ def consultar(prompt):
         except openai.error.RateLimitError as error:
             print("Error de tiempo al agrupar, reintentando ...")
             time.sleep(5)
+        except openai.error.ServiceUnavailableError as e:
+            print("Error: El servidor está sobrecargado o no está listo todavía, reintentando...")
+            time.sleep(5)
     return response
 
 

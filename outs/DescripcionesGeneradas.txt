@@ -2,11 +2,11 @@ path: /api/auth/introspect:
 operacion: get
 {"deprecated": true, "operationId": "getAuthIntrospect", "responses": {"200": {"$ref": "#/components/responses/IntrospectResponse"}, "401": {"$ref": "#/components/responses/UnauthorizedErrorResponse"}, "500": {"$ref": "#/components/responses/InternalServerErrorResponse"}, "default": {"$ref": "#/components/responses/GenericErrorResponse"}}, "security": [{"jwtsa": []}], "summary": "Performs introspection of the provided Bearer JWT token", "tags": ["auth"]}
 
-Descripcion generada: Este endpoint realiza una introspección del token Bearer JWT proporcionado.
+Descripcion generada: Este endpoint permite realizar la introspección de un token JWT Bearer proporcionado.
 
 path: /api/v2/auth/introspect:
 operacion: get
 {"operationId": "getAuthIntrospectV2", "responses": {"200": {"$ref": "#/components/responses/IntrospectV2Response"}, "401": {"$ref": "#/components/responses/UnauthorizedErrorResponse"}, "500": {"$ref": "#/components/responses/InternalServerErrorResponse"}, "default": {"$ref": "#/components/responses/GenericErrorResponse"}}, "security": [{"jwtsa": []}], "summary": "Performs introspection of the provided Bearer JWT token", "tags": ["auth"]}
 
-Descripcion generada: Este endpoint permite realizar la inspección del token de autenticación Bearer JWT proporcionado.
+Descripcion generada: Este endpoint permite realizar la introspección del token de autenticación Bearer JWT proporcionado.
 

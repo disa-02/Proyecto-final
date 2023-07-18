@@ -5,6 +5,7 @@ from tqdm import tqdm
 import JsonProcessing
 import json
 import Vectorization
+import KmeansClustering
 
 
 # Importacion de los documentos
@@ -39,3 +40,12 @@ Files.saveFile(
 # Vectorizacion
 res = Vectorization.vectorize(groupings, filesDescriptions)
 print(res)
+# Agregar metodo para guardar el resultado en un archivo y no perder esa info
+# FALTA ESTO
+
+# Clustering
+data,sse = KmeansClustering.cluster(res, 3)
+print("Data")
+print(data)
+print("SSE")
+print(sse)
