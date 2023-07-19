@@ -11,16 +11,15 @@ import json
 
 openai.api_key = "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"
 
-main_enunciado = """Dado los siguientes temas. Agrupa sus elementos según su relación semántica. 
-                Los temas no pueden pertenecer a mas de un grupo. 
+main_enunciado = """Dado los siguientes temas. Agruparlos según su relación semántica. 
+                Los temas si o si deben pertenecer a un unico grupo. No pueden haber temas no agrupados.
                 Dar la respuesta en un json  donde cada atributo sea el nombre de grupo y el valor una lista de los temas. 
-                El nombre de grupo debe ser representativo a los temas que agrupa. 
                 La lista de temas debe ser unicamente numerica y cada numero debe corresponder al 
                 identificador de cada tema, no debe haber strings en este atributo.
                 No utilices saltos de lineas ni espacios en la respuesta.
                 Intenta que en las agrupaciones no queden grupos con un unico tema.
                 Lista de temas:  """
-
+#El nombre de grupo debe ser representativo a los temas que agrupa. 
 
 def createChunks(lista):
     char_text_splitter = RecursiveCharacterTextSplitter(
@@ -37,7 +36,7 @@ def getResponseGroups(response):
 def verificarAtributos(response):
     atributos = JsonProcessing.getAttributes(response)
     for element in atributos:
-        if "group" in element or "grupo" in element:
+        if "group" in element.lower() or "grupo" in element.lower():
             return True
     return False
 
@@ -54,8 +53,9 @@ def consultar(prompt):
                 ])
             response = (completion.choices[0].message.content)
             if (JsonProcessing.contiene_json(response)):
-                if (not verificarAtributos(response)):
-                    condition = False
+                # if (not verificarAtributos(response)):
+                #     condition = False
+                condition = False # si agrego el if borrar esta linea
         except openai.error.RateLimitError as error:
             print("Error de tiempo al agrupar, reintentando ...")
             time.sleep(5)

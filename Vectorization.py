@@ -42,7 +42,7 @@ def _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longV
 def _addVectors(vectors):
     addition = np.zeros(len(vectors[0]))
     for vector in vectors:
-        print(vector)
+        # print(vector)
         addition = addition + vector
         # Evaluar cuando se haga el clustering si conviene hacer esta division
         addition = addition / len(vectors)
@@ -55,11 +55,14 @@ def vectorize(groupings, filesDescriptions):
     vectorGroups = _createVectorByGroup(groupings)
     vectorsDescriptions = _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longVector)
     cont = 1
+    out = ""
     for vectors in vectorsDescriptions:
-        print("File " + str(cont) + ":")
-        print("Len:" + str(len(vectors)))
+        # print("File " + str(cont) + ":")
+        # print("Len:" + str(len(vectors)))
         addition = _addVectors(vectors)
         vectorDescriptions.append(addition)
-        print()
+        # print("Sum vectors:")
+        # print(addition)
+        # print()
         cont = cont + 1
     return vectorDescriptions

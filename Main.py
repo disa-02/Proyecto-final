@@ -24,15 +24,16 @@ def generateOutVectorization(res):
     return out
 
 def generateOutCluster(data,sse,centroids):
-    out = "SSE: " + str(sse) + "\n"
-    out = out + "Centroides: " + "\n".join(str(centroids)) + "/n"
-    out = out + "\n"
+    out = ""
     for i in range(0,3):#k
         out = out + "Group " + str(i) + ":\n"
         for num in range(0,len(data)):
             if(data[num] == i):
                 out = out + str(filesNames[num]) + "\n"
         out = out + "\n"
+    out = out + "\n"
+    out = "SSE: " + str(sse) + "\n\n"
+    out = out + "Centroides: \n" + str(centroids)
     return out
 
 #---MAIN---
