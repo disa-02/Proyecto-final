@@ -26,7 +26,6 @@ def createChunks(lista):
     char_text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=10000, chunk_overlap=0)
     docs = char_text_splitter.split_text(lista)
-    print(len(docs))
     return docs
 
 
@@ -57,7 +56,6 @@ def consultar(prompt):
             if (JsonProcessing.contiene_json(response)):
                 if (not verificarAtributos(response)):
                     condition = False
-            print("Condition=" + str(condition))
         except openai.error.RateLimitError as error:
             print("Error de tiempo al agrupar, reintentando ...")
             time.sleep(5)

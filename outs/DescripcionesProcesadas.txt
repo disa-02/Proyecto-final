@@ -187,83 +187,83 @@
 187-to convenience endpoint deliver push
 188-the in be to usage
 189-the this returns service time
-190-mascota endpoint permitir actualizar información
+190-endpoint permitir actualizar información mascota
 191-add new pet to the
 192-multiple status values can be
 193-multiple tag can be provided
 194-returns single pet
-195-mascota endpoint opcional caso devolver
+195-mascota endpoint petpetid permitir solicitud
 196-deletir pet
-197-endpoint permitir subir imagen asociado
+197-mascota endpoint petpetiduploadimage permitir subir
 198-returns map of status codes
 199-place new order in the
 200- for valid response try
 201-1000 for valid response try
 202-this can only be done
 203-creates list of users with
-204-usuario endpoint user login utilizar
-205-endpoint permitir cerrar sesión usuario
-206-usuario endpoint permitir obtener información
+204-usuario endpoint user login permitir
+205-actual sesión endpoint permitir usuario
+206-usuario endpoint userusername permitir obtener
 207-this can only be done
 208-this can only be done
-209-endpoint permitir obtener información adicional
-210-endpoint ruta método amazon api
-211-endpoint account permitir obtener opción
+209-endpoint objetivo devolver respuesta exitoso
+210-endpoint permitir método api devolver
+211-endpoint account permitir solicitud options
 212-create new account
 213-get account balance
-214-endpoint accountid permitir obtener información
+214-endpoint permitir obtener información específico
 215-access detailed block information
-216-acceso endpoint block permitir opción
+216-endpoint permitir obtener opción header
 217-get information about particular block
-218-bloque endpoint permitir acceder específico
+218-endpoint permitir obtener información vacío
 219-get transaction count within block
-220-endpoint permitir obtener lista transacción
+220-bloque endpoint permitir solicitud opción
 221-get information about particular transaction
-222-transacción bloque endpoint blockidtransactionindex opción
+222-información transacción endpoint permitir obtener
 223-get list of supported blockchains
-224-blockchain endpoint permitir obtener información
+224-blockchain endpoint permitir opción acceder
 225-get information about blockchain woth
-226-bloque endpoint blockchainid permitir petición
-227-endpoint tipo options permitir obtener
+226-bloque endpoint blockchainid permitir solicitud
+227-permitir endpoint contract solicitud options
 228-create new smart contract
 229-get contract balance
-230-endpoint contractid permitir obtener información
+230-endpoint permitir obtener opción disponible
 231-call the contract
-232-permitir encabezado endpoint echo solicitud
-233-funcionalidad endpoint echo devolver respuesta
+232-encabezado endpoint echo proporcionar opción
+233-endpoint llamado echo aceptar método
 234-get token information such as
-235-endpoint permitir solicitud opción recurso
-236-endpoint permitir solicitud post creación
+235-endpoint erc20 permitir solicitud opción
+236-erc20 respuesta endpoint permitir enviar
 237-get information amout token balance
-238-token endpoint permitir obtener información
+238-respuesta formato endpoint permitir opción
 239-transfer tokens to another account
-240-obtener endpoint key permitir petición
-241-endpoint permitir solicitud options obtener
-242-endpoint key utilizar enviar solicitud
-243-endpoint permitir eliminar elemento específico
-244-solicitud endpoint permitir options ruta
-245-permitir endpoint obtener opción disponible
+240-endpoint key permitir obtener elemento
+241-solicitud endpoint options devolver respuesta
+242-endpoint permitir crear clave sistema
+243-endpoint permitir eliminar elemento diccionario
+244-endpoint keykey permitir solicitud options
+245-permitir endpoint transaction opción devolver
 246-create new transaction transfer ether
 247-transaction get information about by
-248-endpoint transactionhash permitir solicitud opción
+248-endpoint permitir obtener información transacción
 249-get receipt detail information
-250-endpoint permitir obtener comprobante transacción
+250-endpoint permitir obtener recibo transacción
 251-get api version info
-252-endpoint version método options devolver
+252- endpoint llamado version permitir
 253-get current account balance
 254-endpoint wallet permitir solicitud opción
 255-create personal wallet
-256-endpoint wallet account permitir solicitud
-257-endpoint wallet account devolver respuesta
-258-endpoint wallet account permitir crear
+256-endpoint permitir obtener información billetera
+257-endpoint permitir obtener información billetera
+258-endpoint permitir crear cartera devolver
 259-get account balance
-260-endpoint wallet accountid permitir obtener
+260-respuesta contenido endpoint describir ruta
 261-endpoint permitir crear contrato billetera
-262-endpoint permitir crear erc20 asociado
+262-endpoint permitir crear erc20 billetera
 263-endpoint wallet accountidpay permitir pago
 264-the send payment from account
-265-auth endpoint api introspect realizar
+265-endpoint api auth introspect realizar
 266-this endpoint requires your json
 267-this endpoint requires your json
 268-this endpoint requires your json
-269-endpoint realizar introspección token jwt
+269-realizar introspección token jwt bearer

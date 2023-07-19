@@ -10,6 +10,7 @@ def _searchGroup(groupings, descriptionNumber):
 
 
 def _createVectorByGroup(groupings):
+    # Genera un vector por cada grupo -> grupo1:(1,0,0), grupo1:(0,1,0), grupo3:(0,0,1) ...
     vectorGroups = {}
     groups = groupings.keys()
     cont = 0
@@ -41,6 +42,7 @@ def _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longV
 def _addVectors(vectors):
     addition = np.zeros(len(vectors[0]))
     for vector in vectors:
+        print(vector)
         addition = addition + vector
         # Evaluar cuando se haga el clustering si conviene hacer esta division
         addition = addition / len(vectors)
@@ -51,11 +53,13 @@ def vectorize(groupings, filesDescriptions):
     vectorDescriptions = []
     longVector = len(groupings.keys())
     vectorGroups = _createVectorByGroup(groupings)
-    vectorsDescriptions = _assignVectorToDescription(
-        groupings, filesDescriptions, vectorGroups, longVector)
-    # print(vectorsDescriptions)
-    # print()
+    vectorsDescriptions = _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longVector)
+    cont = 1
     for vectors in vectorsDescriptions:
+        print("File " + str(cont) + ":")
+        print("Len:" + str(len(vectors)))
         addition = _addVectors(vectors)
         vectorDescriptions.append(addition)
+        print()
+        cont = cont + 1
     return vectorDescriptions

@@ -6,7 +6,7 @@ def cluster(data,k):
 
     kmeans = KMeans(n_clusters=k).fit(data)
     centroids = kmeans.cluster_centers_
-    print(centroids)
+    # print(centroids)
 
     # solo funciona para representar elementos de dos dimensiones
     # plt.scatter(data[:,0],data[:,1],c=kmeans.labels_.astype(float),s=50)
@@ -15,7 +15,7 @@ def cluster(data,k):
 
     clust=kmeans.predict(data)
     sse = kmeans.inertia_
-    return clust,sse
+    return clust,sse,centroids
 
 def clusterK(data):
     krange = range(1,len(data))

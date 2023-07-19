@@ -85,7 +85,6 @@ def procces(data):
     descriptions = {}
     pathInfo = {}
     _extractDescriptions(data, descriptions, pathInfo)
-    print(len(pathInfo))
     _completeDescriptions(descriptions, pathInfo)
     for path, endpoint in descriptions.items():
         for method, description in endpoint.items():
