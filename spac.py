@@ -8,32 +8,33 @@ from spacy.lang.es.stop_words import STOP_WORDS
 nlp = spacy.load('es_core_news_md')
 
 
-def _filtrar_vector(vector):
-    vector_filtrado = []
-    for texto in vector:
-        # Eliminar caracteres especiales y espacios en blanco
-        texto_filtrado = re.sub(r'[^\w\s]|[\n,\'\s\t]', '', texto)
-        vector_filtrado.append(texto_filtrado)
-    return vector_filtrado
+def _filterVector(vector):
+    # Elimina caracteres especiales y espacios en blanco
+    filter_vector = []
+    for text in vector:
+        filter_text = re.sub(r'[^\w\s]|[\n,\'\s\t]', '', text)
+        filter_vector.append(filter_text)
+    return filter_vector
 
 
-def analizar_oracion(oracion):
+def analyzeSentence(oracion):
+    # Obtiene las palabras mas relevantes de una sentencia
+
     # Procesar la oración con el modelo cargado
     doc = nlp(oracion)
-
     # Filtrar palabras irrelevantes (stop words)
-    palabras_filtradas = [token.lemma_.lower(
+    leaked_words = [token.lemma_.lower(
     ) for token in doc if not token.is_stop and not token.is_punct]
-    palabras_filtradas = _filtrar_vector(palabras_filtradas)
+    leaked_words = _filterVector(leaked_words)
     # Calcular la frecuencia de las palabras
-    frecuencia = FreqDist(palabras_filtradas)
+    frequency = FreqDist(leaked_words)
     # Obtener las palabras más relevantes
-    palabras_relevantes = [palabra for palabra,
-                           _ in frecuencia.most_common(5)]
-    return palabras_relevantes
+    relevant_words = [word for word,
+                           _ in frequency.most_common(5)]
+    return relevant_words
 
 
-def anlizar_similutud(texto, grupo):
+def anlizeSimilitary(texto, grupo): # Creo que no lo uso
     doc_texto = nlp(texto)
     doc_descripcion = nlp(grupo)
     print("aaa")
@@ -53,7 +54,7 @@ def anlizar_similutud(texto, grupo):
     #     return False
 
 
-def getTextTokens(lista):
+def getTextTokens(lista): # Creo que no lo uso
     respuesta = []
     cantidad_tokens = 0
     for item in lista:

@@ -16,6 +16,7 @@ nltk.download('stopwords')
 
 
 def _extractDescriptions(data, descriptions, pathInfo):
+    # Extrae todas las descripciones de todos los documentos
     paths = data.get("paths", {})
     for path, endpoint in paths.items():
         infoDescriptions = {}
@@ -31,10 +32,11 @@ def _extractDescriptions(data, descriptions, pathInfo):
 
 
 def _completeDescriptions(descriptions, pathInfo):
+    # Completa las descripciones faltantes utilizando chatGPT
     Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w")
     for path, endpoint in pathInfo.items():
         for method, description in endpoint.items():
-            # desc = request to chatGPT
+            # Request to chatGPT
             prompt = str(path) + ": " + str(method) + ": " + str(description)
             desc = ChatGptDescriptions.generateDescription(prompt)
             descriptions[path][method] = desc
@@ -57,31 +59,32 @@ def _joinDescriptions(path, method, description):
     description = ' '.join(descriptions)
     descriptions[path][method] = description
 
-
+ 
 def _extract_main_topic(path, method, description, descriptions):
-    text = spac.analizar_oracion(description)
+    text = spac.analyzeSentence(description)
     text = ' '.join(text)
     descriptions[path][method] = text
 
 
-def generar_resumen(numero_oraciones, path, method, description):
+def generateSummary(number_sentences, path, method, description):
     # Tokenizar el texto en oraciones
-    oraciones = sent_tokenize(description)
+    sentences = sent_tokenize(description)
 
     # Calcular la frecuencia de las palabras
-    frecuencia = FreqDist(description)
+    frequency = FreqDist(description)
 
     # Ordenar las oraciones según la suma de las frecuencias de las palabras en cada oración
-    oraciones_ordenadas = sorted(oraciones, key=lambda oracion: sum(
-        frecuencia[palabra] for palabra in word_tokenize(oracion.lower()) if palabra.isalnum()), reverse=True)
+    ordered_sentences = sorted(sentences, key=lambda oracion: sum(
+        frequency[word] for word in word_tokenize(oracion.lower()) if word.isalnum()), reverse=True)
 
     # Tomar las primeras n oraciones como resumen
-    resumen = ' '.join(oraciones_ordenadas[:numero_oraciones])
+    summary = ' '.join(ordered_sentences[:number_sentences])
 
-    descriptions[path][method] = resumen
+    descriptions[path][method] = summary
 
 
 def procces(data):
+    # Procesa las descripciones obteniendo los tokens mas relevantes
     descriptions = {}
     pathInfo = {}
     _extractDescriptions(data, descriptions, pathInfo)
@@ -90,6 +93,6 @@ def procces(data):
         for method, description in endpoint.items():
             # _delStopWords(path, method, description)
             # _joinDescriptions(path, method, description)
-            # generar_resumen(1, path, method, description)
+            # generateSummary(1, path, method, description)
             _extract_main_topic(path, method, description, descriptions)
     return descriptions

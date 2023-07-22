@@ -2,7 +2,8 @@ import numpy as np
 
 
 def _searchGroup(groupings, descriptionNumber):
-    data = groupings  # json.loads(groupings)
+    # Busca el grupo al que pertenece una descripcion
+    data = groupings
     for group, descriptions in data.items():
         if descriptionNumber in descriptions:
             return group
@@ -23,6 +24,7 @@ def _createVectorByGroup(groupings):
 
 
 def _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longVector):
+    # Asigna a cada descripcion el vector de grupo correspondiente
     vectorsDescriptions = []
     cont = 1
     for description in filesDescriptions:
@@ -30,7 +32,7 @@ def _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longV
         for path, endpoint in description.items():
             for method, desc in endpoint.items():
                 group = _searchGroup(groupings, cont)
-                if (group == None):
+                if (group == None): # Si no encuentra grupo pone el vector 0
                     vectors.append(np.zeros(longVector))
                 else:
                     vectors.append(vectorGroups.get(group))
@@ -40,6 +42,7 @@ def _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longV
 
 
 def _addVectors(vectors):
+    # Suma todos los vectores de un mismo archivo openApi
     addition = np.zeros(len(vectors[0]))
     for vector in vectors:
         # print(vector)
@@ -50,6 +53,7 @@ def _addVectors(vectors):
 
 
 def vectorize(groupings, filesDescriptions):
+    # Vectoriza los archivos openApi segun sus operaciones
     vectorDescriptions = []
     longVector = len(groupings.keys())
     vectorGroups = _createVectorByGroup(groupings)
@@ -57,12 +61,7 @@ def vectorize(groupings, filesDescriptions):
     cont = 1
     out = ""
     for vectors in vectorsDescriptions:
-        # print("File " + str(cont) + ":")
-        # print("Len:" + str(len(vectors)))
         addition = _addVectors(vectors)
         vectorDescriptions.append(addition)
-        # print("Sum vectors:")
-        # print(addition)
-        # print()
         cont = cont + 1
     return vectorDescriptions

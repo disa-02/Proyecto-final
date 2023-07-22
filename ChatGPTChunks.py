@@ -11,7 +11,7 @@ import json
 
 openai.api_key = "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"
 
-main_enunciado = """Dado los siguientes temas. Agruparlos según su relación semántica. 
+main_statemenet = """Dado los siguientes temas. Agruparlos según su relación semántica. 
                 Los temas si o si deben pertenecer a un unico grupo. No pueden haber temas no agrupados.
                 Dar la respuesta en un json  donde cada atributo sea el nombre de grupo y el valor una lista de los temas. 
                 La lista de temas debe ser unicamente numerica y cada numero debe corresponder al 
@@ -21,19 +21,15 @@ main_enunciado = """Dado los siguientes temas. Agruparlos según su relación se
                 Lista de temas:  """
 #El nombre de grupo debe ser representativo a los temas que agrupa. 
 
-def createChunks(lista):
+def createChunks(filesDescriptions,chunks):
+    # Divide el texto segun cantidad de caracteres especificados
     char_text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=10000, chunk_overlap=0)
-    docs = char_text_splitter.split_text(lista)
+        chunk_size=chunks, chunk_overlap=0)
+    docs = char_text_splitter.split_text(filesDescriptions)
     return docs
 
-
-def getResponseGroups(response):
-    groups = JsonProcessing.getAttributes(response)
-    return groups
-
-
-def verificarAtributos(response):
+def checkAttributes(response):
+    # Verifica la respuesta generada por el chat, verifica que los nombres de los grupos sean representativos
     atributos = JsonProcessing.getAttributes(response)
     for element in atributos:
         if "group" in element.lower() or "grupo" in element.lower():
@@ -41,7 +37,8 @@ def verificarAtributos(response):
     return False
 
 
-def consultar(prompt):
+def consult(prompt):
+    # Realiza la consulta al chat
     condition = True
     response = ''
     while (condition):
@@ -53,7 +50,7 @@ def consultar(prompt):
                 ])
             response = (completion.choices[0].message.content)
             if (JsonProcessing.contiene_json(response)):
-                # if (not verificarAtributos(response)):
+                # if (not checkAttributes(response)):
                 #     condition = False
                 condition = False # si agrego el if borrar esta linea
         except openai.error.RateLimitError as error:
@@ -64,8 +61,8 @@ def consultar(prompt):
             time.sleep(5)
     return response
 
-
-def generarResponseFinal(finalResponse):
+def generateResponseFinal(finalResponse):
+    # Procesa todas las respuestas del chat y lo convierte en un json con la respuesta final
     resp = {}
     for response in finalResponse:
         response_data = json.loads(response)
@@ -74,48 +71,49 @@ def generarResponseFinal(finalResponse):
                 # Agregar los elementos a la lista existente
                 resp[key].extend(value)
             else:
-                resp[key] = value  # Crear una nueva lista para la clave
+                # Crear una nueva lista para la clave
+                resp[key] = value  
     return resp
 
-
 def saveFiles(finalResponse):
+    # Genera un json por cada respuesta del chat
     cont = 0
     for response in finalResponse:
         Files.saveFile(response, "response_" + str(cont) +
                        ".json", "./outs/responses/", "w")
         cont = cont + 1
 
-
-def agrupar(lista):
-    documents = createChunks(" ".join(["".join(text) for text in lista]))
+def group(filesDescriptions,chunks):
+    # Agrupa las descripciones segun su relacion semantica utilizando el chat
+    documents = createChunks(" ".join(["".join(text) for text in filesDescriptions]),chunks)
     finalResponse = []
     print("Realizando consultas a chatGPT:")
 
     # Primera consulta
     cont = 0
-    prompt = main_enunciado + documents[0]
+    prompt = main_statemenet + documents[0]
     Files.saveFile(prompt, "prompt_" + str(cont) +
                    ".txt", "./outs/prompts/", "w")
-    response = consultar(prompt)
+    response = consult(prompt)
     documents.pop(0)
     finalResponse.append(response)
     # Resto de consultas
-    grupos = set()
+    groups = set()
     for document in tqdm(documents, desc="Consulta"):
         # Obtengo los grupos de la consulta anterior
-        newGroups = getResponseGroups(response)
-        grupos.update(set(newGroups))
+        newGroups = JsonProcessing.getAttributes(response)
+        groups.update(set(newGroups))
 
-        prompt = main_enunciado + document + """Considerar que ya existen los siguientes grupos como atributos del json.
+        prompt = main_statemenet + document + """Considerar que ya existen los siguientes grupos como atributos del json.
                                             Analizar si un tema puede pertenecer a uno de estos grupos o es necesario agruparlo en uno nuevo.
                                             Debes tener en cuenta la relacion semantica de cada tema: """ + ' '.join(f'{i+1}-{elem}' for i, elem in enumerate(grupos))
         cont = cont + 1
         Files.saveFile(prompt, "prompt_" + str(cont) +
                        ".txt", "./outs/prompts/", "w")
-        response = consultar(prompt)
+        response = consult(prompt)
         finalResponse.append(response)
 
     saveFiles(finalResponse)
     # Files.saveFile(str(agrupaciones), "agrupaciones.json", "./outs/", "w")
-    finalResponse = generarResponseFinal(finalResponse)
+    finalResponse = generateResponseFinal(finalResponse)
     return finalResponse

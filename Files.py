@@ -3,6 +3,7 @@ import os
 
 
 def _fileImport(fileName):
+    # Importa un archivo de tipo yaml
     try:
         file = open(fileName, 'r')
         data = yaml.safe_load(file)
@@ -13,9 +14,9 @@ def _fileImport(fileName):
 
 
 def filesImport(folderDir):
+    # Importa todos los archivos yaml de una carpeta
     files = os.listdir(folderDir)
     fileList = []
-    # Imprimir los nombres de los archivos
     for fileName in files:
         # chequear si es .yaml
         # print(fileName)
@@ -34,3 +35,23 @@ def saveFile(text, name, dir, mode):
 def deleteFile(path):
     if (os.path.exists(path)):
         os.remove(path)
+
+def openTxt(dir):
+    # Lee un archivo txt que tiene una lista de "key:valor" separados por salto de linea
+    try:
+        entries = []    
+        with open(dir,"r") as fileTxt:
+            content = fileTxt.read()
+            content = content.split("\n")
+            for cont in content:
+                if (cont != ""): # Tengo en cuenta lineas vacias
+                    cont = cont.split(":")
+                    entries.append(cont[1])
+        return entries
+    except FileNotFoundError:
+        print(f"El archivo de entrada no se encontró.")
+    except IOError:
+        print(f"Ocurrió un error al intentar leer el archivo.")
+    except IndexError:
+        print(f"El archivo de entrada se encuentra mal definido.")
+        

@@ -1,10 +1,11 @@
 import openai
 import time
 
-enunciado = "Dado el siguiente endpoint perteneciente a un archivo de openApi, generar una descripcion que explique resumidamente la funcionalidad del endpoint. Se debe generar en una unica oracion: "
+statement = "Dado el siguiente endpoint perteneciente a un archivo de openApi, generar una descripcion que explique resumidamente la funcionalidad del endpoint. Se debe generar en una unica oracion: "
 
 
-def consultar(prompt):
+def consult(prompt):
+    # Realiza una consulta al chat gpt para generar una descripcion de un endpoint 
     condition = True
     response = ''
     while (condition):
@@ -26,6 +27,7 @@ def consultar(prompt):
 
 
 def generateDescription(endpoint):
-    prompt = enunciado + str(endpoint)
-    response = consultar(prompt)
+    # Genera la descripcion de un endpoint
+    prompt = statement + str(endpoint)
+    response = consult(prompt)
     return response

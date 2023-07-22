@@ -6,24 +6,29 @@ import JsonProcessing
 import json
 import Vectorization
 import KmeansClustering
+import time
+import sys
 
 def enumDescriptions(filesDescriptions):
-    lista = []
+    # Enumera las descripciones
+    enumFilesDescriptions = []
     cont = 1
     for descriptions in filesDescriptions:
         for path, endpoint in descriptions.items():
             for method, description in endpoint.items():
-                lista.append('' + str(cont) + "-" + description)
+                enumFilesDescriptions.append('' + str(cont) + "-" + description)
                 cont += 1
-    return lista
+    return enumFilesDescriptions 
 
 def generateOutVectorization(res):
+    # Genera la salida del resultado de vectorizar los documentos
     out = ""
     for i in range(0,len(res)):
         out = out + str(filesNames[i]) + ": " + str(res[i]) + "\n"
     return out
 
 def generateOutCluster(data,sse,centroids):
+    # Genera la salida del resultado de aplicar clustering sobre los documentos,es la salida final del programa
     out = ""
     for i in range(0,3):#k
         out = out + "Group " + str(i) + ":\n"
@@ -32,45 +37,55 @@ def generateOutCluster(data,sse,centroids):
                 out = out + str(filesNames[num]) + "\n"
         out = out + "\n"
     out = out + "\n"
-    out = "SSE: " + str(sse) + "\n\n"
+    out = out + "SSE: " + str(sse) + "\n\n"
     out = out + "Centroides: \n" + str(centroids)
     return out
 
-#---MAIN---
+#-----------MAIN-----------
+start_time = time.time()
+
+# Lectura de las entradas
+entries = Files.openTxt("./entries.txt")
+if (len(entries) < 3):
+    print("Error en la entrada, no se definieron todos los atributos")
+    sys.exit()
+chunks = int(entries[0])
+k = int(entries[1])
+nInit = int(entries[2])
+
 # Importacion de los documentos
 files, filesNames = Files.filesImport("./openApiDescriptions")
-filesDescriptions = []
-vectorDescriptions = []
 
 # Procesamiento de los documentos
-con = 0
+filesDescriptions = [] # Almacena todas las descripciones de todos los documentos
 print("\nProcesando documentos:")
 for d in tqdm(files, desc="Documento"):
     filesDescriptions.append(textProcessing.procces(d))
-    con = con + 1
 
 # Obtencion de las descripciones como una lista enumerada
-lista = enumDescriptions(filesDescriptions)
+enumFilesDescriptions = enumDescriptions(filesDescriptions)
 
 # Agrupacion con consultas al chatGpt
-groupings = ChatGPTChunks.agrupar(lista)
+groupings = ChatGPTChunks.group(enumFilesDescriptions,chunks)
 
 # Vectorizacion
 print("Vectorizando archivos...")
 res = Vectorization.vectorize(groupings, filesDescriptions)
-print(res)
 
 # Clustering
 print("Realizando el clustering:")
-data,sse,centroids = KmeansClustering.cluster(res, 3)#k
+data,sse,centroids = KmeansClustering.cluster(res, k, nInit)
 
 
 # Save files
-Files.saveFile("\n".join(lista), "DescripcionesProcesadas.txt", "./outs/", "w")
+Files.saveFile("\n".join(enumFilesDescriptions), "DescripcionesProcesadas.txt", "./outs/", "w")
 Files.saveFile(str(groupings), "AgrupacionDeDescripciones.json", "./outs/", "w")
 out = generateOutVectorization(res)
 Files.saveFile(out, "vectorizacion.txt", "./outs/", "w")
 out = generateOutCluster(data,sse,centroids)
 Files.saveFile(out, "finalOut.txt", "./outs/", "w")
 
-
+end_time = time.time()
+total_time = end_time - start_time
+print("Programa finalizado")
+print(f"Tiempo de ejecución: {total_time:.6f} segundos")

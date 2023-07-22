@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
-def cluster(data,k):
-
-    kmeans = KMeans(n_clusters=k).fit(data)
+def cluster(data,k,nInit):
+    # Realiza un clustering con el metodo k-means utilizando k clusters en un set de data
+    kmeans = KMeans(n_clusters=k,n_init=nInit).fit(data)
     centroids = kmeans.cluster_centers_
     # print(centroids)
 
@@ -17,11 +17,12 @@ def cluster(data,k):
     sse = kmeans.inertia_
     return clust,sse,centroids
 
-def clusterK(data):
+def clusterK(data,nInit):
+    # Realiza un clustering sobre un set de data calculando el mejor k --> FALTA TERMINAR
     krange = range(1,len(data))
     sse = []
     for k in krange:
-        kmeans = KMeans(n_clusters=k).fit(data)
+        kmeans = KMeans(n_clusters=k,n_init=nInit).fit(data)
         sse.append(kmeans.inertia_) 
     
     plt.xlabel('K')
@@ -29,7 +30,6 @@ def clusterK(data):
     plt.plot(krange,sse)
     plt.show()
 
-    print(sse)
 
 # data = np.random.random(size=(30,2)) #30 puntos de 2 dimensiones
 # result,sse = cluster(data, 4)
