@@ -1,11 +1,14 @@
 import spacy
 import re
 from nltk.probability import FreqDist
-from spacy.lang.es.stop_words import STOP_WORDS
+import Files
 
-
+model = str(Files.openTxt("./entries.txt")[1])
 # Cargar el modelo de spaCy en español
-nlp = spacy.load('es_core_news_md')
+# nlp = spacy.load('es_core_news_md')
+
+# Cargar el modelo de spacy en ingles
+nlp = spacy.load(model)
 
 
 def _filterVector(vector):
@@ -17,7 +20,7 @@ def _filterVector(vector):
     return filter_vector
 
 
-def analyzeSentence(oracion):
+def analyzeSentence(oracion,commonWords):
     # Obtiene las palabras mas relevantes de una sentencia
 
     # Procesar la oración con el modelo cargado
@@ -30,18 +33,13 @@ def analyzeSentence(oracion):
     frequency = FreqDist(leaked_words)
     # Obtener las palabras más relevantes
     relevant_words = [word for word,
-                           _ in frequency.most_common(5)]
+                           _ in frequency.most_common(commonWords)]
     return relevant_words
 
 
 def anlizeSimilitary(texto, grupo): # Creo que no lo uso
     doc_texto = nlp(texto)
     doc_descripcion = nlp(grupo)
-    print("aaa")
-    print(texto)
-    print(grupo)
-    print(doc_texto)
-    print(doc_descripcion)
 
     similitud = doc_texto.similarity(doc_descripcion)
     return similitud
@@ -54,14 +52,3 @@ def anlizeSimilitary(texto, grupo): # Creo que no lo uso
     #     return False
 
 
-def getTextTokens(lista): # Creo que no lo uso
-    respuesta = []
-    cantidad_tokens = 0
-    for item in lista:
-        doc = nlp(item)
-        if (cantidad_tokens + len(doc) > 1900):
-            break
-        cantidad_tokens = cantidad_tokens + len(doc)
-        respuesta.append(item)
-        lista.remove(item)
-    return respuesta, lista

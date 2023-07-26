@@ -54,14 +54,14 @@ def _addVectors(vectors):
 
 def vectorize(groupings, filesDescriptions):
     # Vectoriza los archivos openApi segun sus operaciones
-    vectorDescriptions = []
     longVector = len(groupings.keys())
     vectorGroups = _createVectorByGroup(groupings)
     vectorsDescriptions = _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longVector)
     cont = 1
     out = ""
+    vectorDescriptionsAddition = []
     for vectors in vectorsDescriptions:
         addition = _addVectors(vectors)
-        vectorDescriptions.append(addition)
+        vectorDescriptionsAddition.append(addition)
         cont = cont + 1
-    return vectorDescriptions
+    return vectorsDescriptions,vectorDescriptionsAddition

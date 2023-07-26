@@ -1,0 +1,180 @@
+Agrupar temas por su relación semántica en un JSON con nombres de grupo representativos
+Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, asegúrate de que las agrupaciones no contengan grupos con un único tema y de evitar el uso de saltos de línea o espacios en la respuesta.
+
+Considerar que ya existen los siguientes grupos como atributos del json.
+1-Attachment 2-Status Update 3-Goal 4-User Workspace 5-Endpoint 6-Time Period 7-Webhook 8-Project Template 9-Job 10-User Task List 11-Account 12-Workspace 13-Block 14-Portfolio 15-Custom Field 16-Project Brief 17-Story 18-Tag 19-Project 20-Team Membership 21-Team 22-Task 23-Task Dependency 24-Goal Relationship 25-Section 26-Integration 27-Event 
+Analizar si un tema puede pertenecer a uno de estos grupos o es necesario agruparlo en uno nuevo. No pueden quedar temas sin grupos./n177-este endpoint permite obtener información sobre un bloque específico mediante
+178-transaction count block
+179-bloque este endpoint permite obtener información sobre una transacción específica
+180-information particular transaction block
+181-su este endpoint permite obtener información sobre una transacción específica
+182-list support blockchain
+183-blockchain una este endpoint llamado permite obtener información sobre la
+184-information blockchain woth give d
+185-de un en la este endpoint permite obtener información bloque
+186-este endpoint del archivo de openapi permite obtener información sobre
+187-create new smart contract
+188-contract balance
+189-el endpoint contractid permite obtener información de un contrato específico
+190-contract
+191-de una el endpoint echo permite realizar solicitud http options
+192-de una respuesta el endpoint echo permite enviar solicitud cualquier
+193-token information total circulation etc
+194-para el endpoint erc20 permite realizar una solicitud options obtener
+195-una el este endpoint permite realizar solicitud post para recurso
+196-information amout token balance account
+197-una este endpoint permite realizar solicitud options la dirección específica
+198-transfer token account
+199-una clave que en este endpoint permite obtener través de
+200-una este endpoint permite realizar solicitud de opciones para obtener
+201-una este endpoint permite crear nueva clave y devuelve respuesta
+202-un la este endpoint permite eliminar elemento del diccionario utilizando
+203-una de respuesta el endpoint keykey permite realizar opción solicitud
+204-una de y el endpoint transaction permite realizar opción transacción
+205-create new transaction transfer ether account
+206-transaction information hash value
+207-una el endpoint transactionhash permite acceder la información de transacción
+208-receipt detail information
+209-el endpoint transactionhashreceipt permite obtener recibo de una transacción específica
+210-api version info
+211-la este endpoint permite obtener las opcione disponible para versión
+212-current account balance
+213-una el endpoint wallet permite realizar solicitud de opcione http
+214-create personal wallet
+215-se una este endpoint utiliza para obtener información sobre cuenta
+216-una de el endpoint wallet account permite realizar solicitud opciones
+217-una este endpoint permite crear cuenta de billetera y devuelve
+218-account balance
+219-la de este endpoint permite realizar opción option en url
+220-el endpoint permite crear un contrato para una cuenta de
+221-una cuenta este endpoint permite crear erc20 para billetera específica
+222-el un endpoint wallet accountidpay permite realizar pago desde una
+223-send payment account hold wallet
+224- project attachment task refer file brief return compact record
+225- attachment upload file request object possible attach content endpoint
+226-delete specific exist attachment  return data record
+227-record single attachment
+228-multiple request parallel asana api
+229- custom field workspace create date new require specific change
+230-field custom delete  lock specific exist make request url
+231- type field custom definition define relevant enum complete metadata
+232- field custom update change user enum enum_option lock specific
+233-option enum field custom create add list  lock 500
+234-field enum option custom lock move particular specify  reorder
+235-enum update option field custom  lock exist require enable
+236- event resource return request sync token 100 project contain
+237-return compact goal relationship record
+238-goal relationship return complete update record single
+239- goal relationship update field exist make request url provide
+240-return compact goal record
+241-create goal new workspace team  return record newly
+242-goal delete specific exist make request url  return data
+243-goal return complete record single
+244- goal update field exist make request url provide data
+245-follower goal add return  associate zero system request remove
+246-goal create relationship add support resource give  return newly
+247-goal return compact representation parent
+248-follower goal remove return  associate zero system request add
+249-goal remove relationship give parent
+250-goal metric exist create add specify note replace
+251- update goal exist metric current_number_value respond 400 status code
+252-return record job
+253-create request export method organization asana complete point
+254-return detail previously request organization export
+255- portfolio user return list membership compact representation specify workspace
+256-portfolio return complete record single membership
+257-return list portfolio compact representation own current api user
+258-create portfolio  state new give workspace supply note asana
+259-portfolio delete  exist make request url return data record
+260-portfolio return complete record single
+261- portfolio update field exist make request url provide data
+262-custom field portfolio setting associate way  method create
+263-add item portfolio  return data block
+264-portfolio add specify list user member  return update record
+265-return list custom field setting portfolio compact form
+266-list item compact form portfolio
+267-portfolio return compact membership record
+268-remove custom field set portfolio
+269-remove item portfolio  return data block
+270-portfolio remove specify list user member  return update record
+271-delete specific exist project brief  return data record
+272-record project brief
+273- project brief update field exist make request url provide
+274-project return complete record single membership
+275- deprecate new integration prefer status_updatesstatus_gid route delete specific exist
+276- deprecate new integration prefer status_updatesstatus_gid route return complete record
+277-project template return compact record give team workspace
+278-project template return complete record single
+279- project request workspace gid requested_date organization create return job
+280-project return filter compact record set use parameter provide 
+281- project workspace create organization team new require specific change
+282-project delete  specific exist make request url return data
+283-project return complete record single
+284- project update field change specific exist make request url
+285-custom field project setting associate way  method create
+286-project member add user follower specify list subset opt receive
+287-add user  member project default notification setting specify list
+288-return compact representation  output list custom field setting project
+289-create return job asynchronously handle duplication
+290-create project brief new  return record newly
+291-project return compact membership record
+292- project update deprecate new integration prefer status_updates route return
+293- new create status update project deprecate integration prefer status_updates
+294-remove custom field set project
+295-project remove specify list user follow affect membership status 
+296-project remove specify list user member  return update record
+297-project template  api create return job asynchronously handle creation
+298-return compact record section specify project
+299-create section new project  return record newly
+300- section relative before_section after_section require move project return data
+301- count field task endpoint rate limit cost object hold
+302-task project return compact record give order priority exist time
+303-section delete  specific exist make request url note remain
+304-return complete record single section
+305- field update section change specific exist make request url
+306-task section  add specific exist remove project insert insert_before
+307-section board view return compact record task give
+308-update return compact status record object
+309-create status update new object  return record newly
+310-delete specific exist status update  return data record
+311-return complete record single status update
+312-delete story user create  return data record
+313-return record single story
+314-story  update comment text return record attachment pin html_text
+315-tag return filter compact record set use parameter provide
+316- create tag workspace organization new require specific change set
+317-tag delete  specific exist make request url return data
+318-tag return complete record single
+319- update tag field change property provide data block unspecified
+320-task tag return compact record give time
+321- task return filter use specify workspace compact record set
+322- task set workspace create field new easy post tasks
+323-task delete  make request trash specific exist url user
+324-task return complete record single
+325- task update field change specific exist make request url
+326-task dependency mark set 30 dependent combine
+327-task dependent mark set 30 dependency combine
+328-follower task add return  data block associate zero system
+329- section task specify project add location insert_before insert_aft insert
+330-add tag task return data block
+331-return compact representation dependency task
+332-return compact representation dependent task
+333-create return job asynchronously handle duplication
+334-return compact representation project task
+335-unlink set dependency task
+336-unlink set dependent task
+337-task remove specify follower follow return complete update record affected
+338-task project  remove specify exist system anymore return data
+339-remove tag task return data block
+340- parent task return data block insert_before insert_aft option specify
+341-return compact record story task
+342-story  add task currently comment endpoint allow create author
+343-return compact representation subtask task
+344-create subtask new add parent task return record newly
+345-compact representation tag task
+346-return compact team membership record
+347-team membership return complete record single
+348-create team current workspace
+349-update team current workspace
+350-return record single team

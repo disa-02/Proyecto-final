@@ -89,13 +89,13 @@ def group(filesDescriptions,chunks):
     print("Realizando consultas a chatGPT:")
 
     # Primera consulta
-    cont = 0
-    prompt = main_statemenet + (documents[0])
-    Files.saveFile(prompt, "prompt_" + str(cont) +
-                   ".txt", "./outs/prompts/", "w")
-    response = consult(prompt)
-    documents.pop(0)
-    finalResponse.append(response)
+    # cont = 0
+    # prompt = main_statemenet + (documents[0])
+    # Files.saveFile(prompt, "prompt_" + str(cont) +
+    #                ".txt", "./outs/prompts/", "w")
+    # response = consult(prompt)
+    # documents.pop(0)
+    # finalResponse.append(response)
     # Resto de consultas
     groups = set()
     for document in tqdm(documents, desc="Consulta"):
@@ -103,7 +103,7 @@ def group(filesDescriptions,chunks):
         newGroups = JsonProcessing.getAttributes(response)
         groups.update(set(newGroups))
 
-        prompt = main_statemenet + f"\nConsiderar que ya existen los siguientes grupos como atributos del json.\n{' '.join(f'{i+1}-{elem}' for i, elem in enumerate(groups))} \nAnalizar si un tema puede pertenecer a uno de estos grupos o es necesario agruparlo en uno nuevo. No pueden quedar temas sin grupos./n" + document
+        prompt = main_statemenet + document
                                             
         cont = cont + 1
         Files.saveFile(prompt, "prompt_" + str(cont) +

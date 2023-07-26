@@ -11,8 +11,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 import spac
 
 nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('stopwords')
+# nltk.download('averaged_perceptron_tagger')
+# nltk.download('stopwords')
 
 
 def _extractDescriptions(data, descriptions, pathInfo):
@@ -30,7 +30,6 @@ def _extractDescriptions(data, descriptions, pathInfo):
                     pathInfo[path] = methodInfo
         descriptions[path] = infoDescriptions
 
-
 def _completeDescriptions(descriptions, pathInfo):
     # Completa las descripciones faltantes utilizando chatGPT
     Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w")
@@ -43,30 +42,14 @@ def _completeDescriptions(descriptions, pathInfo):
             Files.saveFile("path: " + str(path) + ":\n" + "operacion: " + str(method) + "\n" + json.dumps(dict(description)) + "\n\n" + "Descripcion generada: " +
                            desc + "\n\n", "DescripcionesGeneradas.txt", "./outs/", "a")
 
-
-def _delStopWords(path, method, description):
-    if (description != None):
-        # Tokenizacion
-        text = word_tokenize(description)
-        # Eliminacion de las stopWords
-        for word in text:
-            if (word in stopwords.words('english')):
-                text.remove(word)
-        descriptions[path][method] = text
-
-
-def _joinDescriptions(path, method, description):
-    description = ' '.join(descriptions)
-    descriptions[path][method] = description
-
  
-def _extract_main_topic(path, method, description, descriptions):
-    text = spac.analyzeSentence(description)
+def _extract_main_topic(path, method, description, descriptions,commonWords):
+    text = spac.analyzeSentence(description,commonWords)
     text = ' '.join(text)
     descriptions[path][method] = text
 
 
-def generateSummary(number_sentences, path, method, description):
+def generateSummary(number_sentences, path, method, description, descriptions):
     # Tokenizar el texto en oraciones
     sentences = sent_tokenize(description)
 
@@ -83,7 +66,7 @@ def generateSummary(number_sentences, path, method, description):
     descriptions[path][method] = summary
 
 
-def procces(data):
+def procces(data,commonWords,numberSentences):
     # Procesa las descripciones obteniendo los tokens mas relevantes
     descriptions = {}
     pathInfo = {}
@@ -91,8 +74,6 @@ def procces(data):
     _completeDescriptions(descriptions, pathInfo)
     for path, endpoint in descriptions.items():
         for method, description in endpoint.items():
-            # _delStopWords(path, method, description)
-            # _joinDescriptions(path, method, description)
-            # generateSummary(1, path, method, description)
-            _extract_main_topic(path, method, description, descriptions)
+            generateSummary(numberSentences, path, method, description,descriptions)
+            _extract_main_topic(path, method, description, descriptions,commonWords)
     return descriptions

@@ -1,8 +1,179 @@
-Dado los siguientes temas. Agruparlos según su relación semántica. 
-                Los temas si o si deben pertenecer a un unico grupo. No pueden haber temas no agrupados.
-                Dar la respuesta en un json  donde cada atributo sea el nombre de grupo y el valor una lista de los temas. 
-                La lista de temas debe ser unicamente numerica y cada numero debe corresponder al 
-                identificador de cada tema, no debe haber strings en este atributo.
-                No utilices saltos de lineas ni espacios en la respuesta.
-                Intenta que en las agrupaciones no queden grupos con un unico tema.
-                Lista de temas:  1- the for project to 2- the attachment this an 3-deletes specific existing attachment  4-get the full record for 5-make multiple requests in parallel 6- custom workspace be field 7-custom field the can be 8- the of custom fields 9- custom the updated fields 10-enum options the custom fields 11-the enum option be custom 12-enum the option custom fields 13- the for events that 14-returns compact goal relationship records 15-goal relationship returns the complete 16- the goal relationship updated 17-returns compact goal records 18-goal the creates new in 19-goal specific existing can be 20-goal returns the complete record 21- the goal updated be 22-followers goal the to  23-goal relationship creates by adding 24-of returns compact representation all 25-followers goal the from  26-goal removes relationship for given 27-goal metric creates and adds 28- updates goals existing metrics 29-returns the full record for 30-request export the this method 31-returns details of previouslyrequested organization 32- portfolio and user returns 33-portfolio returns the complete record 34-the returns list of portfolios 35-the  portfolio created state 36-an portfolio  existing can 37-portfolio returns the complete record 38- the portfolio updated be 39-custom portfolio setting fields are 40-an add item to portfolio 41-the of portfolio adds specified 42-of returns list all the 43-in get list of the 44-the portfolio returns compact membership 45-removes custom field setting from 46-an remove item from portfolio 47-the of portfolio removes specified 48-deletes specific existing project brief 49-get the full record for 50- the project brief updated 51-project returns the complete record 52- deprecated new integrations should 53- the deprecated new integrations 54-the project returns compact template 55-project template returns the complete 56- the to project this 57-the for of projects returns 58- project the workspace or 59-project  specific existing can 60-project returns the complete record 61- the project updated fields 62-custom setting fields are associated 63-the of project members users 64-the of as added this 65-the in compact of all 66-creates and returns job that 67-project brief the creates new 68-the project returns compact membership 69-the  project deprecated new 70-the  new status update 71-removes custom field setting from 72-the project removes specified list 73-the of project removes specified 74-the project in that template 75-the returns compact records for 76-section the creates new in 77- sections move relative to 78- are get an fields 79-the project tasks within returns 80-be  section deleted the 81-returns the complete record for 82- the updated be that 83-the task section of this 84-the section board view only 85-the returns compact status update 86-status update the creates new 87-deletes specific existing status update 88-returns the complete record for 89-deletes story user can only 90-returns the full record for 91-and  the only stories 92-the of tags returns compact 93- tag workspace or organization 94-tag  specific existing can 95-tag returns the complete record 96- the tag fields you 97-the tasks tag returns compact 98- the task for of 99- task the to set 100-the  task can be 101-task returns the complete record 102- the task updated fields 103-dependencies of task marks set 104-of dependents task marks set 105-followers task to  the 106- the section task to 107-adds tag to task returns 108-of the returns compact representations 109-of the returns compact representations 110-creates and returns job that 111-of the returns compact representation 112-unlinks set of dependencies from 113-unlinks set of dependents from 114-the task removes each of 115-the task project will in 116-removes tag from task returns 117- parent at and of 118-the returns compact records for 119-the to  story task 120-of returns compact representation all 121-the subtask creates new and 122-of the get compact representation 123-returns compact team membership records 124-team membership returns the complete 125-creates team within the current 126-updates team within the current 127-returns the full record for 128-the user team must in 129-the project returns compact template 130-the returns compact project records 131-the project creates shared with 132-the user making this call 133-the team returns compact memberships 134-the  for users are 135-returns compact time period records 136-returns the full record for 137-returns the full record for 138-tasks  the for list 139-user the all id returns 140-the user returns full record 141-the given of in order 142-the returns compact team membership 143-the returns compact records for 144-returns the full record for 145-the returns compact workspace membership 146-the get compact representation of 147- the to webhook post 148-webhook that be this method 149-the returns full record for 150-the  filter webhooks be 151-workspace returns the complete record 152-the returns compact records for 153-workspace returns the full record 154-the workspace be updated can 155-user the or their add 156-the  events that of 157-of the returns list compact 158-the  for endpoint returns 159-the project  returns for 160-user the workspace or  161-the of tags returns compact 162- tag workspace or organization 163- the of to search 164-the returns compact records for 165- the to is of 166-the  for users results 167-the workspace returns compact membership 168-enumerate all activar channels of 169-get metadata of channel 170-get message history for channel 171-publish message to the specified 172-get presence on channel 173-get presence on channel 174-the tokenrequest ably is to 175-delete device details object 176-get list of push notification 177-to subscribe either single device 178-returns paginated response of channel 179-unregisters deviz all their subscriptions 180-of list device details devices 181-to register devices details including 182-device its unregisters single by 183-get the full details of 184-specific attributes of an existing 185-device registrations can be upserted 186-gets an updated device details 187-to convenience endpoint deliver push 188-the in be to usage 189-the this returns service time 190-pet mascota información json xml 191-add new pet to the 192-multiple status values can be 193-multiple tag can be provided 194-returns single pet 195-mascota endpoint permitir agregar sistema 196-deletir pet 197-endpoint permitir subir imagen mascota 198-returns map of status codes 199-place new order in the 200- for valid response try 201-1000 for valid response try 202-this can only be done 203-creates list of users with 204-usuario endpoint user login permitir 205-sesión endpoint user logout utilizar 206-usuario endpoint userusername realizar petición 207-this can only be done 208-this can only be done 209-permitir endpoint opción obtener respuesta 210-endpoint devolver respuesta exitoso código 211-endpoint account utilizar obtener opción 212-create new account 213-get account balance 214-endpoint permitir obtener información especificado 215-access detailed block information 216-endpoint utilizar obtener opción disponible 217-get information about particular block 218-endpoint blockid permitir obtener información 219-get transaction count within block 220-endpoint blockidtransaction permitir opción options 221-get information about particular transaction 222-bloque transacción endpoint permitir obtener 223-get list of supported blockchains 224-blockchain endpoint permitir consulta operación 225-get information about blockchain woth 226-bloque endpoint permitir obtener información 227-endpoint contract método options devolver 228-create new smart contract 229-get contract balance 230-endpoint permitir opción contrato específico 231-call the contract 232-endpoint echo permitir solicitud options 233-endpoint echo permitir enviar tipo 234-get token information such as 235-contenido endpoint erc20 permitir solicitud 236-endpoint permitir crear objeto erc20 237-get information amout token balance 238-token endpoint erc20address permitir obtener 239-transfer tokens to another account 240-endpoint key permitir obtener objeto 241-endpoint permitir solicitud options obtener 242-endpoint key tipo post utilizar 243-endpoint permitir eliminar elemento diccionario 244-endpoint permitir solicitud options ruta 245-endpoint transaction permitir transacción devolver 246-create new transaction transfer ether 247-transaction get information about by 248-endpoint transactionhash permitir obtener información 249-get receipt detail information 250-endpoint permitir obtener recibo transacción 251-get api version info 252-endpoint permitir obtener opción disponible 253-get current account balance 254-endpoint ofrecer opción billetera devolver 255-create personal wallet 256-endpoint wallet account permitir obtener 257-endpoint wallet account permitir obtener 258-endpoint permitir crear billetera virtual 259-get account balance 260-endpoint wallet accountid permitir obtener 261-endpoint wallet accountidcontract permitir crear 262-endpoint wallet accountiderc20 permitir crear 263-endpoint wallet accountidpay permitir pago 264-the send payment from account 265-endpoint api auth introspect realizar 266-this endpoint requires your json 267-this endpoint requires your json 268-this endpoint requires your json 269-endpoint api v2 auth introspect
+Agrupar temas por su relación semántica en un JSON con nombres de grupo representativos
+Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, asegúrate de que las agrupaciones no contengan grupos con un único tema y de evitar el uso de saltos de línea o espacios en la respuesta.
+1- project attachment task refer file brief return compact record
+2- attachment upload file request object possible attach content endpoint
+3-delete specific exist attachment  return data record
+4-record single attachment
+5-multiple request parallel asana api
+6- custom field workspace create date new require specific change
+7-field custom delete  lock specific exist make request url
+8- type field custom definition define relevant enum complete metadata
+9- field custom update change user enum enum_option lock specific
+10-option enum field custom create add list  lock 500
+11-field enum option custom lock move particular specify  reorder
+12-enum update option field custom  lock exist require enable
+13- event resource return request sync token 100 project contain
+14-return compact goal relationship record
+15-goal relationship return complete update record single
+16- goal relationship update field exist make request url provide
+17-return compact goal record
+18-create goal new workspace team  return record newly
+19-goal delete specific exist make request url  return data
+20-goal return complete record single
+21- goal update field exist make request url provide data
+22-follower goal add return  associate zero system request remove
+23-goal create relationship add support resource give  return newly
+24-goal return compact representation parent
+25-follower goal remove return  associate zero system request add
+26-goal remove relationship give parent
+27-goal metric exist create add specify note replace
+28- update goal exist metric current_number_value respond 400 status code
+29-return record job
+30-create request export method organization asana complete point
+31-return detail previously request organization export
+32- portfolio user return list membership compact representation specify workspace
+33-portfolio return complete record single membership
+34-return list portfolio compact representation own current api user
+35-create portfolio  state new give workspace supply note asana
+36-portfolio delete  exist make request url return data record
+37-portfolio return complete record single
+38- portfolio update field exist make request url provide data
+39-custom field portfolio setting associate way  method create
+40-add item portfolio  return data block
+41-portfolio add specify list user member  return update record
+42-return list custom field setting portfolio compact form
+43-list item compact form portfolio
+44-portfolio return compact membership record
+45-remove custom field set portfolio
+46-remove item portfolio  return data block
+47-portfolio remove specify list user member  return update record
+48-delete specific exist project brief  return data record
+49-record project brief
+50- project brief update field exist make request url provide
+51-project return complete record single membership
+52- deprecate new integration prefer status_updatesstatus_gid route delete specific exist
+53- deprecate new integration prefer status_updatesstatus_gid route return complete record
+54-project template return compact record give team workspace
+55-project template return complete record single
+56- project request workspace gid requested_date organization create return job
+57-project return filter compact record set use parameter provide 
+58- project workspace create organization team new require specific change
+59-project delete  specific exist make request url return data
+60-project return complete record single
+61- project update field change specific exist make request url
+62-custom field project setting associate way  method create
+63-project member add user follower specify list subset opt receive
+64-add user  member project default notification setting specify list
+65-return compact representation  output list custom field setting project
+66-create return job asynchronously handle duplication
+67-create project brief new  return record newly
+68-project return compact membership record
+69- project update deprecate new integration prefer status_updates route return
+70- new create status update project deprecate integration prefer status_updates
+71-remove custom field set project
+72-project remove specify list user follow affect membership status 
+73-project remove specify list user member  return update record
+74-project template  api create return job asynchronously handle creation
+75-return compact record section specify project
+76-create section new project  return record newly
+77- section relative before_section after_section require move project return data
+78- count field task endpoint rate limit cost object hold
+79-task project return compact record give order priority exist time
+80-section delete  specific exist make request url note remain
+81-return complete record single section
+82- field update section change specific exist make request url
+83-task section  add specific exist remove project insert insert_before
+84-section board view return compact record task give
+85-update return compact status record object
+86-create status update new object  return record newly
+87-delete specific exist status update  return data record
+88-return complete record single status update
+89-delete story user create  return data record
+90-return record single story
+91-story  update comment text return record attachment pin html_text
+92-tag return filter compact record set use parameter provide
+93- create tag workspace organization new require specific change set
+94-tag delete  specific exist make request url return data
+95-tag return complete record single
+96- update tag field change property provide data block unspecified
+97-task tag return compact record give time
+98- task return filter use specify workspace compact record set
+99- task set workspace create field new easy post tasks
+100-task delete  make request trash specific exist url user
+101-task return complete record single
+102- task update field change specific exist make request url
+103-task dependency mark set 30 dependent combine
+104-task dependent mark set 30 dependency combine
+105-follower task add return  data block associate zero system
+106- section task specify project add location insert_before insert_aft insert
+107-add tag task return data block
+108-return compact representation dependency task
+109-return compact representation dependent task
+110-create return job asynchronously handle duplication
+111-return compact representation project task
+112-unlink set dependency task
+113-unlink set dependent task
+114-task remove specify follower follow return complete update record affected
+115-task project  remove specify exist system anymore return data
+116-remove tag task return data block
+117- parent task return data block insert_before insert_aft option specify
+118-return compact record story task
+119-story  add task currently comment endpoint allow create author
+120-return compact representation subtask task
+121-create subtask new add parent task return record newly
+122-compact representation tag task
+123-return compact team membership record
+124-team membership return complete record single
+125-create team current workspace
+126-update team current workspace
+127-return record single team
+128-user team add make member order exist organization  return
+129-project template return compact record team
+130-project return compact record team
+131-create project share give team  return record newly
+132-user make member team order remove
+133-team return compact membership
+134- result return compact record user member team sort alphabetically
+135-return compact time period record
+136-return record single time period
+137-return record user task list
+138- task return user list tasks note access endpoint asana
+139-user workspace id return record organization accessible authenticated accept optional
+140-user return record single provide id
+141-give order return user favorite workspace type  result asana
+142-return compact team membership record user
+143-return compact record team give user assign
+144-return record user task list
+145-return compact workspace membership record user
+146-compact representation webhook app register authenticated user give workspace
+147- webhook request post x secret create handshake target hook
+148-webhook request method permanently remove note possible receive flight delete
+149-return record give webhook
+150- webhook filter request exist update make url note previous
+151-workspace return complete record single membership
+152-return compact record workspace visible authorized user
+153-workspace return record single
+154-workspace update field  specific exist make request url provide
+155-user add workspace organization  reference globally unique id email
+156- event log filter audit return provide capture query response
+157-return list compact representation custom field workspace
+158- project endpoint return compact record workspace note timeout large
+159-project  return record workspace compact organization supply team share
+160-user workspace  remove organization make admin reference globally unique
+161-tag return filter compact record set use parameter provide
+162- create tag workspace organization new require specific change set
+163- search premium asana task custom field number enum datum
+164-return compact record team workspace visible authorized user
+165- result user project search task return resource object provide
+166- result return compact record user specify workspace organization sort
+167-workspace return compact membership record
+168-de una respuesta el endpoint permite realizar petición tipo options
+169-en el este endpoint acepta cualquier método http y devuelve
+170-en una el endpoint account proporciona información sobre las opcione
+171-create new account
+172-account balance
+173-una este endpoint permite obtener información de cuenta específica identificada
+174-access detailed block information
+175-de un y se trata endpoint que brinda las opcione
+176-information particular block

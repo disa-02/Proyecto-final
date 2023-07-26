@@ -44,8 +44,9 @@ def openTxt(dir):
             content = fileTxt.read()
             content = content.split("\n")
             for cont in content:
-                if (cont != ""): # Tengo en cuenta lineas vacias
-                    cont = cont.split(":")
+                # if (cont != ""): # Tengo en cuenta lineas vacias
+                cont = cont.split(":")
+                if(len(cont) == 2):
                     entries.append(cont[1])
         return entries
     except FileNotFoundError:

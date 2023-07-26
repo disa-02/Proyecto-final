@@ -1,12 +1,204 @@
-path: /api/auth/introspect:
+path: /:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint proporciona opciones para acceder a un recurso, devolviendo una respuesta exitosa 200 con un contenido JSON vacío junto con las cabeceras de control de acceso adecuadas.
+
+path: /:
+operacion: x-amazon-apigateway-any-method
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: El endpoint "/tipo_de_metodo" devuelve una respuesta exitosa en formato JSON con un esquema vacío.
+
+path: /account:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint tiene la funcionalidad de devolver una respuesta exitosa vacía en formato JSON, junto con los headers necesarios para permitir el acceso a recursos desde diferentes orígenes y permitir métodos y encabezados específicos.
+
+path: /account/{id}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar la opción de obtención de información de una cuenta específica, indicada mediante su ID.
+
+path: /block:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /block permite realizar una solicitud OPTIONS para obtener información sobre las capacidades y permisos de acceso relacionados con la función de bloqueo.
+
+path: /block/{id}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /block/{id} permite realizar una solicitud OPTIONS para obtener información sobre el bloque identificado por el ID proporcionado en la ruta, como la respuesta y los permisos de acceso permitidos.
+
+path: /block/{id}/transaction:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite obtener opciones sobre una transacción en un bloque específico identificado por su ID.
+
+path: /block/{id}/transaction/{index}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}, {"description": "Automatically added", "in": "path", "name": "index", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /block/{id}/transaction/{index} permite obtener información de una transacción específica en un bloque mediante su ID y su índice.
+
+path: /blockchain:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint '/blockchain' permite realizar una solicitud de opciones para obtener información relacionada con la cadena de bloques y devuelve una respuesta exitosa en formato JSON.
+
+path: /blockchain/{id}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar una solicitud OPTIONS a la ruta /blockchain/{id} para obtener información sobre el sistema blockchain correspondiente al ID proporcionado.
+
+path: /contract:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /contract permite obtener información sobre un contrato, devolviendo una respuesta exitosa con contenido en formato JSON y sin datos en el cuerpo.
+
+path: /contract/{id}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/contract/{id}" permite realizar una solicitud "options" para obtener información sobre un contrato especificado por su ID.
+
+path: /echo:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint "/echo" permite obtener una respuesta exitosa en formato JSON con el código de respuesta 200, y también establece ciertos encabezados de control de acceso permitidos.
+
+path: /echo:
+operacion: x-amazon-apigateway-any-method
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint "echo" permite enviar una solicitud de cualquier método HTTP y devuelve una respuesta exitosa (código 200) en formato JSON con un esquema vacío.
+
+path: /erc20:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /erc20 permite realizar una solicitud OPTIONS para obtener información sobre los métodos, cabeceras y origen permitidos para interactuar con la API de tokens ERC20.
+
+path: /erc20:
+operacion: post
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint permite enviar una solicitud POST a la ruta /erc20 y devuelve una respuesta exitosa con un contenido JSON vacío en caso de éxito.
+
+path: /erc20/{address}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "address", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar una consulta OPTIONS a la dirección ERC20 especificada.
+
+path: /key:
 operacion: get
-{"deprecated": true, "operationId": "getAuthIntrospect", "responses": {"200": {"$ref": "#/components/responses/IntrospectResponse"}, "401": {"$ref": "#/components/responses/UnauthorizedErrorResponse"}, "500": {"$ref": "#/components/responses/InternalServerErrorResponse"}, "default": {"$ref": "#/components/responses/GenericErrorResponse"}}, "security": [{"jwtsa": []}], "summary": "Performs introspection of the provided Bearer JWT token", "tags": ["auth"]}
+{"parameters": [{"in": "query", "name": "token", "required": false, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
 
-Descripcion generada: El endpoint /api/auth/introspect realiza una introspección del token Bearer JWT proporcionado.
+Descripcion generada: El endpoint "/key" permite realizar una solicitud GET y obtener información del diccionario si se proporciona un token, devolviendo una respuesta exitosa 200 en formato JSON.
 
-path: /api/v2/auth/introspect:
+path: /key:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint ofrece opciones para obtener una respuesta exitosa (código 200) en formato JSON vacío, junto con los encabezados para permitir el acceso a través de los métodos y orígenes especificados.
+
+path: /key:
+operacion: post
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: El endpoint "/key" realiza una solicitud de tipo POST y devuelve una respuesta exitosa (código 200) en formato JSON, con una estructura de datos vacía.
+
+path: /key/{key}:
+operacion: delete
+{"parameters": [{"in": "path", "name": "key", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint elimina el elemento asociado a la clave proporcionada en la URL.
+
+path: /key/{key}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "key", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/key/{key}" permite realizar una solicitud OPTIONS para obtener información sobre los encabezados permitidos y los métodos de acceso para una clave determinada.
+
+path: /transaction:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint "/transaction" permite realizar una solicitud de opciones para obtener información necesaria para realizar transacciones, con una respuesta exitosa (200) que devuelve una estructura vacía en formato JSON.
+
+path: /transaction/{hash}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "hash", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /transaction/{hash} permite obtener información de una transacción específica mediante su hash como parámetro, devolviendo una respuesta exitosa si la transacción existe.
+
+path: /transaction/{hash}/receipt:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "hash", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: La funcionalidad de este endpoint es obtener el recibo de una transacción específica utilizando su hash como parámetro.
+
+path: /version:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /version devuelve una respuesta exitosa 200 con un esquema de datos vacío en formato JSON, y también incluye los headers Access-Control-Allow-Headers, Access-Control-Allow-Methods y Access-Control-Allow-Origin.
+
+path: /wallet:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar una solicitud OPTIONS para obtener información sobre la billetera, devolviendo una respuesta exitosa (código 200) en formato JSON.
+
+path: /wallet/account:
 operacion: get
-{"operationId": "getAuthIntrospectV2", "responses": {"200": {"$ref": "#/components/responses/IntrospectV2Response"}, "401": {"$ref": "#/components/responses/UnauthorizedErrorResponse"}, "500": {"$ref": "#/components/responses/InternalServerErrorResponse"}, "default": {"$ref": "#/components/responses/GenericErrorResponse"}}, "security": [{"jwtsa": []}], "summary": "Performs introspection of the provided Bearer JWT token", "tags": ["auth"]}
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
 
-Descripcion generada: El endpoint /api/v2/auth/introspect permite realizar una introspección del token Bearer JWT proporcionado.
+Descripcion generada: El endpoint /wallet/account permite obtener la cuenta de billetera del usuario.
+
+path: /wallet/account:
+operacion: options
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite obtener opciones relacionadas con una cuenta de billetera, devolviendo una respuesta exitosa en formato JSON y sin contenido.
+
+path: /wallet/account:
+operacion: post
+{"responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: El endpoint "/wallet/account" se utiliza para crear una cuenta de billetera y devuelve una respuesta exitosa con un código 200.
+
+path: /wallet/account/{id}:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: Este endpoint permite realizar una operación de opciones en la cuenta de una billetera, identificada por su "id".
+
+path: /wallet/account/{id}/contract:
+operacion: post
+{"parameters": [{"in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint permite crear un nuevo contrato en la cuenta de billetera especificada por su ID.
+
+path: /wallet/account/{id}/erc20:
+operacion: post
+{"parameters": [{"in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response"}}}
+
+Descripcion generada: Este endpoint permite crear una cuenta de token ERC20 en una billetera, enviando el ID de la cuenta como parámetro en la ruta y devolviendo un código de respuesta exitoso.
+
+path: /wallet/account/{id}/pay:
+operacion: options
+{"parameters": [{"description": "Automatically added", "in": "path", "name": "id", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Empty"}}}, "description": "200 response", "headers": {"Access-Control-Allow-Headers": {"schema": {"type": "string"}}, "Access-Control-Allow-Methods": {"schema": {"type": "string"}}, "Access-Control-Allow-Origin": {"schema": {"type": "string"}}}}}}
+
+Descripcion generada: El endpoint /wallet/account/{id}/pay permite realizar un pago utilizando la cuenta de billetera especificada por el ID proporcionado.
 
