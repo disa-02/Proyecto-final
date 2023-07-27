@@ -1,28 +1,34 @@
-import openai
-import Files
-# Obtener la clave de API de OpenAI
-api_key = str(Files.openTxt("./entries.txt")[6])
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+import json
 
+# Define los textos
+textos2 = ["1 - El perro es un mamífero","4 - El perro es un mamífero" ,"2-El gato es un mamífero", "3-El caballo es un mamífero"]
 
-# Crear un objeto ChatGPT
-chatgpt = openai.Client(api_key)
+def agrupar(textos):
+    # Crea un objeto TfidfVectorizer para convertir los textos en vectores TF-IDF
+    vectorizador = TfidfVectorizer()
+    vectores = vectorizador.fit_transform(textos)
 
-# Generar un conjunto de datos de texto
-text_data = [
-  "El gato está sentado en la mesa.",
-  "El perro está ladrando en el parque.",
-  "El pájaro está volando en el cielo.",
-  "El pez está nadando en el agua.",
-  "La flor está floreciendo en el jardín."
-]
+    # Crea una instancia del algoritmo KMeans
+    n_clusters = 25
+    kmeans = KMeans(n_clusters=n_clusters)
 
-# Entrenar el modelo `davinci` en el conjunto de datos de texto
-chatgpt.train(text_data)
+    # Agrupa los textos según los centroides más cercanos
+    labels = kmeans.fit_predict(vectores)
 
-# Utilizar el modelo `davinci` para agrupar el texto
-clusters = chatgpt.cluster(text_data)
+    # Crea un diccionario para almacenar los textos por etiqueta (label)
+    grupos = {}
+    for label, texto in zip(labels, textos):
+        if label not in grupos:
+            grupos[int(label)] = []
+        grupos[int(label)].append(int(texto.split("-")[0]))
 
-# Imprimir los grupos
-# for cluster in clusters:
-#   name = chatgpt.generate(prompt="Dame un nombre para este grupo: {}".format(cluster))
-#   print(cluster, name)
+    # Convierte el diccionario en formato JSON
+    # resultado_json = json.dumps(grupos, indent=4)
+    # return str(resultado_json).replace("\n", "").replace(" ", "")
+    return grupos
+
+# resp = agrupar(textos2)
+# print(resp)

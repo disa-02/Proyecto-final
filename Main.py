@@ -9,6 +9,7 @@ import KmeansClustering
 import time
 import sys
 import outsGenerator
+import prueba
 
 def enumDescriptions(filesDescriptions):
     # Enumera las descripciones
@@ -24,7 +25,9 @@ def enumDescriptions(filesDescriptions):
 
 #-----------MAIN-----------
 start_time = time.time()
-
+Files.deleteFiles("./outs/files/")
+Files.deleteFiles("./outs/prompts/")
+Files.deleteFiles("./outs/responses/")
 # Lectura de las entradas
 entries = Files.openTxt("./entries.txt")
 if (len(entries) < 7):
@@ -53,6 +56,7 @@ enumFilesDescriptions = enumDescriptions(filesDescriptions)
 
 # Agrupacion con consultas al chatGpt
 groupings = ChatGPTChunks.group(enumFilesDescriptions,chunks)
+# groupings = prueba.agrupar(enumFilesDescriptions)
 
 # Vectorizacion
 print("Vectorizando archivos...")

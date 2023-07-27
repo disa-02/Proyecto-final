@@ -1,11 +1,11 @@
 # ChatGpt - 4 caracteres = 1 token (aprox)
-chunks: 10000
+chunks: 40000
 # Spacy - ingles: en_core_web_sm, espanol: es_core_news_md
-model:en_core_web_sm
+model:en_core_web_lg
 numberSentences:1
 commonWords:10
 # Clustering
 k:2
 nInit:10
 # OpenApi
-openApiKey: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
+openApiKey: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

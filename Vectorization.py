@@ -1,4 +1,5 @@
 import numpy as np
+import spac
 
 
 def _searchGroup(groupings, descriptionNumber):
@@ -22,6 +23,19 @@ def _createVectorByGroup(groupings):
         cont = cont + 1
     return vectorGroups
 
+def _createVectorByGroup2(groupings):
+    # Genera un vector por cada grupo -> grupo1:(1,0,0), grupo1:(0,1,0), grupo3:(0,0,1) ...
+    vectorGroups = {}
+    groups = groupings.keys()
+    for group in groups:
+        vector = np.zeros(len(groups))
+        pos = 0
+        for group2 in groups:
+            similitary = spac.anlizeSimilitary(group, group2)
+            vector[pos] = similitary
+            pos = pos + 1
+        vectorGroups[group] = vector
+    return vectorGroups
 
 def _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longVector):
     # Asigna a cada descripcion el vector de grupo correspondiente
@@ -48,14 +62,14 @@ def _addVectors(vectors):
         # print(vector)
         addition = addition + vector
         # Evaluar cuando se haga el clustering si conviene hacer esta division
-        addition = addition / len(vectors)
+        addition = addition #/ len(vectors)
     return addition
 
 
 def vectorize(groupings, filesDescriptions):
     # Vectoriza los archivos openApi segun sus operaciones
     longVector = len(groupings.keys())
-    vectorGroups = _createVectorByGroup(groupings)
+    vectorGroups = _createVectorByGroup2(groupings)
     vectorsDescriptions = _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longVector)
     cont = 1
     out = ""

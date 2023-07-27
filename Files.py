@@ -32,9 +32,12 @@ def saveFile(text, name, dir, mode):
     newFile.close()
 
 
-def deleteFile(path):
-    if (os.path.exists(path)):
-        os.remove(path)
+def deleteFiles(folderPath):
+    files = os.listdir(folderPath)
+    for delFile in files:
+        path = os.path.join(folderPath,delFile)
+        if (os.path.exists(path)):
+            os.remove(path)
 
 def openTxt(dir):
     # Lee un archivo txt que tiene una lista de "key:valor" separados por salto de linea

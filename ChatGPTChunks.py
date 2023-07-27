@@ -13,7 +13,7 @@ openai.api_key = str(Files.openTxt("./entries.txt")[6])
 
 main_statemenet = """Agrupar temas por su relación semántica en un JSON con nombres de grupo representativos
 Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
-Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, asegúrate de que las agrupaciones no contengan grupos con un único tema y de evitar el uso de saltos de línea o espacios en la respuesta.\n"""
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que las agrupaciones  contengan grupos con un único tema.\n"""
 
 
 def createChunks(filesDescriptions,chunks):
@@ -31,6 +31,16 @@ def checkAttributes(response):
             return True
     return False
 
+def checkRepeatedTopics(response):
+    repeated = set()
+    dic = json.loads(response)
+    for key in dic:
+        valores = dic[key]
+        for valor in valores:
+            if valor in repeated:
+                return True
+            repeated.add(valor)
+    return False
 
 def consult(prompt):
     # Realiza la consulta al chat
@@ -39,7 +49,7 @@ def consult(prompt):
     while (condition):
         try:
             completion = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-3.5-turbo-16k",
                 messages=[
                     {"role": "user", "content": prompt}
                 ])
@@ -50,6 +60,10 @@ def consult(prompt):
                     condition = False
                 else:
                     print("Error en la generacion de los nombres en la respuesta, reintentando ...")
+                if (not checkRepeatedTopics(response)):
+                    condition = False
+                else:
+                    print("Error se genero un json con valores repetidos, reintentando ...")
             else:
                 print("Error en el formato de la respuesta, reintentando ...")
         except openai.error.RateLimitError as error:
@@ -103,7 +117,7 @@ def group(filesDescriptions,chunks):
         newGroups = JsonProcessing.getAttributes(response)
         groups.update(set(newGroups))
 
-        prompt = main_statemenet + f"\nConsiderar que ya existen los siguientes grupos como atributos del json.\n{' '.join(f'{i+1}-{elem}' for i, elem in enumerate(groups))} \nAnalizar si un tema puede pertenecer a uno de estos grupos o es necesario agruparlo en uno nuevo. No pueden quedar temas sin grupos./n" + document
+        prompt = f"\nConsiderando que ya existen los siguientes grupos.\n{' '.join(f'{i+1}-{elem}' for i, elem in enumerate(groups))} \nAnalizar si los siguientes temas pueden pertenecer a uno de estos grupos. En caso que haya temas que no pertenece a ningun grupo, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que las agrupaciones contengan grupos con un único tema.\n""" + document
                                             
         cont = cont + 1
         Files.saveFile(prompt, "prompt_" + str(cont) +
