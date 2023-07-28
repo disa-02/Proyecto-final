@@ -10,12 +10,14 @@ import spac
 import json
 import copy
 import spac
+import prueba
 
 openai.api_key = str(Files.openTxt("./entries.txt")[6])
 
 main_statemenet = """Agrupar temas por su relación semántica en un JSON con nombres de grupo representativos
 Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
-Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, asegúrate de que las agrupaciones no contengan grupos con un único tema y de evitar el uso de saltos de línea o espacios en la respuesta.\n"""
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que las agrupaciones  contengan grupos con un único tema.\n"""
+ 
 
 
 def createChunks(filesDescriptions,chunks):
@@ -35,13 +37,15 @@ def checkAttributes(response):
 
 
 def consult(prompt):
+    print("consult")
     # Realiza la consulta al chat
     condition = True
     response = ''
     while (condition):
+        print("   while")
         try:
             completion = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-3.5-turbo-16k",
                 messages=[
                     {"role": "user", "content": prompt}
                 ])
@@ -52,8 +56,12 @@ def consult(prompt):
                     condition = False
                 else:
                     print("Error en la generacion de los nombres en la respuesta, reintentando ...")
+                    Files.saveFile(response, f"error{prueba.contError}", "./outs/errores/", "w")
+                    prueba.contError = prueba.contError + 1
             else:
                 print("Error en el formato de la respuesta, reintentando ...")
+                Files.saveFile(response, f"error{prueba.contError}", "./outs/errores/", "w")
+                prueba.contError = prueba.contError + 1
         except openai.error.RateLimitError as error:
             print("Error de tiempo al agrupar, reintentando ...")
             time.sleep(5)
@@ -63,6 +71,7 @@ def consult(prompt):
     return response
 
 def generateResponseFinal(finalResponse):
+    print("generateResponseFinal")
     # Procesa todas las respuestas del chat y lo convierte en un json con la respuesta final
     resp = {}
     for response in finalResponse:
@@ -85,11 +94,12 @@ def saveFiles(finalResponse):
         cont = cont + 1
 
 def getPreviousResults(response,filesDescriptions):
+    print("getPreviousResult")
     result = []
     jsonResponse = json.loads(response)
     for key in jsonResponse.keys():
         if len(jsonResponse[key]) > 0:
-            pos = jsonResponse[key][0]
+            pos = int(jsonResponse[key][0])
             pos = pos - 1
             desc = str(filesDescriptions[pos])
             result.append(desc)
@@ -97,16 +107,30 @@ def getPreviousResults(response,filesDescriptions):
             print(f"Warning: se genero un grupo vacio - {key}")
     return result
 
+def addValueToDict(key,dicti,values):
+    print("addValueToDict")
+    if key in dicti:
+        # Agregar los elementos a la lista existente
+        dicti[key].extend(values)
+    else:
+        # Crear una nueva lista para la clave
+        dicti[key] = values  
+
 def joinResponses(response,previousResults,respAnt,filesDescriptions):
-    respAnt = json.loads(respAnt)
-    keysRespAnt = list(respAnt.keys())
-    response = json.loads(response)
+    print("joinResponse")
+    # Busca en la consulta anterior y en la actual los valores repetidos. Luego decide si juntar los grupos 
+    # o a que grupo le pertenece el elemento segun su relacion semantica
     cont = 0
     delete = []
     add = {}
-    deletes = {}
+    deletes = {} #Diccionario que se utiliza para indicar que elementos borrar de la consulta anterior
+
+    respAnt = json.loads(respAnt) #Consulta anterior
+    response = json.loads(response) #Consulta actual
+    keysRespAnt = list(respAnt.keys())
+    
     for searchValue in previousResults:
-        searchValue = int(searchValue.split("-")[0])
+        searchValue = int(searchValue.split("-")[0]) #Obtengo el valor numerico de la descripcion
         for key in response.keys():
             for value in response[key]:
                 if(value == searchValue):
@@ -117,26 +141,17 @@ def joinResponses(response,previousResults,respAnt,filesDescriptions):
                         print("ENTRAAA")
                         response[key].remove(value)
                         delete.append(key)
-                        if newKey in add:
-                            # Agregar los elementos a la lista existente
-                            add[newKey].extend(response[key])
-                        else:
-                            # Crear una nueva lista para la clave
-                            add[newKey] = response[key]  
+                        addValueToDict(newKey, add, response[key])
                         cont = cont + 1
                     else:
+                        #Analizo en cual de los dos grupos hace un mayor matching
                         umbral1 = spac.anlizeSimilitary(filesDescriptions[value-1], newKey)
                         umbral2 = spac.anlizeSimilitary(filesDescriptions[value-1], key)
                         if umbral1 > umbral2:
                             # response[key] = response[key].remove(value) #analizar en cual esta mejor
                             print("borra")
                         else:
-                            if newKey in deletes:
-                                # Agregar los elementos a la lista existente
-                                deletes[newKey].extend(value)
-                            else:
-                                # Crear una nueva lista para la clave
-                                deletes[newKey] = value  
+                            addValueToDict(newKey, deletes, value)
     for key in delete:
         if key in response.keys():
             response.pop(key)
@@ -151,6 +166,7 @@ def joinResponses(response,previousResults,respAnt,filesDescriptions):
     return response, deletes
 
 def group(filesDescriptions,chunks):
+    print("group")
     # Agrupa las descripciones segun su relacion semantica utilizando el chat
     documents = createChunks("\n".join(["".join(text) for text in filesDescriptions]),chunks)
     finalResponse = []
@@ -159,9 +175,6 @@ def group(filesDescriptions,chunks):
     cont = 0
     response = ""
     for document in tqdm(documents, desc="Consulta"):
-        # Obtengo los grupos de la consulta anterior
-        # newGroups = JsonProcessing.getAttributes(response)
-        # groups.update(set(newGroups))
         respAnt = response
         document = "\n".join(previousResults) + document
         prompt = main_statemenet + document

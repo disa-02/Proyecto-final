@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 import json
 
+contError = 0
 # Define los textos
 textos2 = ["1 - El perro es un mamífero","4 - El perro es un mamífero" ,"2-El gato es un mamífero", "3-El caballo es un mamífero"]
 

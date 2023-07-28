@@ -1,0 +1,75 @@
+
+Considerando que ya existen los siguientes grupos.
+1-Goals and Relationships 2-Transaction Information 3-Chat Generation 4-Status Updates 5-Blockchain 6-Account Management 7-Transactions 8-Stories 9-Webhooks 10-Portfolios 11-Sections 12-File Management 13-Tasks 14-Block Information 15-Users 16-Teams 17-Tags 18-Export Requests 19-Asana API 20-Projects 21-Time Periods 22-Workspaces 23-Metrics 
+Analizar si los siguientes temas pueden pertenecer a uno de estos grupos. En caso que haya temas que no pertenece a ningun grupo, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que las agrupaciones contengan grupos con un único tema.
+376-workspace return record single
+377-workspace update field  specific exist make request url provide
+378-user add workspace organization  reference globally unique id email
+379- event log filter audit return provide capture query response
+380-return list compact representation custom field workspace
+381- project endpoint return compact record workspace note timeout large
+382-project  return record workspace compact organization supply team share
+383-user workspace  remove organization make admin reference globally unique
+384-tag return filter compact record set use parameter provide
+385- create tag workspace organization new require specific change set
+386- search premium asana task custom field number enum datum
+387-return compact record team workspace visible authorized user
+388- result user project search task return resource object provide
+389- user result return compact record specified workspace organization sort
+390-workspace return compact membership record
+391-description generate chat gpt
+392-description generate chat gpt
+393-description generate chat gpt
+394-create new account
+395-account balance
+396-description generate chat gpt
+397-access detailed block information
+398-description generate chat gpt
+399-information particular block
+400-description generate chat gpt
+401-transaction count block
+402-description generate chat gpt
+403-information particular transaction block
+404-description generate chat gpt
+405-list support blockchain
+406-description generate chat gpt
+407-information blockchain woth give d
+408-description generate chat gpt
+409-description generate chat gpt
+410-create new smart contract
+411-contract balance
+412-description generate chat gpt
+413-contract
+414-description generate chat gpt
+415-description generate chat gpt
+416-token information total circulation etc
+417-description generate chat gpt
+418-description generate chat gpt
+419-information amout token balance account
+420-description generate chat gpt
+421-transfer token account
+422-description generate chat gpt
+423-description generate chat gpt
+424-description generate chat gpt
+425-description generate chat gpt
+426-description generate chat gpt
+427-description generate chat gpt
+428-create new transaction transfer ether account
+429-transaction information hash value
+430-description generate chat gpt
+431-receipt detail information
+432-description generate chat gpt
+433-api version info
+434-description generate chat gpt
+435-current account balance
+436-description generate chat gpt
+437-create personal wallet
+438-description generate chat gpt
+439-description generate chat gpt
+440-description generate chat gpt
+441-account balance
+442-description generate chat gpt
+443-description generate chat gpt
+444-description generate chat gpt
+445-description generate chat gpt
+446-send payment account hold wallet

@@ -1,5 +1,6 @@
 import textProcessing
 import ChatGPTChunks
+import ChatGPTChunks2
 import Files
 from tqdm import tqdm
 import JsonProcessing
@@ -10,6 +11,7 @@ import time
 import sys
 import outsGenerator
 import prueba
+
 
 def enumDescriptions(filesDescriptions):
     # Enumera las descripciones
@@ -22,7 +24,7 @@ def enumDescriptions(filesDescriptions):
                 cont += 1
     return enumFilesDescriptions 
 
-
+    
 #-----------MAIN-----------
 start_time = time.time()
 Files.deleteFiles("./outs/files/")
@@ -56,7 +58,8 @@ enumFilesDescriptions = enumDescriptions(filesDescriptions)
 
 # Agrupacion con consultas al chatGpt
 groupings = ChatGPTChunks.group(enumFilesDescriptions,chunks)
-# groupings = prueba.agrupar(enumFilesDescriptions)
+# groupings = ChatGPTChunks2.group(enumFilesDescriptions, chunks)
+# groupings = KmeansClustering.agrupar(enumFilesDescriptions)
 
 # Vectorizacion
 print("Vectorizando archivos...")

@@ -1,5 +1,5 @@
 # ChatGpt - 4 caracteres = 1 token (aprox)
-chunks: 40000
+chunks: 10000
 # Spacy - ingles: en_core_web_sm, espanol: es_core_news_md
 model:en_core_web_lg
 numberSentences:1

@@ -1,0 +1,197 @@
+
+Considerando que ya existen los siguientes grupos.
+1-File Management 2-Tasks 3-Block Information 4-Users 5-Teams 6-Tags 7-Export Requests 8-Goals and Relationships 9-Asana API 10-Transaction Information 11-Chat Generation 12-Projects 13-Status Updates 14-Time Periods 15-Blockchain 16-Account Management 17-Workspaces 18-Stories 19-Metrics 20-Webhooks 21-Portfolios 22-Sections 
+Analizar si los siguientes temas pueden pertenecer a uno de estos grupos. En caso que haya temas que no pertenece a ningun grupo, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que las agrupaciones contengan grupos con un único tema.
+183-description generate chat gpt
+184-information blockchain woth give d
+185-description generate chat gpt
+186-description generate chat gpt
+187-create new smart contract
+188-contract balance
+189-description generate chat gpt
+190-contract
+191-description generate chat gpt
+192-description generate chat gpt
+193-token information total circulation etc
+194-description generate chat gpt
+195-description generate chat gpt
+196-information amout token balance account
+197-description generate chat gpt
+198-transfer token account
+199-description generate chat gpt
+200-description generate chat gpt
+201-description generate chat gpt
+202-description generate chat gpt
+203-description generate chat gpt
+204-description generate chat gpt
+205-create new transaction transfer ether account
+206-transaction information hash value
+207-description generate chat gpt
+208-receipt detail information
+209-description generate chat gpt
+210-api version info
+211-description generate chat gpt
+212-current account balance
+213-description generate chat gpt
+214-create personal wallet
+215-description generate chat gpt
+216-description generate chat gpt
+217-description generate chat gpt
+218-account balance
+219-description generate chat gpt
+220-description generate chat gpt
+221-description generate chat gpt
+222-description generate chat gpt
+223-send payment account hold wallet
+224- project attachment task refer file brief return compact record
+225- attachment upload file request object possible attach content endpoint
+226-delete specific exist attachment  return data record
+227-record single attachment
+228-multiple request parallel asana api
+229- custom field workspace create date new require specific change
+230-field custom delete  lock specific exist make request url
+231- type field custom definition define relevant enum complete metadata
+232- field custom update change user enum enum_option lock specific
+233-option enum field custom create add list  lock 500
+234-field enum option custom lock move particular specify  reorder
+235-enum update option field custom  lock exist require enable
+236- event resource return request sync token 100 project contain
+237-return compact goal relationship record
+238-goal relationship return complete update record single
+239- goal relationship update field exist make request url provide
+240-return compact goal record
+241-create goal new workspace team  return record newly
+242-goal delete specific exist make request url  return data
+243-goal return complete record single
+244- goal update field exist make request url provide datum
+245-follower goal add return  associate zero system request remove
+246-goal create relationship add support resource give  return newly
+247-goal return compact representation parent
+248-follower goal remove return  associate zero system request add
+249-goal remove relationship give parent
+250-goal metric exist create add specified note replace
+251- update goal exist metric current_number_value respond 400 status code
+252-return record job
+253-create request export method organization asana complete point
+254-return detail previously request organization export
+255- portfolio user return list membership compact representation specify workspace
+256-portfolio return complete record single membership
+257-return list portfolio compact representation own current api user
+258-create portfolio  state new give workspace supply note asana
+259-portfolio delete  exist make request url return data record
+260-portfolio return complete record single
+261- portfolio update field exist make request url provide datum
+262-custom field portfolio setting associate way  method create
+263-add item portfolio  return data block
+264-portfolio add specified list user member  return update record
+265-return list custom field setting portfolio compact form
+266-list item compact form portfolio
+267-portfolio return compact membership record
+268-remove custom field set portfolio
+269-remove item portfolio  return data block
+270-portfolio remove specified list user member  return update record
+271-delete specific exist project brief  return data record
+272-record project brief
+273- project brief update field exist make request url provide
+274-project return complete record single membership
+275- deprecate new integration prefer status_updatesstatus_gid route delete specific exist
+276- deprecate new integration prefer status_updatesstatus_gid route return complete record
+277-project template return compact record give team workspace
+278-project template return complete record single
+279- project request workspace gid requested_dates organization create return job
+280-project filter return compact record set use parameter provide 
+281- project workspace create organization team new require specific change
+282-project delete  specific exist make request url return data
+283-project return complete record single
+284- project update field change specific exist make request url
+285-custom field project setting associate way  method create
+286-project member add user follower specified list subset opt receive
+287-add user  member project default notification setting specified list
+288-return compact representation  output list custom field setting project
+289-create return job asynchronously handle duplication
+290-create project brief new  return record newly
+291-project return compact membership record
+292- project update deprecate new integration prefer status_updates route return
+293- new create status update project deprecate integration prefer status_updates
+294-remove custom field set project
+295-project remove specified list user follow affect membership status 
+296-project remove specified list user member  return update record
+297-project template  api create return job asynchronously handle creation
+298-return compact record section specified project
+299-create section new project  return record newly
+300- section relative before_section after_section require move project return data
+301- count field task endpoint rate limit cost object hold
+302-task project return compact record give order priority exist time
+303-section delete  specific existing make request url note remain
+304-return complete record single section
+305- field update section change specific existing make request url
+306-task section  add specific exist remove project insert insert_before
+307-section board view return compact record task give
+308-update return compact status record object
+309-create status update new object  return record newly
+310-delete specific exist status update  return data record
+311-return complete record single status update
+312-delete story user create  return data record
+313-return record single story
+314-story  update comment text return record attachment pin html_text
+315-tag return filter compact record set use parameter provide
+316- create tag workspace organization new require specific change set
+317-tag delete  specific exist make request url return data
+318-tag return complete record single
+319- update tag field change property provide datum block unspecified
+320-task tag return compact record give time
+321- task return filter use specify workspace compact record set
+322- task set workspace create field new easy post endpoint
+323-task delete  make request trash specific exist url user
+324-task return complete record single
+325- task update field change specific exist make request url
+326-task dependency mark set 30 dependent combine
+327-task dependent mark set 30 dependency combine
+328-follower task add return  data block associate zero system
+329- section task specify project add location insert_before insert_after insert
+330-add tag task return data block
+331-return compact representation dependency task
+332-return compact representation dependent task
+333-create return job asynchronously handle duplication
+334-return compact representation project task
+335-unlink set dependency task
+336-unlinks set dependent task
+337-task remove specified follower follow return complete update record affected
+338-task project  remove specified exist system anymore return data
+339-remove tag task return data block
+340- parent task return data block insert_before insert_after option specify
+341-return compact record story task
+342-story  add task currently comment endpoint allow create author
+343-return compact representation subtask task
+344-create subtask new add parent task return record newly
+345-compact representation tag task
+346-return compact team membership record
+347-team membership return complete record single
+348-create team current workspace
+349-update team current workspace
+350-return record single team
+351-user team add make member order exist organization  return
+352-project template return compact record team
+353-project return compact record team
+354-create project share give team  return record newly
+355-user make member team order remove
+356-team return compact membership
+357- user result return compact record member team sort alphabetically
+358-return compact time period record
+359-return record single time period
+360-return record user task list
+361- task return user list tasks note access endpoint asana
+362-user workspace id return record organization accessible authenticated accept optional
+363-user return record single provide id
+364-give order return user favorite workspace type  result asana
+365-return compact team membership record user
+366-return compact record team give user assign
+367-return record user task list
+368-return compact workspace membership record user
+369-compact representation webhook app register authenticate user give workspace
+370- webhook request post x secret create handshake target hook
+371-webhook request method permanently remove note possible receive flight delete
+372-return record give webhook
+373- webhook filter request exist update make url note previous
+374-workspace return complete record single membership
+375-return compact record workspace visible authorized user

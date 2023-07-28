@@ -37,7 +37,7 @@ def analyzeSentence(oracion,commonWords):
     return relevant_words
 
 
-def anlizeSimilitary(texto, grupo): # Creo que no lo uso
+def anlizeSimilitary(texto, grupo): 
     doc_texto = nlp(texto)
     doc_descripcion = nlp(grupo)
 
