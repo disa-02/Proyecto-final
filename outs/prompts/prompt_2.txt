@@ -1,75 +1,114 @@
-
-Considerando que ya existen los siguientes grupos.
-1-Goals and Relationships 2-Transaction Information 3-Chat Generation 4-Status Updates 5-Blockchain 6-Account Management 7-Transactions 8-Stories 9-Webhooks 10-Portfolios 11-Sections 12-File Management 13-Tasks 14-Block Information 15-Users 16-Teams 17-Tags 18-Export Requests 19-Asana API 20-Projects 21-Time Periods 22-Workspaces 23-Metrics 
-Analizar si los siguientes temas pueden pertenecer a uno de estos grupos. En caso que haya temas que no pertenece a ningun grupo, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que las agrupaciones contengan grupos con un único tema.
-376-workspace return record single
-377-workspace update field  specific exist make request url provide
-378-user add workspace organization  reference globally unique id email
-379- event log filter audit return provide capture query response
-380-return list compact representation custom field workspace
-381- project endpoint return compact record workspace note timeout large
-382-project  return record workspace compact organization supply team share
-383-user workspace  remove organization make admin reference globally unique
-384-tag return filter compact record set use parameter provide
-385- create tag workspace organization new require specific change set
-386- search premium asana task custom field number enum datum
-387-return compact record team workspace visible authorized user
-388- result user project search task return resource object provide
-389- user result return compact record specified workspace organization sort
-390-workspace return compact membership record
-391-description generate chat gpt
-392-description generate chat gpt
-393-description generate chat gpt
-394-create new account
-395-account balance
-396-description generate chat gpt
-397-access detailed block information
-398-description generate chat gpt
-399-information particular block
-400-description generate chat gpt
-401-transaction count block
-402-description generate chat gpt
-403-information particular transaction block
-404-description generate chat gpt
-405-list support blockchain
-406-description generate chat gpt
-407-information blockchain woth give d
-408-description generate chat gpt
-409-description generate chat gpt
-410-create new smart contract
-411-contract balance
-412-description generate chat gpt
-413-contract
-414-description generate chat gpt
-415-description generate chat gpt
-416-token information total circulation etc
-417-description generate chat gpt
+Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados y no puede haber un mismo tema en grupos diferentes.
+La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que los grupos contengan un único tema.
+Al finalizar asegura que no hayan temas que pertenescan a mas de un grupo
+383-team return compact membership
+384- user result return compact record member team sort alphabetically
+385-return compact time period record
+386-return record single time period
+387-return record user task list
+388- task return user list tasks note access endpoint asana
+389-user workspace id return record organization accessible authenticated accept optional
+390-user return record single provide id
+391-give order return user favorite workspace type  result asana
+392-return compact team membership record user
+393-return compact record team give user assign
+394-return record user task list
+395-return compact workspace membership record user
+396-compact representation webhook app register authenticate user give workspace
+397- webhook request post x secret create handshake target hook
+398-webhook request method permanently remove note possible receive flight delete
+399-return record give webhook
+400- webhook filter request exist update make url note previous
+401-workspace return complete record single membership
+402-return compact record workspace visible authorized user
+403-workspace return record single
+404-workspace update field  specific exist make request url provide
+405-user add workspace organization  reference globally unique id email
+406- event log filter audit return provide capture query response
+407-return list compact representation custom field workspace
+408- project endpoint return compact record workspace note timeout large
+409-project  return record workspace compact organization supply team share
+410-user workspace  remove organization make admin reference globally unique
+411-tag return filter compact record set use parameter provide
+412- create tag workspace organization new require specific change set
+413- search premium asana task custom field number enum datum
+414-return compact record team workspace visible authorized user
+415- result user project search task return resource object provide
+416- user result return compact record specified workspace organization sort
+417-workspace return compact membership record
 418-description generate chat gpt
-419-information amout token balance account
-420-description generate chat gpt
-421-transfer token account
-422-description generate chat gpt
+419-add new pet store
+420-multiple status value provide comma separate string
+421-multiple tag provide comma separate string use tag1 tag2 tag3
+422-return single pet
 423-description generate chat gpt
-424-description generate chat gpt
+424-delete pet
 425-description generate chat gpt
-426-description generate chat gpt
-427-description generate chat gpt
-428-create new transaction transfer ether account
-429-transaction information hash value
-430-description generate chat gpt
-431-receipt detail information
+426-return map status code quantity
+427-place new order store
+428- value valid response try integer id 5 10 generate
+429-1000 valid response try integer id value  noninteger generate
+430-log user
+431-create list user give input array
 432-description generate chat gpt
-433-api version info
+433-description generate chat gpt
 434-description generate chat gpt
-435-current account balance
-436-description generate chat gpt
-437-create personal wallet
+435-log user
+436-log user
+437-description generate chat gpt
 438-description generate chat gpt
 439-description generate chat gpt
-440-description generate chat gpt
+440-create new account
 441-account balance
 442-description generate chat gpt
-443-description generate chat gpt
+443-access detailed block information
 444-description generate chat gpt
-445-description generate chat gpt
-446-send payment account hold wallet
+445-information particular block
+446-description generate chat gpt
+447-transaction count block
+448-description generate chat gpt
+449-information particular transaction block
+450-description generate chat gpt
+451-list support blockchain
+452-description generate chat gpt
+453-information blockchain woth give d
+454-description generate chat gpt
+455-description generate chat gpt
+456-create new smart contract
+457-contract balance
+458-description generate chat gpt
+459-contract
+460-description generate chat gpt
+461-description generate chat gpt
+462-token information total circulation etc
+463-description generate chat gpt
+464-description generate chat gpt
+465-information amout token balance account
+466-description generate chat gpt
+467-transfer token account
+468-description generate chat gpt
+469-description generate chat gpt
+470-description generate chat gpt
+471-description generate chat gpt
+472-description generate chat gpt
+473-description generate chat gpt
+474-create new transaction transfer ether account
+475-transaction information hash value
+476-description generate chat gpt
+477-receipt detail information
+478-description generate chat gpt
+479-api version info
+480-description generate chat gpt
+481-current account balance
+482-description generate chat gpt
+483-create personal wallet
+484-description generate chat gpt
+485-description generate chat gpt
+486-description generate chat gpt
+487-account balance
+488-description generate chat gpt
+489-description generate chat gpt
+490-description generate chat gpt
+491-description generate chat gpt
+492-send payment account hold wallet

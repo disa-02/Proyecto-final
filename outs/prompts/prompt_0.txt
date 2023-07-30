@@ -1,6 +1,7 @@
-Agrupar temas por su relación semántica en un JSON con nombres de grupo representativos
-Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados. La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
-Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que las agrupaciones  contengan grupos con un único tema.
+Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Cada tema debe pertenecer a un único grupo; no puede haber temas no agrupados y no puede haber un mismo tema en grupos diferentes.
+La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que los grupos contengan un único tema.
+Al finalizar asegura que no hayan temas que pertenescan a mas de un grupo
 1- project attachment task refer file brief return compact record
 2- attachment upload file request object possible attach content endpoint
 3-delete specific exist attachment  return data record
@@ -169,17 +170,17 @@ Es importante que los nombres de los grupos sean descriptivos y representen clar
 166- user result return compact record specified workspace organization sort
 167-workspace return compact membership record
 168-description generate chat gpt
-169-description generate chat gpt
-170-description generate chat gpt
-171-create new account
-172-account balance
-173-description generate chat gpt
-174-access detailed block information
-175-description generate chat gpt
-176-information particular block
-177-description generate chat gpt
-178-transaction count block
-179-description generate chat gpt
-180-information particular transaction block
-181-description generate chat gpt
-182-list support blockchain
+169-endpoint require json web token auditevent feature
+170-endpoint require json web token itemusage feature
+171-endpoint require json web token signinattempt feature
+172-description generate chat gpt
+173-enumerate active channel application
+174-metadata channel
+175-message history channel
+176-publish message specified channel
+177-presence channel
+178-presence channel
+179-tokenrequest token ably use documentation spec mean client obtain access
+180-delete device detail object
+181-list push notification subscription channel
+182-device subscribe single associate client id receive push notification message

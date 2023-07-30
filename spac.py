@@ -4,10 +4,6 @@ from nltk.probability import FreqDist
 import Files
 
 model = str(Files.openTxt("./entries.txt")[1])
-# Cargar el modelo de spaCy en español
-# nlp = spacy.load('es_core_news_md')
-
-# Cargar el modelo de spacy en ingles
 nlp = spacy.load(model)
 
 
@@ -43,12 +39,3 @@ def anlizeSimilitary(texto, grupo):
 
     similitud = doc_texto.similarity(doc_descripcion)
     return similitud
-    # # Establece un umbral de similitud para considerar que la descripción pertenece al texto
-    # umbral_similitud = 0.8
-
-    # if similitud > umbral_similitud:
-    #     return True
-    # else:
-    #     return False
-
-

@@ -1,6 +1,6 @@
 import textProcessing
-import ChatGPTChunks
-import ChatGPTChunks2
+import ChatGptGrouping
+import ChatGptAssistedGrouping
 import Files
 from tqdm import tqdm
 import JsonProcessing
@@ -27,12 +27,14 @@ def enumDescriptions(filesDescriptions):
     
 #-----------MAIN-----------
 start_time = time.time()
+# Inicializacion de las carpetas de salida
 Files.deleteFiles("./outs/files/")
 Files.deleteFiles("./outs/prompts/")
 Files.deleteFiles("./outs/responses/")
+
 # Lectura de las entradas
 entries = Files.openTxt("./entries.txt")
-if (len(entries) < 7):
+if (len(entries) < 11):
     print("Error en la entrada, no se definieron todos los atributos")
     sys.exit()
 
@@ -42,7 +44,10 @@ numberSentences = int(entries[2])
 commonWords = int(entries[3])
 k = int(entries[4])
 nInit = int(entries[5])
-
+method=int(entries[9])
+kInt=int(entries[7])
+nInitInt = int(entries[8])
+umbral = float(entries[9])
 
 # Importacion de los documentos
 files, filesNames = Files.filesImport("./openApiDescriptions")
@@ -56,19 +61,22 @@ for d in tqdm(files, desc="Documento"):
 # Obtencion de las descripciones como una lista enumerada
 enumFilesDescriptions = enumDescriptions(filesDescriptions)
 
-# Agrupacion con consultas al chatGpt
-groupings = ChatGPTChunks.group(enumFilesDescriptions,chunks)
-# groupings = ChatGPTChunks2.group(enumFilesDescriptions, chunks)
-# groupings = KmeansClustering.agrupar(enumFilesDescriptions)
+# Agrupacion de las descripciones
+groupings = {}
+if method == 0: # Usando el chat
+    groupings = ChatGptGrouping.group(enumFilesDescriptions, chunks)
+elif method == 1: # Usando el chat de manera asistida
+    groupings = ChatGptAssistedGrouping.group(enumFilesDescriptions,chunks,umbral)
+else: # Usando k-means
+    groupings = KmeansClustering.groupDescriptions(enumFilesDescriptions, kInt, nInitInt)
 
 # Vectorizacion
 print("Vectorizando archivos...")
-vectorsGroups, res = Vectorization.vectorize(groupings, filesDescriptions)
+vectorsGroups, res = Vectorization.vectorize(groupings, filesDescriptions, method)
 
 # Clustering
 print("Realizando el clustering:")
 data,sse,centroids = KmeansClustering.cluster(res, k, nInit)
-
 
 # Save files
 Files.saveFile("\n".join(enumFilesDescriptions), "DescripcionesProcesadas.txt", "./outs/", "w")

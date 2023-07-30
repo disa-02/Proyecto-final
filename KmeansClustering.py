@@ -32,14 +32,13 @@ def clusterK(data,nInit):
     plt.plot(krange,sse)
     plt.show()
 
-def agrupar(textos):
+def groupDescriptions(textos,n_clusters,nIntit):
     # Crea un objeto TfidfVectorizer para convertir los textos en vectores TF-IDF
     vectorizador = TfidfVectorizer()
     vectores = vectorizador.fit_transform(textos)
 
     # Crea una instancia del algoritmo KMeans
-    n_clusters = 25
-    kmeans = KMeans(n_clusters=n_clusters)
+    kmeans = KMeans(n_clusters=n_clusters,n_init=nIntit)
 
     # Agrupa los textos según los centroides más cercanos
     labels = kmeans.fit_predict(vectores)
@@ -51,9 +50,6 @@ def agrupar(textos):
             grupos[int(label)] = []
         grupos[int(label)].append(int(texto.split("-")[0]))
 
-    # Convierte el diccionario en formato JSON
-    # resultado_json = json.dumps(grupos, indent=4)
-    # return str(resultado_json).replace("\n", "").replace(" ", "")
     return grupos
 
 # data = np.random.random(size=(30,2)) #30 puntos de 2 dimensiones

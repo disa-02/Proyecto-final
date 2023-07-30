@@ -23,15 +23,19 @@ def _createVectorByGroup(groupings):
         cont = cont + 1
     return vectorGroups
 
-def _createVectorByGroup2(groupings):
+def _createVectorByGroupWhitSemanticRelation(groupings):
     # Genera un vector por cada grupo -> grupo1:(1,0,0), grupo1:(0,1,0), grupo3:(0,0,1) ...
     vectorGroups = {}
     groups = groupings.keys()
     for group in groups:
         vector = np.zeros(len(groups))
         pos = 0
+        processGroup = group.replace("_"," ")
+        processGroup = group.replace("-"," ")
         for group2 in groups:
-            similitary = spac.anlizeSimilitary(group, group2)
+            processGroup2 = group2.replace("_"," ")
+            processGroup2 = group2.replace("-"," ")
+            similitary = spac.anlizeSimilitary(processGroup, processGroup2)
             vector[pos] = similitary
             pos = pos + 1
         vectorGroups[group] = vector
@@ -66,10 +70,15 @@ def _addVectors(vectors):
     return addition
 
 
-def vectorize(groupings, filesDescriptions):
+def vectorize(groupings, filesDescriptions,method):
     # Vectoriza los archivos openApi segun sus operaciones
     longVector = len(groupings.keys())
-    vectorGroups = _createVectorByGroup2(groupings)
+    vectorGroups = []
+    if method >=  2:
+        vectorGroups = _createVectorByGroup(groupings)
+    else:
+        vectorGroups = _createVectorByGroupWhitSemanticRelation(groupings)
+
     vectorsDescriptions = _assignVectorToDescription(groupings, filesDescriptions, vectorGroups, longVector)
     cont = 1
     out = ""

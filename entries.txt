@@ -4,8 +4,15 @@ chunks: 10000
 model:en_core_web_lg
 numberSentences:1
 commonWords:10
-# Clustering
-k:2
+# Clustering final
+k:4
 nInit:10
 # OpenApi
 openApiKey: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
+# Clustering intermedio
+k:25
+nInit:10
+#
+metodo:1
+# 
+umbral:0.6
