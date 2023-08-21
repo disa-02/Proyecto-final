@@ -19,10 +19,13 @@ def consult(prompt):
             condition = False
         except openai.error.RateLimitError as error:
             print("Error de tiempo al generar descripcion, reintentando...")
-            time.sleep(5)
+            time.sleep(65)
         except openai.error.ServiceUnavailableError as e:
             print("Error: El servidor está sobrecargado o no está listo todavía, reintentando...")
-            time.sleep(5)
+            time.sleep(65)
+        except Exception as e:
+            print("Posible error de tiempo, reintentando en 1 minuto ...")
+            time.sleep(65)
     return response
 
 

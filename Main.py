@@ -31,6 +31,8 @@ start_time = time.time()
 Files.deleteFiles("./outs/files/")
 Files.deleteFiles("./outs/prompts/")
 Files.deleteFiles("./outs/responses/")
+Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w") #Lo escribo vacio
+
 
 # Lectura de las entradas
 entries = Files.openTxt("./entries.txt")
@@ -49,17 +51,27 @@ kInt=int(entries[7])
 nInitInt = int(entries[8])
 umbral = float(entries[9])
 
-# Importacion de los documentos
-files, filesNames = Files.filesImport("./openApiDescriptions")
+importDocs = 1
+filesDescriptions = []
+filesNames = []
+if (importDocs == 1):
+    # Importacion de los documentos
+    print("Importando documentos:")
+    files, filesNames = Files.filesImport("./openApiDescriptions")
 
-# Procesamiento de los documentos
-filesDescriptions = [] # Almacena todas las descripciones de todos los documentos
-print("\nProcesando documentos:")
-for d in tqdm(files, desc="Documento"):
-    filesDescriptions.append(textProcessing.procces(d,commonWords,numberSentences))
+    # Procesamiento de los documentos
+    # filesDescriptions = [] # Almacena todas las descripciones de todos los documentos
+    print("\nProcesando documentos:")
+    for d in tqdm(files, desc="Documento"):
+        filesDescriptions.append(textProcessing.procces(d,commonWords,numberSentences))
+
+else:
+    filesDescriptions = Files.cargar_json_como_diccionario("./outs/filesDescriptions.json")
+    filesNames = Files.filesImportNames("./openApiDescriptions")
 
 # Obtencion de las descripciones como una lista enumerada
 enumFilesDescriptions = enumDescriptions(filesDescriptions)
+
 
 # Agrupacion de las descripciones
 groupings = {}
@@ -79,6 +91,7 @@ print("Realizando el clustering:")
 data,sse,centroids = KmeansClustering.cluster(res, k, nInit)
 
 # Save files
+Files.guardar_diccionario_en_json(filesDescriptions, "./outs/filesDescriptions.json")
 Files.saveFile("\n".join(enumFilesDescriptions), "DescripcionesProcesadas.txt", "./outs/", "w")
 Files.saveFile(str(groupings), "AgrupacionDeDescripciones.json", "./outs/", "w")
 out = outsGenerator.generateOutVectorization(res,filesNames)

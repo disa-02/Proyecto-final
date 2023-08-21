@@ -1,5 +1,8 @@
 import yaml
 import os
+from tqdm import tqdm
+import json
+
 
 
 def _fileImport(fileName):
@@ -17,7 +20,7 @@ def filesImport(folderDir):
     # Importa todos los archivos yaml de una carpeta
     files = os.listdir(folderDir)
     fileList = []
-    for fileName in files:
+    for fileName in tqdm(files,desc="Documento"):
         # chequear si es .yaml
         # print(fileName)
         data = _fileImport(folderDir + "/" + fileName)
@@ -58,4 +61,37 @@ def openTxt(dir):
         print(f"Ocurrió un error al intentar leer el archivo.")
     except IndexError:
         print(f"El archivo de entrada se encuentra mal definido.")
+
+def importDescriptions(dir):
+    try:
+        entries = []    
+        with open(dir,"r") as fileTxt:
+            content = fileTxt.read()
+            content = content.split("\n")
+            for cont in content:
+                cont = cont.split("-")[1]
+                entries.append(cont)
+        return entries
+    except FileNotFoundError:
+        print(f"El archivo de entrada no se encontró.")
+    except IOError:
+        print(f"Ocurrió un error al intentar leer el archivo.")
+    except IndexError:
+        print(f"El archivo de entrada se encuentra mal definido.")
+
+
         
+def guardar_diccionario_en_json(diccionario, nombre_archivo):
+    with open(nombre_archivo, "w") as archivo:
+        json.dump(diccionario, archivo)
+
+def cargar_json_como_diccionario(nombre_archivo):
+    with open(nombre_archivo, "r") as archivo:
+        contenido = json.load(archivo)
+    return contenido
+
+
+def filesImportNames(folderDir):
+    # Importa todos los archivos yaml de una carpeta
+    files = os.listdir(folderDir)
+    return files

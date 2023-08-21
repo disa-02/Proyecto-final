@@ -32,12 +32,11 @@ def _extractDescriptions(data, descriptions, pathInfo):
 
 def _completeDescriptions(descriptions, pathInfo):
     # Completa las descripciones faltantes utilizando chatGPT
-    Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w")
     for path, endpoint in pathInfo.items():
         for method, description in endpoint.items():
             # Request to chatGPT
             prompt = str(path) + ": " + str(method) + ": " + str(description)
-            desc = "Description generated with chat gpt" #ChatGptDescriptions.generateDescription(prompt)
+            desc = ChatGptDescriptions.generateDescription(prompt)
             descriptions[path][method] = desc
             Files.saveFile("path: " + str(path) + ":\n" + "operacion: " + str(method) + "\n" + json.dumps(dict(description)) + "\n\n" + "Descripcion generada: " +
                            desc + "\n\n", "DescripcionesGeneradas.txt", "./outs/", "a")
