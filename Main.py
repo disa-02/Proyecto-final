@@ -36,7 +36,7 @@ Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w") #Lo escribo vac
 
 # Lectura de las entradas
 entries = Files.openTxt("./entries.txt")
-if (len(entries) < 11):
+if (len(entries) < 12):
     print("Error en la entrada, no se definieron todos los atributos")
     sys.exit()
 
@@ -54,16 +54,21 @@ umbral = float(entries[9])
 importDocs = 1
 filesDescriptions = []
 filesNames = []
+time2 = 0
 if (importDocs == 1):
+    
     # Importacion de los documentos
     print("Importando documentos:")
     files, filesNames = Files.filesImport("./openApiDescriptions")
-
+    time2I=time.time()
     # Procesamiento de los documentos
     # filesDescriptions = [] # Almacena todas las descripciones de todos los documentos
     print("\nProcesando documentos:")
     for d in tqdm(files, desc="Documento"):
         filesDescriptions.append(textProcessing.procces(d,commonWords,numberSentences))
+    time2F=time.time()
+    time2=time2F - time2I
+
 
 else:
     filesDescriptions = Files.cargar_json_como_diccionario("./outs/filesDescriptions.json")
@@ -103,6 +108,8 @@ for i in range(0,len(outs)):
     Files.saveFile(outs[i], str(filesNames[i]) + ".txt", "./outs/files/", "w")
 
 # Fin del programa
+print("Tiempo de procesamiento de descripciones")
+print(time2)
 end_time = time.time()
 total_time = end_time - start_time
 print("Programa finalizado")

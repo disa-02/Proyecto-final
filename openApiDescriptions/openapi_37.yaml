@@ -1,2313 +1,2627 @@
-openapi: 3.0.0
-info:
-  version: '2019-09-01'
-  x-release: v4
-  title: Braket
-  description: '<p>The Amazon Braket API Reference provides information about the operations and structures supported in Amazon Braket.</p> <p>Additional Resources:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">Amazon Braket Developer Guide</a> </p> </li> </ul>'
-  x-logo:
-    url: 'https://twitter.com/awscloud/profile_image?size=original'
-    backgroundColor: '#FFFFFF'
-  termsOfService: 'https://aws.amazon.com/service-terms/'
-  contact:
-    name: Mike Ralphson
-    email: mike.ralphson@gmail.com
-    url: 'https://github.com/mermade/aws2openapi'
-    x-twitter: PermittedSoc
-  license:
-    name: Apache 2.0 License
-    url: 'http://www.apache.org/licenses/'
-  x-providerName: amazonaws.com
-  x-serviceName: braket
-  x-aws-signingName: braket
-  x-origin:
-    - contentType: application/json
-      url: 'https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/braket-2019-09-01.normal.json'
-      converter:
-        url: 'https://github.com/mermade/aws2openapi'
-        version: 1.0.0
-      x-apisguru-driver: external
-  x-apiClientRegistration:
-    url: 'https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct'
-  x-apisguru-categories:
-    - cloud
-  x-preferred: true
-externalDocs:
-  description: Amazon Web Services documentation
-  url: 'https://docs.aws.amazon.com/braket/'
+openapi: 3.0.1
 servers:
-  - url: 'http://braket.{region}.amazonaws.com'
-    variables:
-      region:
-        description: The AWS region
-        enum:
-          - us-east-1
-          - us-east-2
-          - us-west-1
-          - us-west-2
-          - us-gov-west-1
-          - us-gov-east-1
-          - ca-central-1
-          - eu-north-1
-          - eu-west-1
-          - eu-west-2
-          - eu-west-3
-          - eu-central-1
-          - eu-south-1
-          - af-south-1
-          - ap-northeast-1
-          - ap-northeast-2
-          - ap-northeast-3
-          - ap-southeast-1
-          - ap-southeast-2
-          - ap-east-1
-          - ap-south-1
-          - sa-east-1
-          - me-south-1
-        default: us-east-1
-    description: The Braket multi-region endpoint
-  - url: 'https://braket.{region}.amazonaws.com'
-    variables:
-      region:
-        description: The AWS region
-        enum:
-          - us-east-1
-          - us-east-2
-          - us-west-1
-          - us-west-2
-          - us-gov-west-1
-          - us-gov-east-1
-          - ca-central-1
-          - eu-north-1
-          - eu-west-1
-          - eu-west-2
-          - eu-west-3
-          - eu-central-1
-          - eu-south-1
-          - af-south-1
-          - ap-northeast-1
-          - ap-northeast-2
-          - ap-northeast-3
-          - ap-southeast-1
-          - ap-southeast-2
-          - ap-east-1
-          - ap-south-1
-          - sa-east-1
-          - me-south-1
-        default: us-east-1
-    description: The Braket multi-region endpoint
-  - url: 'http://braket.{region}.amazonaws.com.cn'
-    variables:
-      region:
-        description: The AWS region
-        enum:
-          - cn-north-1
-          - cn-northwest-1
-        default: cn-north-1
-    description: The Braket endpoint for China (Beijing) and China (Ningxia)
-  - url: 'https://braket.{region}.amazonaws.com.cn'
-    variables:
-      region:
-        description: The AWS region
-        enum:
-          - cn-north-1
-          - cn-northwest-1
-        default: cn-north-1
-    description: The Braket endpoint for China (Beijing) and China (Ningxia)
-x-hasEquivalentPaths: true
+  - url: https://supersim.twilio.com
+info:
+  contact:
+    email: support@twilio.com
+    name: Twilio Support
+    url: https://support.twilio.com
+  description: This is the public Twilio REST API.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://www.twilio.com/legal/tos
+  title: Twilio - Supersim
+  version: 1.47.0
+  x-apisguru-categories:
+    - telecom
+    - messaging
+  x-logo:
+    url: https://static1.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg
+  x-origin:
+    - format: openapi
+      url: https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_supersim_v1.json
+      version: "3.0"
+  x-providerName: twilio.com
+  x-serviceName: twilio_supersim_v1
+tags:
+  - name: SupersimV1BillingPeriod
+  - name: SupersimV1EsimProfile
+  - name: SupersimV1Fleet
+  - name: SupersimV1IpCommand
+  - name: SupersimV1Network
+  - name: SupersimV1NetworkAccessProfile
+  - name: SupersimV1NetworkAccessProfileNetwork
+  - name: SupersimV1SettingsUpdate
+  - name: SupersimV1Sim
+  - name: SupersimV1SimIpAddress
+  - name: SupersimV1SmsCommand
+  - name: SupersimV1UsageRecord
 paths:
-  '/job/{jobArn}/cancel':
-    put:
-      operationId: CancelJob
-      description: Cancels an Amazon Braket job.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CancelJobResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '482':
-          description: ConflictException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ConflictException'
-        '483':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '484':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '485':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: jobArn
-          in: path
-          required: true
-          description: The ARN of the Amazon Braket job to cancel.
-          schema:
-            type: string
-            pattern: '^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$'
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  '/quantum-task/{quantumTaskArn}/cancel':
-    put:
-      operationId: CancelQuantumTask
-      description: Cancels the specified task.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CancelQuantumTaskResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '482':
-          description: ConflictException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ConflictException'
-        '483':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '484':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '485':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: quantumTaskArn
-          in: path
-          required: true
-          description: The ARN of the task to cancel.
-          schema:
-            type: string
-            minLength: 1
-            maxLength: 256
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - clientToken
-              properties:
-                clientToken:
-                  description: The client token associated with the request.
-                  type: string
-                  minLength: 1
-                  maxLength: 64
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  /job:
-    post:
-      operationId: CreateJob
-      description: Creates an Amazon Braket job.
-      responses:
-        '201':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateJobResponse'
-        '480':
-          description: ConflictException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ConflictException'
-        '481':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '482':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '483':
-          description: DeviceRetiredException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DeviceRetiredException'
-        '484':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '485':
-          description: ServiceQuotaExceededException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ServiceQuotaExceededException'
-        '486':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - algorithmSpecification
-                - clientToken
-                - deviceConfig
-                - instanceConfig
-                - jobName
-                - outputDataConfig
-                - roleArn
-              properties:
-                algorithmSpecification:
-                  description: Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.
-                  type: object
-                  properties:
-                    containerImage:
-                      allOf:
-                        - $ref: '#/components/schemas/ContainerImage'
-                        - description: The container image used to create an Amazon Braket job.
-                    scriptModeConfig:
-                      allOf:
-                        - $ref: '#/components/schemas/ScriptModeConfig'
-                        - description: Configures the paths to the Python scripts used for entry and training.
-                checkpointConfig:
-                  description: Contains information about the output locations for job checkpoint data.
-                  type: object
-                  properties:
-                    localPath:
-                      allOf:
-                        - $ref: '#/components/schemas/String4096'
-                        - description: (Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.
-                    s3Uri:
-                      allOf:
-                        - $ref: '#/components/schemas/S3Path'
-                        - description: 'Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.'
-                clientToken:
-                  description: A unique token that guarantees that the call to this API is idempotent.
-                  type: string
-                  minLength: 1
-                  maxLength: 64
-                deviceConfig:
-                  description: Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.
-                  type: object
-                  properties:
-                    device:
-                      allOf:
-                        - $ref: '#/components/schemas/String256'
-                        - description: The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.
-                hyperParameters:
-                  description: 'Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.'
-                  type: object
-                  minProperties: 0
-                  maxProperties: 100
-                  additionalProperties:
-                    $ref: '#/components/schemas/HyperParametersValueString'
-                inputDataConfig:
-                  description: A list of parameters that specify the name and type of input data and where it is located.
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/InputFileConfig'
-                  minItems: 0
-                  maxItems: 20
-                instanceConfig:
-                  description: Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon Braket.
-                  type: object
-                  properties:
-                    instanceCount:
-                      allOf:
-                        - $ref: '#/components/schemas/InstanceConfigInstanceCountInteger'
-                        - description: Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.
-                    instanceType:
-                      allOf:
-                        - $ref: '#/components/schemas/InstanceType'
-                        - description: Configures the type resource instances to use while running an Amazon Braket hybrid job.
-                    volumeSizeInGb:
-                      allOf:
-                        - $ref: '#/components/schemas/InstanceConfigVolumeSizeInGbInteger'
-                        - description: 'The size of the storage volume, in GB, that user wants to provision.'
-                jobName:
-                  description: The name of the Amazon Braket job.
-                  type: string
-                  pattern: '^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$'
-                  minLength: 1
-                  maxLength: 50
-                outputDataConfig:
-                  description: Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.
-                  type: object
-                  properties:
-                    kmsKeyId:
-                      allOf:
-                        - $ref: '#/components/schemas/String2048'
-                        - description: The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.
-                    s3Path:
-                      allOf:
-                        - $ref: '#/components/schemas/S3Path'
-                        - description: 'Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.'
-                roleArn:
-                  description: 'The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users'' s3 buckets.'
-                  type: string
-                  pattern: '^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$'
-                stoppingCondition:
-                  description: 'Specifies limits for how long an Amazon Braket job can run. '
-                  type: object
-                  properties:
-                    maxRuntimeInSeconds:
-                      allOf:
-                        - $ref: '#/components/schemas/JobStoppingConditionMaxRuntimeInSecondsInteger'
-                        - description: 'The maximum length of time, in seconds, that an Amazon Braket job can run.'
-                tags:
-                  description: 'A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.'
-                  type: object
-                  additionalProperties:
-                    $ref: '#/components/schemas/String'
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  /quantum-task:
-    post:
-      operationId: CreateQuantumTask
-      description: Creates a quantum task.
-      responses:
-        '201':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateQuantumTaskResponse'
-        '480':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '481':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '482':
-          description: DeviceOfflineException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DeviceOfflineException'
-        '483':
-          description: DeviceRetiredException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DeviceRetiredException'
-        '484':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '485':
-          description: ServiceQuotaExceededException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ServiceQuotaExceededException'
-        '486':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - action
-                - clientToken
-                - deviceArn
-                - outputS3Bucket
-                - outputS3KeyPrefix
-                - shots
-              properties:
-                action:
-                  description: The action associated with the task.
-                  type: string
-                clientToken:
-                  description: The client token associated with the request.
-                  type: string
-                  minLength: 1
-                  maxLength: 64
-                deviceArn:
-                  description: The ARN of the device to run the task on.
-                  type: string
-                  minLength: 1
-                  maxLength: 256
-                deviceParameters:
-                  description: The parameters for the device to run the task on.
-                  type: string
-                  minLength: 1
-                  maxLength: 48000
-                jobToken:
-                  description: The token for an Amazon Braket job that associates it with the quantum task.
-                  type: string
-                  minLength: 1
-                  maxLength: 128
-                outputS3Bucket:
-                  description: The S3 bucket to store task result files in.
-                  type: string
-                  minLength: 3
-                  maxLength: 63
-                outputS3KeyPrefix:
-                  description: The key prefix for the location in the S3 bucket to store task results in.
-                  type: string
-                  minLength: 1
-                  maxLength: 1024
-                shots:
-                  description: The number of shots to use for the task.
-                  type: integer
-                  minimum: 0
-                tags:
-                  description: Tags to be added to the quantum task you're creating.
-                  type: object
-                  additionalProperties:
-                    $ref: '#/components/schemas/String'
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  '/device/{deviceArn}':
+  /v1/ESimProfiles:
+    description: eSIM Profiles that can be loaded onto consumer eUICC SIMs
     get:
-      operationId: GetDevice
-      description: '<p>Retrieves the devices available in Amazon Braket.</p> <note> <p>For backwards compatibility with older versions of BraketSchemas, OpenQASM information is omitted from GetDevice API calls. To get this information the user-agent needs to present a recent version of the BraketSchemas (1.8.0 or later). The Braket SDK automatically reports this for you. If you do not see OpenQASM results in the GetDevice response when using a Braket SDK, you may need to set AWS_EXECUTION_ENV environment variable to configure user-agent. See the code examples provided below for how to do this for the AWS CLI, Boto3, and the Go, Java, and JavaScript/TypeScript SDKs.</p> </note>'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetDeviceResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '482':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '483':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '484':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
+      description: Retrieve a list of eSIM Profiles.
+      operationId: ListEsimProfile
       parameters:
-        - name: deviceArn
-          in: path
-          required: true
-          description: The ARN of the device to retrieve.
-          schema:
-            type: string
-            minLength: 1
-            maxLength: 256
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  '/job/{jobArn}':
-    get:
-      operationId: GetJob
-      description: Retrieves the specified Amazon Braket job.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetJobResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '482':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '483':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '484':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: jobArn
-          in: path
-          required: true
-          description: The ARN of the job to retrieve.
-          schema:
-            type: string
-            pattern: '^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$'
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  '/quantum-task/{quantumTaskArn}':
-    get:
-      operationId: GetQuantumTask
-      description: Retrieves the specified quantum task.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetQuantumTaskResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '482':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '483':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '484':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: quantumTaskArn
-          in: path
-          required: true
-          description: the ARN of the task to retrieve.
-          schema:
-            type: string
-            minLength: 1
-            maxLength: 256
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  '/tags/{resourceArn}':
-    get:
-      operationId: ListTagsForResource
-      description: Shows the tags associated with this resource.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListTagsForResourceResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '482':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: resourceArn
-          in: path
-          required: true
-          description: Specify the <code>resourceArn</code> for the resource whose tags to display.
-          schema:
-            type: string
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-    post:
-      operationId: TagResource
-      description: Add a tag to the specified resource.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TagResourceResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '482':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: resourceArn
-          in: path
-          required: true
-          description: Specify the <code>resourceArn</code> of the resource to which a tag will be added.
-          schema:
-            type: string
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - tags
-              properties:
-                tags:
-                  description: Specify the tags to add to the resource.
-                  type: object
-                  additionalProperties:
-                    $ref: '#/components/schemas/String'
-  /devices:
-    post:
-      operationId: SearchDevices
-      description: Searches for devices using the specified filters.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SearchDevicesResponse'
-        '480':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '481':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '482':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '483':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: maxResults
+        - description: List the eSIM Profiles that have been associated with an EId.
           in: query
+          name: Eid
           schema:
             type: string
-          description: Pagination limit
-          required: false
-        - name: nextToken
+        - description: Find the eSIM Profile resource related to a [Sim](https://www.twilio.com/docs/iot/wireless/api/sim-resource) resource by providing the SIM SID. Will always return an array with either 1 or 0 records.
           in: query
+          name: SimSid
           schema:
             type: string
-          description: Pagination token
-          required: false
+        - description: List the eSIM Profiles that are in a given status.
+          in: query
+          name: Status
+          schema:
+            $ref: "#/components/schemas/esim_profile_enum_status"
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  esim_profiles:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.esim_profile"
+                    type: array
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                title: ListEsimProfileResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1EsimProfile
+      x-maturity:
+        - Beta
+    post:
+      description: Order an eSIM Profile.
+      operationId: CreateEsimProfile
       requestBody:
-        required: true
         content:
-          application/json:
+          application/x-www-form-urlencoded:
             schema:
-              type: object
-              required:
-                - filters
               properties:
-                filters:
-                  description: The filter values to use to search for a device.
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/SearchDevicesFilter'
-                  minItems: 0
-                  maxItems: 10
-                maxResults:
-                  description: The maximum number of results to return in the response.
-                  type: integer
-                  minimum: 1
-                  maximum: 100
-                nextToken:
-                  description: A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.
+                CallbackMethod:
+                  description: "The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is POST."
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
                   type: string
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  /jobs:
-    post:
-      operationId: SearchJobs
-      description: Searches for Amazon Braket jobs that match the specified filter values.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SearchJobsResponse'
-        '480':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '481':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '482':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '483':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: maxResults
-          in: query
-          schema:
-            type: string
-          description: Pagination limit
-          required: false
-        - name: nextToken
-          in: query
-          schema:
-            type: string
-          description: Pagination token
-          required: false
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - filters
-              properties:
-                filters:
-                  description: The filter values to use when searching for a job.
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/SearchJobsFilter'
-                  minItems: 0
-                  maxItems: 10
-                maxResults:
-                  description: The maximum number of results to return in the response.
-                  type: integer
-                  minimum: 1
-                  maximum: 100
-                nextToken:
-                  description: A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.
+                CallbackUrl:
+                  description: The URL we should call using the `callback_method` when the status of the eSIM Profile changes. At this stage of the eSIM Profile pilot, the a request to the URL will only be called when the ESimProfile resource changes from `reserving` to `available`.
                   type: string
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  /quantum-tasks:
-    post:
-      operationId: SearchQuantumTasks
-      description: Searches for tasks that match the specified filter values.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SearchQuantumTasksResponse'
-        '480':
-          description: AccessDeniedException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessDeniedException'
-        '481':
-          description: ThrottlingException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ThrottlingException'
-        '482':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '483':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
-      parameters:
-        - name: maxResults
-          in: query
-          schema:
-            type: string
-          description: Pagination limit
-          required: false
-        - name: nextToken
-          in: query
-          schema:
-            type: string
-          description: Pagination token
-          required: false
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - filters
-              properties:
-                filters:
-                  description: Array of <code>SearchQuantumTasksFilter</code> objects.
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/SearchQuantumTasksFilter'
-                  minItems: 0
-                  maxItems: 10
-                maxResults:
-                  description: Maximum number of results to return in the response.
-                  type: integer
-                  minimum: 1
-                  maximum: 100
-                nextToken:
-                  description: A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.
+                Eid:
+                  description: Identifier of the eUICC that will claim the eSIM Profile.
                   type: string
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-  '/tags/{resourceArn}#tagKeys':
+                GenerateMatchingId:
+                  description: When set to `true`, a value for `Eid` does not need to be provided. Instead, when the eSIM profile is reserved, a matching ID will be generated and returned via the `matching_id` property. This identifies the specific eSIM profile that can be used by any capable device to claim and download the profile.
+                  type: boolean
+              title: CreateEsimProfileRequest
+              type: object
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.esim_profile"
+          description: Created
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1EsimProfile
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - status
+      mountName: esim_profiles
+      pathType: list
+  "/v1/ESimProfiles/{Sid}":
+    description: eSIM Profiles that can be loaded onto consumer eUICC SIMs
+    get:
+      description: Fetch an eSIM Profile.
+      operationId: FetchEsimProfile
+      parameters:
+        - description: The SID of the eSIM Profile resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.esim_profile"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1EsimProfile
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - status
+      mountName: esim_profiles
+      pathType: instance
+  /v1/Fleets:
+    description: Configure shared settings inherited by all Super SIMs assigned to the Fleet
+    get:
+      description: Retrieve a list of Fleets from your account.
+      operationId: ListFleet
+      parameters:
+        - description: The SID or unique name of the Network Access Profile that controls which cellular networks the Fleet's SIMs can connect to.
+          in: query
+          name: NetworkAccessProfile
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  fleets:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.fleet"
+                    type: array
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                title: ListFleetResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Fleet
+      x-maturity:
+        - Beta
+    post:
+      description: Create a Fleet
+      operationId: CreateFleet
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                DataEnabled:
+                  description: Defines whether SIMs in the Fleet are capable of using 2G/3G/4G/LTE/CAT-M data connectivity. Defaults to `true`.
+                  type: boolean
+                DataLimit:
+                  description: The total data usage (download and upload combined) in Megabytes that each Super SIM assigned to the Fleet can consume during a billing period (normally one month). Value must be between 1MB (1) and 2TB (2,000,000). Defaults to 1GB (1,000).
+                  type: integer
+                IpCommandsMethod:
+                  description: A string representing the HTTP method to use when making a request to `ip_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`.
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
+                  type: string
+                IpCommandsUrl:
+                  description: The URL that will receive a webhook when a Super SIM in the Fleet is used to send an IP Command from your device to a special IP address. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored.
+                  format: uri
+                  type: string
+                NetworkAccessProfile:
+                  description: The SID or unique name of the Network Access Profile that will control which cellular networks the Fleet's SIMs can connect to.
+                  type: string
+                SmsCommandsEnabled:
+                  description: Defines whether SIMs in the Fleet are capable of sending and receiving machine-to-machine SMS via Commands. Defaults to `true`.
+                  type: boolean
+                SmsCommandsMethod:
+                  description: A string representing the HTTP method to use when making a request to `sms_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`.
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
+                  type: string
+                SmsCommandsUrl:
+                  description: The URL that will receive a webhook when a Super SIM in the Fleet is used to send an SMS from your device to the SMS Commands number. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored.
+                  format: uri
+                  type: string
+                UniqueName:
+                  description: An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
+                  type: string
+              required:
+                - NetworkAccessProfile
+              title: CreateFleetRequest
+              type: object
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.fleet"
+          description: Created
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Fleet
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - unique_name
+        - data_metering
+      pathType: list
+  "/v1/Fleets/{Sid}":
+    description: Configure shared settings inherited by all Super SIMs assigned to the Fleet
+    get:
+      description: Fetch a Fleet instance from your account.
+      operationId: FetchFleet
+      parameters:
+        - description: The SID of the Fleet resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.fleet"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Fleet
+      x-maturity:
+        - Beta
+    post:
+      description: Updates the given properties of a Super SIM Fleet instance from your account.
+      operationId: UpdateFleet
+      parameters:
+        - description: The SID of the Fleet resource to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                DataLimit:
+                  description: The total data usage (download and upload combined) in Megabytes that each Super SIM assigned to the Fleet can consume during a billing period (normally one month). Value must be between 1MB (1) and 2TB (2,000,000). Defaults to 1GB (1,000).
+                  type: integer
+                IpCommandsMethod:
+                  description: A string representing the HTTP method to use when making a request to `ip_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`.
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
+                  type: string
+                IpCommandsUrl:
+                  description: The URL that will receive a webhook when a Super SIM in the Fleet is used to send an IP Command from your device to a special IP address. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored.
+                  format: uri
+                  type: string
+                NetworkAccessProfile:
+                  description: The SID or unique name of the Network Access Profile that will control which cellular networks the Fleet's SIMs can connect to.
+                  type: string
+                SmsCommandsMethod:
+                  description: A string representing the HTTP method to use when making a request to `sms_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`.
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
+                  type: string
+                SmsCommandsUrl:
+                  description: The URL that will receive a webhook when a Super SIM in the Fleet is used to send an SMS from your device to the SMS Commands number. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored.
+                  format: uri
+                  type: string
+                UniqueName:
+                  description: An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
+                  type: string
+              title: UpdateFleetRequest
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.fleet"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Fleet
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - unique_name
+        - data_metering
+      pathType: instance
+  /v1/IpCommands:
+    description: Machine-to-machine IP Commands sent to/from Super SIMs
+    get:
+      description: Retrieve a list of IP Commands from your account.
+      operationId: ListIpCommand
+      parameters:
+        - description: The SID or unique name of the Sim resource that IP Command was sent to or from.
+          in: query
+          name: Sim
+          schema:
+            type: string
+        - description: The ICCID of the Sim resource that IP Command was sent to or from.
+          in: query
+          name: SimIccid
+          schema:
+            type: string
+        - description: "The status of the IP Command. Can be: `queued`, `sent`, `received` or `failed`. See the [IP Command Status Values](https://www.twilio.com/docs/iot/supersim/api/ipcommand-resource#status-values) for a description of each."
+          in: query
+          name: Status
+          schema:
+            $ref: "#/components/schemas/ip_command_enum_status"
+            type: string
+        - description: The direction of the IP Command. Can be `to_sim` or `from_sim`. The value of `to_sim` is synonymous with the term `mobile terminated`, and `from_sim` is synonymous with the term `mobile originated`.
+          in: query
+          name: Direction
+          schema:
+            $ref: "#/components/schemas/ip_command_enum_direction"
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  ip_commands:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.ip_command"
+                    type: array
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                title: ListIpCommandResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1IpCommand
+      x-maturity:
+        - Beta
+    post:
+      description: Send an IP Command to a Super SIM.
+      operationId: CreateIpCommand
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                CallbackMethod:
+                  description: The HTTP method we should use to call `callback_url`. Can be `GET` or `POST`, and the default is `POST`.
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
+                  type: string
+                CallbackUrl:
+                  description: The URL we should call using the `callback_method` after we have sent the IP Command.
+                  format: uri
+                  type: string
+                DevicePort:
+                  description: The device port to which the IP Command will be sent.
+                  type: integer
+                Payload:
+                  description: The data that will be sent to the device. The payload cannot exceed 1300 bytes. If the PayloadType is set to text, the payload is encoded in UTF-8. If PayloadType is set to binary, the payload is encoded in Base64.
+                  type: string
+                PayloadType:
+                  $ref: "#/components/schemas/ip_command_enum_payload_type"
+                  description: Indicates how the payload is encoded. Either `text` or `binary`. Defaults to `text`.
+                  type: string
+                Sim:
+                  description: The `sid` or `unique_name` of the [Super SIM](https://www.twilio.com/docs/iot/supersim/api/sim-resource) to send the IP Command to.
+                  type: string
+              required:
+                - Sim
+                - Payload
+                - DevicePort
+              title: CreateIpCommandRequest
+              type: object
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.ip_command"
+          description: Created
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1IpCommand
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - status
+        - date_created
+      pathType: list
+  "/v1/IpCommands/{Sid}":
+    description: Machine-to-machine IP Commands sent to/from Super SIMs
+    get:
+      description: Fetch IP Command instance from your account.
+      operationId: FetchIpCommand
+      parameters:
+        - description: The SID of the IP Command resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^HG[0-9a-fA-F]{32}$
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.ip_command"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1IpCommand
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - status
+        - date_created
+      pathType: instance
+  /v1/NetworkAccessProfiles:
+    description: "TODO: Resource-level docs"
+    get:
+      description: Retrieve a list of Network Access Profiles from your account.
+      operationId: ListNetworkAccessProfile
+      parameters:
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                  network_access_profiles:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.network_access_profile"
+                    type: array
+                title: ListNetworkAccessProfileResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfile
+      x-maturity:
+        - Beta
+    post:
+      description: Create a new Network Access Profile
+      operationId: CreateNetworkAccessProfile
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Networks:
+                  description: List of Network SIDs that this Network Access Profile will allow connections to.
+                  items:
+                    type: string
+                  type: array
+                UniqueName:
+                  description: An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
+                  type: string
+              title: CreateNetworkAccessProfileRequest
+              type: object
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.network_access_profile"
+          description: Created
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfile
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - unique_name
+        - fleets_count
+      dependentProperties:
+        network_access_profile_network: "{network_access_profile_sid: sid}"
+      pathType: list
+  "/v1/NetworkAccessProfiles/{NetworkAccessProfileSid}/Networks":
+    description: Mobile operator networks which Network Access Profiles allow access to
+    get:
+      description: Retrieve a list of Network Access Profile resource's Network resource.
+      operationId: ListNetworkAccessProfileNetwork
+      parameters:
+        - description: The unique string that identifies the Network Access Profile resource.
+          in: path
+          name: NetworkAccessProfileSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                  networks:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.network_access_profile.network_access_profile_network"
+                    type: array
+                title: ListNetworkAccessProfileNetworkResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfileNetwork
+      x-maturity:
+        - Beta
+    post:
+      description: Add a Network resource to the Network Access Profile resource.
+      operationId: CreateNetworkAccessProfileNetwork
+      parameters:
+        - description: The unique string that identifies the Network Access Profile resource.
+          in: path
+          name: NetworkAccessProfileSid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Network:
+                  description: The SID of the Network resource to be added to the Network Access Profile resource.
+                  maxLength: 34
+                  minLength: 34
+                  pattern: ^HW[0-9a-fA-F]{32}$
+                  type: string
+              required:
+                - Network
+              title: CreateNetworkAccessProfileNetworkRequest
+              type: object
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.network_access_profile.network_access_profile_network"
+          description: Created
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfileNetwork
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      className: network_access_profile_network
+      defaultOutputProperties:
+        - sid
+      parent: /NetworkAccessProfiles/{Sid}
+      pathType: list
+  "/v1/NetworkAccessProfiles/{NetworkAccessProfileSid}/Networks/{Sid}":
     delete:
-      operationId: UntagResource
-      description: Remove tags from a resource.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UntagResourceResponse'
-        '480':
-          description: ResourceNotFoundException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFoundException'
-        '481':
-          description: InternalServiceException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServiceException'
-        '482':
-          description: ValidationException
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException'
+      description: Remove a Network resource from the Network Access Profile resource's.
+      operationId: DeleteNetworkAccessProfileNetwork
       parameters:
-        - name: resourceArn
+        - description: The unique string that identifies the Network Access Profile resource.
           in: path
+          name: NetworkAccessProfileSid
           required: true
-          description: Specify the <code>resourceArn</code> for the resource from which to remove the tags.
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^HA[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Network resource to be removed from the Network Access Profile resource.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^HW[0-9a-fA-F]{32}$
+            type: string
+      responses:
+        "204":
+          description: The resource was deleted successfully.
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfileNetwork
+      x-maturity:
+        - Beta
+    description: Mobile operator networks which Network Access Profiles allow access to
+    get:
+      description: Fetch a Network Access Profile resource's Network resource.
+      operationId: FetchNetworkAccessProfileNetwork
+      parameters:
+        - description: The unique string that identifies the Network Access Profile resource.
+          in: path
+          name: NetworkAccessProfileSid
+          required: true
           schema:
             type: string
-        - name: tagKeys
-          in: query
+        - description: The SID of the Network resource to fetch.
+          in: path
+          name: Sid
           required: true
-          description: Specify the keys for the tags to remove from the resource.
           schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/String'
-    parameters:
-      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
-      - $ref: '#/components/parameters/X-Amz-Date'
-      - $ref: '#/components/parameters/X-Amz-Algorithm'
-      - $ref: '#/components/parameters/X-Amz-Credential'
-      - $ref: '#/components/parameters/X-Amz-Security-Token'
-      - $ref: '#/components/parameters/X-Amz-Signature'
-      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+            maxLength: 34
+            minLength: 34
+            pattern: ^HW[0-9a-fA-F]{32}$
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.network_access_profile.network_access_profile_network"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfileNetwork
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      className: network_access_profile_network
+      defaultOutputProperties:
+        - sid
+      parent: /NetworkAccessProfiles/{Sid}
+      pathType: instance
+  "/v1/NetworkAccessProfiles/{Sid}":
+    description: "TODO: Resource-level docs"
+    get:
+      description: Fetch a Network Access Profile instance from your account.
+      operationId: FetchNetworkAccessProfile
+      parameters:
+        - description: The SID of the Network Access Profile resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.network_access_profile"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfile
+      x-maturity:
+        - Beta
+    post:
+      description: Updates the given properties of a Network Access Profile in your account.
+      operationId: UpdateNetworkAccessProfile
+      parameters:
+        - description: The SID of the Network Access Profile to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                UniqueName:
+                  description: The new unique name of the Network Access Profile.
+                  type: string
+              title: UpdateNetworkAccessProfileRequest
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.network_access_profile"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1NetworkAccessProfile
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - unique_name
+        - fleets_count
+      dependentProperties:
+        network_access_profile_network: "{network_access_profile_sid: sid}"
+      pathType: instance
+  /v1/Networks:
+    description: Mobile operator networks to which Super SIMs can connect
+    get:
+      description: Retrieve a list of Network resources.
+      operationId: ListNetwork
+      parameters:
+        - description: The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Network resources to read.
+          in: query
+          name: IsoCountry
+          schema:
+            type: string
+        - description: The 'mobile country code' of a country. Network resources with this `mcc` in their `identifiers` will be read.
+          in: query
+          name: Mcc
+          schema:
+            type: string
+        - description: The 'mobile network code' of a mobile operator network. Network resources with this `mnc` in their `identifiers` will be read.
+          in: query
+          name: Mnc
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                  networks:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.network"
+                    type: array
+                title: ListNetworkResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Network
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+      pathType: list
+  "/v1/Networks/{Sid}":
+    description: Mobile operator networks to which Super SIMs can connect
+    get:
+      description: Fetch a Network resource.
+      operationId: FetchNetwork
+      parameters:
+        - description: The SID of the Network resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^HW[0-9a-fA-F]{32}$
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.network"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Network
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+      pathType: instance
+  /v1/SettingsUpdates:
+    description: "TODO: Resource-level docs"
+    get:
+      description: Retrieve a list of Settings Updates.
+      operationId: ListSettingsUpdate
+      parameters:
+        - description: Filter the Settings Updates by a Super SIM's SID or UniqueName.
+          in: query
+          name: Sim
+          schema:
+            type: string
+        - description: Filter the Settings Updates by status. Can be `scheduled`, `in-progress`, `successful`, or `failed`.
+          in: query
+          name: Status
+          schema:
+            $ref: "#/components/schemas/settings_update_enum_status"
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                  settings_updates:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.settings_update"
+                    type: array
+                title: ListSettingsUpdateResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1SettingsUpdate
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - iccid
+        - sim_sid
+        - status
+      pathType: list
+  /v1/Sims:
+    description: Individual IoT Super SIMs
+    get:
+      description: Retrieve a list of Super SIMs from your account.
+      operationId: ListSim
+      parameters:
+        - description: The status of the Sim resources to read. Can be `new`, `ready`, `active`, `inactive`, or `scheduled`.
+          in: query
+          name: Status
+          schema:
+            $ref: "#/components/schemas/sim_enum_status"
+            type: string
+        - description: The SID or unique name of the Fleet to which a list of Sims are assigned.
+          in: query
+          name: Fleet
+          schema:
+            type: string
+        - description: The [ICCID](https://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID) associated with a Super SIM to filter the list by. Passing this parameter will always return a list containing zero or one SIMs.
+          in: query
+          name: Iccid
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                  sims:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.sim"
+                    type: array
+                title: ListSimResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Sim
+      x-maturity:
+        - Beta
+    post:
+      description: Register a Super SIM to your Account
+      operationId: CreateSim
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Iccid:
+                  description: The [ICCID](https://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID) of the Super SIM to be added to your Account.
+                  type: string
+                RegistrationCode:
+                  description: The 10-digit code required to claim the Super SIM for your Account.
+                  type: string
+              required:
+                - Iccid
+                - RegistrationCode
+              title: CreateSimRequest
+              type: object
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.sim"
+          description: Created
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Sim
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - unique_name
+        - status
+      dependentProperties:
+        billing_period: "{sim_sid: sid}"
+        sim_ip_address: "{sim_sid: sid}"
+      pathType: list
+  "/v1/Sims/{Sid}":
+    description: Individual IoT Super SIMs
+    get:
+      description: Fetch a Super SIM instance from your account.
+      operationId: FetchSim
+      parameters:
+        - description: The SID of the Sim resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.sim"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Sim
+      x-maturity:
+        - Beta
+    post:
+      description: Updates the given properties of a Super SIM instance from your account.
+      operationId: UpdateSim
+      parameters:
+        - description: The SID of the Sim resource to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                AccountSid:
+                  description: The SID of the Account to which the Sim resource should belong. The Account SID can only be that of the requesting Account or that of a Subaccount of the requesting Account. Only valid when the Sim resource's status is new.
+                  type: string
+                CallbackMethod:
+                  description: "The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is POST."
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
+                  type: string
+                CallbackUrl:
+                  description: The URL we should call using the `callback_method` after an asynchronous update has finished.
+                  format: uri
+                  type: string
+                Fleet:
+                  description: The SID or unique name of the Fleet to which the SIM resource should be assigned.
+                  type: string
+                Status:
+                  $ref: "#/components/schemas/sim_enum_status_update"
+                  description: "The new status of the resource. Can be: `ready`, `active`, or `inactive`. See the [Super SIM Status Values](https://www.twilio.com/docs/iot/supersim/api/sim-resource#status-values) for more info."
+                  type: string
+                UniqueName:
+                  description: An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
+                  type: string
+              title: UpdateSimRequest
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.sim"
+          description: OK
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.sim"
+          description: Accepted
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1Sim
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - unique_name
+        - status
+      dependentProperties:
+        billing_period: "{sim_sid: sid}"
+        sim_ip_address: "{sim_sid: sid}"
+      pathType: instance
+  "/v1/Sims/{SimSid}/BillingPeriods":
+    description: Billing Period for an IoT Super SIM
+    get:
+      description: Retrieve a list of Billing Periods for a Super SIM.
+      operationId: ListBillingPeriod
+      parameters:
+        - description: The SID of the Super SIM to list Billing Periods for.
+          in: path
+          name: SimSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  billing_periods:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.sim.billing_period"
+                    type: array
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                title: ListBillingPeriodResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1BillingPeriod
+      x-maturity:
+        - GA
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - sim_sid
+        - start_time
+        - end_time
+        - period_type
+      parent: /Sims/{Sid}
+      pathType: list
+  "/v1/Sims/{SimSid}/IpAddresses":
+    description: IP Addresses for a Super SIM configured to use a VPN connection
+    get:
+      description: Retrieve a list of IP Addresses for the given Super SIM.
+      operationId: ListSimIpAddress
+      parameters:
+        - description: The SID of the Super SIM to list IP Addresses for.
+          in: path
+          name: SimSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  ip_addresses:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.sim.sim_ip_address"
+                    type: array
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                title: ListSimIpAddressResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1SimIpAddress
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - ip_address
+        - ip_address_version
+      mountName: sim_ip_addresses
+      parent: /Sims/{Sid}
+      pathType: list
+  /v1/SmsCommands:
+    description: Machine-to-machine SMS Commands sent to/from SIMs
+    get:
+      description: Retrieve a list of SMS Commands from your account.
+      operationId: ListSmsCommand
+      parameters:
+        - description: The SID or unique name of the Sim resource that SMS Command was sent to or from.
+          in: query
+          name: Sim
+          schema:
+            type: string
+        - description: "The status of the SMS Command. Can be: `queued`, `sent`, `delivered`, `received` or `failed`. See the [SMS Command Status Values](https://www.twilio.com/docs/iot/supersim/api/smscommand-resource#status-values) for a description of each."
+          in: query
+          name: Status
+          schema:
+            $ref: "#/components/schemas/sms_command_enum_status"
+            type: string
+        - description: The direction of the SMS Command. Can be `to_sim` or `from_sim`. The value of `to_sim` is synonymous with the term `mobile terminated`, and `from_sim` is synonymous with the term `mobile originated`.
+          in: query
+          name: Direction
+          schema:
+            $ref: "#/components/schemas/sms_command_enum_direction"
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                  sms_commands:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.sms_command"
+                    type: array
+                title: ListSmsCommandResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1SmsCommand
+      x-maturity:
+        - Beta
+    post:
+      description: Send SMS Command to a Sim.
+      operationId: CreateSmsCommand
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                CallbackMethod:
+                  description: "The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is POST."
+                  enum:
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
+                  format: http-method
+                  type: string
+                CallbackUrl:
+                  description: The URL we should call using the `callback_method` after we have sent the command.
+                  format: uri
+                  type: string
+                Payload:
+                  description: The message body of the SMS Command.
+                  type: string
+                Sim:
+                  description: The `sid` or `unique_name` of the [SIM](https://www.twilio.com/docs/iot/supersim/api/sim-resource) to send the SMS Command to.
+                  type: string
+              required:
+                - Sim
+                - Payload
+              title: CreateSmsCommandRequest
+              type: object
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.sms_command"
+          description: Created
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1SmsCommand
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - status
+        - date_created
+      pathType: list
+  "/v1/SmsCommands/{Sid}":
+    description: Machine-to-machine SMS Commands sent to/from SIMs
+    get:
+      description: Fetch SMS Command instance from your account.
+      operationId: FetchSmsCommand
+      parameters:
+        - description: The SID of the SMS Command resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^HC[0-9a-fA-F]{32}$
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/supersim.v1.sms_command"
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1SmsCommand
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - sid
+        - status
+        - date_created
+      pathType: instance
+  /v1/UsageRecords:
+    description: Usage information for Sim resources
+    get:
+      description: List UsageRecords
+      operationId: ListUsageRecord
+      parameters:
+        - description: SID or unique name of a Sim resource. Only show UsageRecords representing usage incurred by this Super SIM.
+          in: query
+          name: Sim
+          schema:
+            type: string
+        - description: SID or unique name of a Fleet resource. Only show UsageRecords representing usage for Super SIMs belonging to this Fleet resource at the time the usage occurred.
+          in: query
+          name: Fleet
+          schema:
+            type: string
+        - description: SID of a Network resource. Only show UsageRecords representing usage on this network.
+          in: query
+          name: Network
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^HW[0-9a-fA-F]{32}$
+            type: string
+        - description: Alpha-2 ISO Country Code. Only show UsageRecords representing usage in this country.
+          in: query
+          name: IsoCountry
+          schema:
+            format: iso-country-code
+            type: string
+        - description: "Dimension over which to aggregate usage records. Can be: `sim`, `fleet`, `network`, `isoCountry`. Default is to not aggregate across any of these dimensions, UsageRecords will be aggregated into the time buckets described by the `Granularity` parameter."
+          in: query
+          name: Group
+          schema:
+            $ref: "#/components/schemas/usage_record_enum_group"
+            type: string
+        - description: "Time-based grouping that UsageRecords should be aggregated by. Can be: `hour`, `day`, or `all`. Default is `all`. `all` returns one UsageRecord that describes the usage for the entire period."
+          in: query
+          name: Granularity
+          schema:
+            $ref: "#/components/schemas/usage_record_enum_granularity"
+            type: string
+        - description: Only include usage that occurred at or after this time, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Default is one month before the `end_time`.
+          in: query
+          name: StartTime
+          schema:
+            format: date-time
+            type: string
+        - description: Only include usage that occurred before this time (exclusive), specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Default is the current time.
+          in: query
+          name: EndTime
+          schema:
+            format: date-time
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
+        - description: The page index. This value is simply for client state.
+          in: query
+          name: Page
+          schema:
+            minimum: 0
+            type: integer
+        - description: The page token. This is provided by the API.
+          in: query
+          name: PageToken
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    properties:
+                      first_page_url:
+                        format: uri
+                        type: string
+                      key:
+                        type: string
+                      next_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      page:
+                        type: integer
+                      page_size:
+                        type: integer
+                      previous_page_url:
+                        format: uri
+                        nullable: true
+                        type: string
+                      url:
+                        format: uri
+                        type: string
+                    type: object
+                  usage_records:
+                    items:
+                      $ref: "#/components/schemas/supersim.v1.usage_record"
+                    type: array
+                title: ListUsageRecordResponse
+                type: object
+          description: OK
+      security:
+        - accountSid_authToken: []
+      tags:
+        - SupersimV1UsageRecord
+      x-maturity:
+        - Beta
+    servers:
+      - url: https://supersim.twilio.com
+    x-twilio:
+      defaultOutputProperties:
+        - account_sid
+        - period
+      pathType: list
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-  securitySchemes:
-    hmac:
-      type: apiKey
-      name: Authorization
-      in: header
-      description: Amazon Signature authorization v4
-      x-amazon-apigateway-authtype: awsSigv4
   schemas:
-    CancelJobResponse:
-      type: object
-      required:
-        - cancellationStatus
-        - jobArn
-      properties:
-        cancellationStatus:
-          allOf:
-            - $ref: '#/components/schemas/CancellationStatus'
-            - description: The status of the job cancellation request.
-        jobArn:
-          allOf:
-            - $ref: '#/components/schemas/JobArn'
-            - description: The ARN of the Amazon Braket job.
-    ResourceNotFoundException: {}
-    AccessDeniedException: {}
-    ConflictException: {}
-    ThrottlingException: {}
-    InternalServiceException: {}
-    ValidationException: {}
-    CancelQuantumTaskResponse:
-      type: object
-      required:
-        - cancellationStatus
-        - quantumTaskArn
-      properties:
-        cancellationStatus:
-          allOf:
-            - $ref: '#/components/schemas/CancellationStatus'
-            - description: The status of the cancellation request.
-        quantumTaskArn:
-          allOf:
-            - $ref: '#/components/schemas/QuantumTaskArn'
-            - description: The ARN of the task.
-    CreateJobResponse:
-      type: object
-      required:
-        - jobArn
-      properties:
-        jobArn:
-          allOf:
-            - $ref: '#/components/schemas/JobArn'
-            - description: The ARN of the Amazon Braket job created.
-    ContainerImage:
-      type: object
-      required:
-        - uri
-      properties:
-        uri:
-          allOf:
-            - $ref: '#/components/schemas/Uri'
-            - description: The URI locating the container image.
-      description: The container image used to create an Amazon Braket job.
-    ScriptModeConfig:
-      type: object
-      required:
-        - entryPoint
-        - s3Uri
-      properties:
-        compressionType:
-          allOf:
-            - $ref: '#/components/schemas/CompressionType'
-            - description: The type of compression used by the Python scripts for an Amazon Braket job.
-        entryPoint:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The path to the Python script that serves as the entry point for an Amazon Braket job.
-        s3Uri:
-          allOf:
-            - $ref: '#/components/schemas/S3Path'
-            - description: The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.
-      description: Contains information about the Python scripts used for entry and by an Amazon Braket job.
-    String4096:
-      type: string
-      minLength: 1
-      maxLength: 4096
-    S3Path:
-      type: string
-      pattern: '^(https|s3)://([^/]+)/?(.*)$'
-      minLength: 0
-      maxLength: 1024
-    String256:
-      type: string
-      minLength: 1
-      maxLength: 256
-    HyperParametersValueString:
-      type: string
-      minLength: 1
-      maxLength: 2500
-    InputFileConfig:
-      type: object
-      required:
-        - channelName
-        - dataSource
-      properties:
-        channelName:
-          allOf:
-            - $ref: '#/components/schemas/InputFileConfigChannelNameString'
-            - description: A named input source that an Amazon Braket job can consume.
-        contentType:
-          allOf:
-            - $ref: '#/components/schemas/String256'
-            - description: The MIME type of the data.
-        dataSource:
-          allOf:
-            - $ref: '#/components/schemas/DataSource'
-            - description: The location of the channel data.
-      description: 'A list of parameters that specify the input channels, type of input data, and where it is located.'
-    InstanceConfigInstanceCountInteger:
-      type: integer
-      minimum: 1
-    InstanceType:
-      type: string
+    billing_period_enum_bp_type:
       enum:
-        - ml.m4.xlarge
-        - ml.m4.2xlarge
-        - ml.m4.4xlarge
-        - ml.m4.10xlarge
-        - ml.m4.16xlarge
-        - ml.g4dn.xlarge
-        - ml.g4dn.2xlarge
-        - ml.g4dn.4xlarge
-        - ml.g4dn.8xlarge
-        - ml.g4dn.12xlarge
-        - ml.g4dn.16xlarge
-        - ml.m5.large
-        - ml.m5.xlarge
-        - ml.m5.2xlarge
-        - ml.m5.4xlarge
-        - ml.m5.12xlarge
-        - ml.m5.24xlarge
-        - ml.c4.xlarge
-        - ml.c4.2xlarge
-        - ml.c4.4xlarge
-        - ml.c4.8xlarge
-        - ml.p2.xlarge
-        - ml.p2.8xlarge
-        - ml.p2.16xlarge
-        - ml.p3.2xlarge
-        - ml.p3.8xlarge
-        - ml.p3.16xlarge
-        - ml.p3dn.24xlarge
-        - ml.p4d.24xlarge
-        - ml.c5.xlarge
-        - ml.c5.2xlarge
-        - ml.c5.4xlarge
-        - ml.c5.9xlarge
-        - ml.c5.18xlarge
-        - ml.c5n.xlarge
-        - ml.c5n.2xlarge
-        - ml.c5n.4xlarge
-        - ml.c5n.9xlarge
-        - ml.c5n.18xlarge
-    InstanceConfigVolumeSizeInGbInteger:
-      type: integer
-      minimum: 1
-    String2048:
+        - ready
+        - active
       type: string
-      minLength: 1
-      maxLength: 2048
-    JobStoppingConditionMaxRuntimeInSecondsInteger:
-      type: integer
-      minimum: 1
-      maximum: 432000
-    String:
+    esim_profile_enum_status:
+      enum:
+        - new
+        - reserving
+        - available
+        - downloaded
+        - installed
+        - failed
       type: string
-    DeviceRetiredException: {}
-    ServiceQuotaExceededException: {}
-    CreateQuantumTaskResponse:
-      type: object
-      required:
-        - quantumTaskArn
+    fleet_enum_data_metering:
+      enum:
+        - payg
+      type: string
+    ip_command_enum_direction:
+      enum:
+        - to_sim
+        - from_sim
+      type: string
+    ip_command_enum_payload_type:
+      enum:
+        - text
+        - binary
+      type: string
+    ip_command_enum_status:
+      enum:
+        - queued
+        - sent
+        - received
+        - failed
+      type: string
+    settings_update_enum_status:
+      enum:
+        - scheduled
+        - in-progress
+        - successful
+        - failed
+      type: string
+    sim_enum_status:
+      enum:
+        - new
+        - ready
+        - active
+        - inactive
+        - scheduled
+      type: string
+    sim_enum_status_update:
+      enum:
+        - ready
+        - active
+        - inactive
+      type: string
+    sim_ip_address_enum_ip_address_version:
+      enum:
+        - IPv4
+        - IPv6
+      type: string
+    sms_command_enum_direction:
+      enum:
+        - to_sim
+        - from_sim
+      type: string
+    sms_command_enum_status:
+      enum:
+        - queued
+        - sent
+        - delivered
+        - received
+        - failed
+      type: string
+    supersim.v1.esim_profile:
       properties:
-        quantumTaskArn:
-          allOf:
-            - $ref: '#/components/schemas/QuantumTaskArn'
-            - description: The ARN of the task created by the request.
-    DeviceOfflineException: {}
-    GetDeviceResponse:
-      type: object
-      required:
-        - deviceArn
-        - deviceCapabilities
-        - deviceName
-        - deviceStatus
-        - deviceType
-        - providerName
-      properties:
-        deviceArn:
-          allOf:
-            - $ref: '#/components/schemas/DeviceArn'
-            - description: The ARN of the device.
-        deviceCapabilities:
-          allOf:
-            - $ref: '#/components/schemas/JsonValue'
-            - description: Details about the capabilities of the device.
-        deviceName:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The name of the device.
-        deviceStatus:
-          allOf:
-            - $ref: '#/components/schemas/DeviceStatus'
-            - description: The status of the device.
-        deviceType:
-          allOf:
-            - $ref: '#/components/schemas/DeviceType'
-            - description: The type of the device.
-        providerName:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The name of the partner company for the device.
-    GetJobResponse:
-      type: object
-      required:
-        - algorithmSpecification
-        - createdAt
-        - instanceConfig
-        - jobArn
-        - jobName
-        - outputDataConfig
-        - roleArn
-        - status
-      properties:
-        algorithmSpecification:
-          allOf:
-            - $ref: '#/components/schemas/AlgorithmSpecification'
-            - description: 'Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.'
-        billableDuration:
-          allOf:
-            - $ref: '#/components/schemas/Integer'
-            - description: The billable time the Amazon Braket job used to complete.
-        checkpointConfig:
-          allOf:
-            - $ref: '#/components/schemas/JobCheckpointConfig'
-            - description: Information about the output locations for job checkpoint data.
-        createdAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The date and time that the Amazon Braket job was created.
-        deviceConfig:
-          allOf:
-            - $ref: '#/components/schemas/DeviceConfig'
-            - description: The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.
-        endedAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The date and time that the Amazon Braket job ended.
-        events:
-          allOf:
-            - $ref: '#/components/schemas/JobEvents'
-            - description: Details about the type and time events occurred related to the Amazon Braket job.
-        failureReason:
-          allOf:
-            - $ref: '#/components/schemas/String1024'
-            - description: 'A description of the reason why an Amazon Braket job failed, if it failed.'
-        hyperParameters:
-          allOf:
-            - $ref: '#/components/schemas/HyperParameters'
-            - description: 'Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.'
-        inputDataConfig:
-          allOf:
-            - $ref: '#/components/schemas/InputConfigList'
-            - description: A list of parameters that specify the name and type of input data and where it is located.
-        instanceConfig:
-          allOf:
-            - $ref: '#/components/schemas/InstanceConfig'
-            - description: The resource instances to use while running the hybrid job on Amazon Braket.
-        jobArn:
-          allOf:
-            - $ref: '#/components/schemas/JobArn'
-            - description: The ARN of the Amazon Braket job.
-        jobName:
-          allOf:
-            - $ref: '#/components/schemas/GetJobResponseJobNameString'
-            - description: The name of the Amazon Braket job.
-        outputDataConfig:
-          allOf:
-            - $ref: '#/components/schemas/JobOutputDataConfig'
-            - description: The path to the S3 location where job artifacts are stored and the encryption key used to store them there.
-        roleArn:
-          allOf:
-            - $ref: '#/components/schemas/RoleArn'
-            - description: 'The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.'
-        startedAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The date and time that the Amazon Braket job was started.
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) to which the eSIM Profile resource belongs.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        activation_code:
+          description: Combined machine-readable activation code for acquiring an eSIM Profile with the Activation Code download method. Can be used in a QR code to download an eSIM profile.
+          nullable: true
+          type: string
+        date_created:
+          description: The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        eid:
+          description: Identifier of the eUICC that can claim the eSIM Profile.
+          nullable: true
+          type: string
+        error_code:
+          description: Code indicating the failure if the download of the SIM Profile failed and the eSIM Profile is in `failed` state.
+          nullable: true
+          type: string
+        error_message:
+          description: Error message describing the failure if the download of the SIM Profile failed and the eSIM Profile is in `failed` state.
+          nullable: true
+          type: string
+        iccid:
+          description: The [ICCID](https://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID) associated with the Sim resource.
+          nullable: true
+          type: string
+        matching_id:
+          description: Unique identifier of the eSIM profile that can be used to identify and download the eSIM profile from the SM-DP+ server. Populated if `generate_matching_id` is set to `true` when creating the eSIM profile reservation.
+          nullable: true
+          type: string
+        sid:
+          description: The unique string that we created to identify the eSIM Profile resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HP[0-9a-fA-F]{32}$
+          type: string
+        sim_sid:
+          description: The SID of the [Sim](https://www.twilio.com/docs/iot/wireless/api/sim-resource) resource that this eSIM Profile controls.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HS[0-9a-fA-F]{32}$
+          type: string
+        smdp_plus_address:
+          description: Address of the SM-DP+ server from which the Profile will be downloaded. The URL will appear once the eSIM Profile reaches the status `available`.
+          format: uri
+          nullable: true
+          type: string
         status:
-          allOf:
-            - $ref: '#/components/schemas/JobPrimaryStatus'
-            - description: The status of the Amazon Braket job.
-        stoppingCondition:
-          allOf:
-            - $ref: '#/components/schemas/JobStoppingCondition'
-            - description: The user-defined criteria that specifies when to stop a job running.
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: 'A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.'
-    GetQuantumTaskResponse:
+          $ref: "#/components/schemas/esim_profile_enum_status"
+          description: "The status of the eSIM Profile. Can be: `reserving`, `available`, `downloaded`, `installed` or `failed`. See the [eSIM Profile Status Values](https://www.twilio.com/docs/iot/supersim/api/esimprofile-resource#status-values) for a description of each."
+          nullable: true
+          type: string
+        url:
+          description: The absolute URL of the eSIM Profile resource.
+          format: uri
+          nullable: true
+          type: string
       type: object
-      required:
-        - createdAt
-        - deviceArn
-        - deviceParameters
-        - outputS3Bucket
-        - outputS3Directory
-        - quantumTaskArn
-        - shots
-        - status
+    supersim.v1.fleet:
       properties:
-        createdAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The time at which the task was created.
-        deviceArn:
-          allOf:
-            - $ref: '#/components/schemas/DeviceArn'
-            - description: The ARN of the device the task was run on.
-        deviceParameters:
-          allOf:
-            - $ref: '#/components/schemas/JsonValue'
-            - description: The parameters for the device on which the task ran.
-        endedAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The time at which the task ended.
-        failureReason:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The reason that a task failed.
-        jobArn:
-          allOf:
-            - $ref: '#/components/schemas/JobArn'
-            - description: The ARN of the Amazon Braket job associated with the quantum task.
-        outputS3Bucket:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The S3 bucket where task results are stored.
-        outputS3Directory:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The folder in the S3 bucket where task results are stored.
-        quantumTaskArn:
-          allOf:
-            - $ref: '#/components/schemas/QuantumTaskArn'
-            - description: The ARN of the task.
-        shots:
-          allOf:
-            - $ref: '#/components/schemas/Long'
-            - description: The number of shots used in the task.
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Fleet resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        data_enabled:
+          description: Defines whether SIMs in the Fleet are capable of using 2G/3G/4G/LTE/CAT-M data connectivity. Defaults to `true`.
+          nullable: true
+          type: boolean
+        data_limit:
+          description: The total data usage (download and upload combined) in Megabytes that each Super SIM assigned to the Fleet can consume during a billing period (normally one month). Value must be between 1MB (1) and 2TB (2,000,000). Defaults to 250MB.
+          nullable: true
+          type: integer
+        data_metering:
+          $ref: "#/components/schemas/fleet_enum_data_metering"
+          description: The model by which a SIMs usage is metered and billed. Defaults to `payg`.
+          nullable: true
+          type: string
+        date_created:
+          description: The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        ip_commands_method:
+          description: A string representing the HTTP method to use when making a request to `ip_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`.
+          enum:
+            - HEAD
+            - GET
+            - POST
+            - PATCH
+            - PUT
+            - DELETE
+          format: http-method
+          nullable: true
+          type: string
+        ip_commands_url:
+          description: The URL that will receive a webhook when a Super SIM in the Fleet is used to send an IP Command from your device to a special IP address. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored.
+          format: uri
+          nullable: true
+          type: string
+        network_access_profile_sid:
+          description: The SID of the Network Access Profile that controls which cellular networks the Fleet's SIMs can connect to.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HA[0-9a-fA-F]{32}$
+          type: string
+        sid:
+          description: The unique string that we created to identify the Fleet resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HF[0-9a-fA-F]{32}$
+          type: string
+        sms_commands_enabled:
+          description: Defines whether SIMs in the Fleet are capable of sending and receiving machine-to-machine SMS via Commands. Defaults to `false`.
+          nullable: true
+          type: boolean
+        sms_commands_method:
+          description: A string representing the HTTP method to use when making a request to `sms_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`.
+          enum:
+            - HEAD
+            - GET
+            - POST
+            - PATCH
+            - PUT
+            - DELETE
+          format: http-method
+          nullable: true
+          type: string
+        sms_commands_url:
+          description: The URL that will receive a webhook when a Super SIM in the Fleet is used to send an SMS from your device to the SMS Commands number. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored.
+          format: uri
+          nullable: true
+          type: string
+        unique_name:
+          description: An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
+          nullable: true
+          type: string
+        url:
+          description: The absolute URL of the Fleet resource.
+          format: uri
+          nullable: true
+          type: string
+      type: object
+    supersim.v1.ip_command:
+      properties:
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IP Command resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        date_created:
+          description: The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        device_ip:
+          description: The IP address of the device that the IP Command was sent to or received from. For an IP Command sent to a Super SIM, `device_ip` starts out as `null`, and once the IP Command is “sent”, the `device_ip` will be filled out. An IP Command sent from a Super SIM have its `device_ip` always set.
+          nullable: true
+          type: string
+        device_port:
+          description: For an IP Command sent to a Super SIM, it would be the destination port of the IP message. For an IP Command sent from a Super SIM, it would be the source port of the IP message.
+          nullable: true
+          type: integer
+        direction:
+          $ref: "#/components/schemas/ip_command_enum_direction"
+          description: Either `to_sim` or `from_sim`. Indicates whether the IP Command resource was sent from or to the Super SIM.
+          nullable: true
+          type: string
+        payload:
+          description: |-
+            The payload that is carried in the IP/UDP message. The payload can be encoded in either text or binary format. For text payload, UTF-8 encoding must be used.
+
+            For an IP Command sent to a Super SIM, the payload is appended to the IP/UDP message “as is”. The payload should not exceed 1300 bytes.
+
+            For an IP Command sent from a Super SIM, the payload from the received IP/UDP message is extracted and sent in binary encoding. For an IP Command sent from a Super SIM, the payload should not exceed 1300 bytes. If it is larger than 1300 bytes, there might be fragmentation on the upstream and the message may appear truncated.
+          nullable: true
+          type: string
+        payload_type:
+          $ref: "#/components/schemas/ip_command_enum_payload_type"
+          description: Either “text” or “binary”. For an IP Command sent to a Super SIM, `payload_type` is configurable. For an IP Command sent from a Super SIM, `payload_type` is always “binary”.
+          nullable: true
+          type: string
+        sid:
+          description: The unique string that we created to identify the IP Command resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HG[0-9a-fA-F]{32}$
+          type: string
+        sim_iccid:
+          description: The [ICCID](https://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID) of the [Super SIM](https://www.twilio.com/docs/iot/supersim/api/sim-resource) that this IP Command was sent to or from.
+          nullable: true
+          type: string
+        sim_sid:
+          description: The SID of the [Super SIM](https://www.twilio.com/docs/iot/supersim/api/sim-resource) that this IP Command was sent to or from.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HS[0-9a-fA-F]{32}$
+          type: string
         status:
-          allOf:
-            - $ref: '#/components/schemas/QuantumTaskStatus'
-            - description: The status of the task.
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: The tags that belong to this task.
-    ListTagsForResourceResponse:
+          $ref: "#/components/schemas/ip_command_enum_status"
+          description: "The delivery status of the IP Command. This is one of the following: “queued”, “sent”, “failed” or “received”."
+          nullable: true
+          type: string
+        url:
+          description: The absolute URL of the IP Command resource.
+          format: uri
+          nullable: true
+          type: string
       type: object
+    supersim.v1.network:
       properties:
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: 'Displays the key, value pairs of tags associated with this resource.'
-    SearchDevicesResponse:
+        friendly_name:
+          description: A human readable identifier of this resource.
+          nullable: true
+          type: string
+        identifiers:
+          description: Array of objects identifying the [MCC-MNCs](https://en.wikipedia.org/wiki/Mobile_country_code) that are included in the Network resource.
+          items: {}
+          nullable: true
+          type: array
+        iso_country:
+          description: The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Network resource.
+          nullable: true
+          type: string
+        sid:
+          description: The unique string that we created to identify the Network resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HW[0-9a-fA-F]{32}$
+          type: string
+        url:
+          description: The absolute URL of the Network resource.
+          format: uri
+          nullable: true
+          type: string
       type: object
-      required:
-        - devices
+    supersim.v1.network_access_profile:
       properties:
-        devices:
-          allOf:
-            - $ref: '#/components/schemas/DeviceSummaryList'
-            - description: An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.
-        nextToken:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: 'A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.'
-    SearchDevicesFilter:
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the Network Access Profile belongs to.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        date_created:
+          description: The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        links:
+          format: uri-map
+          nullable: true
+          type: object
+        sid:
+          description: The unique string that identifies the Network Access Profile resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HA[0-9a-fA-F]{32}$
+          type: string
+        unique_name:
+          description: An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
+          nullable: true
+          type: string
+        url:
+          description: The absolute URL of the Network Access Profile resource.
+          format: uri
+          nullable: true
+          type: string
       type: object
-      required:
-        - name
-        - values
+    supersim.v1.network_access_profile.network_access_profile_network:
       properties:
-        name:
-          allOf:
-            - $ref: '#/components/schemas/SearchDevicesFilterNameString'
-            - description: The name to use to filter results.
-        values:
-          allOf:
-            - $ref: '#/components/schemas/SearchDevicesFilterValuesList'
-            - description: The values to use to filter results.
-      description: The filter to use for searching devices.
-    SearchJobsResponse:
+        friendly_name:
+          description: A human readable identifier of the Network this resource refers to.
+          nullable: true
+          type: string
+        identifiers:
+          description: Array of objects identifying the [MCC-MNCs](https://en.wikipedia.org/wiki/Mobile_country_code) that are included in the Network resource.
+          items: {}
+          nullable: true
+          type: array
+        iso_country:
+          description: The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Network resource.
+          nullable: true
+          type: string
+        network_access_profile_sid:
+          description: The unique string that identifies the Network resource's Network Access Profile resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HA[0-9a-fA-F]{32}$
+          type: string
+        sid:
+          description: The unique string that identifies the Network resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HW[0-9a-fA-F]{32}$
+          type: string
+        url:
+          description: The absolute URL of the Network resource.
+          format: uri
+          nullable: true
+          type: string
       type: object
-      required:
-        - jobs
+    supersim.v1.settings_update:
       properties:
-        jobs:
-          allOf:
-            - $ref: '#/components/schemas/JobSummaryList'
-            - description: An array of <code>JobSummary</code> objects for devices that match the specified filter values.
-        nextToken:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: 'A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.'
-    SearchJobsFilter:
-      type: object
-      required:
-        - name
-        - operator
-        - values
-      properties:
-        name:
-          allOf:
-            - $ref: '#/components/schemas/String64'
-            - description: The name to use for the jobs filter.
-        operator:
-          allOf:
-            - $ref: '#/components/schemas/SearchJobsFilterOperator'
-            - description: An operator to use for the jobs filter.
-        values:
-          allOf:
-            - $ref: '#/components/schemas/SearchJobsFilterValuesList'
-            - description: The values to use for the jobs filter.
-      description: A filter used to search for Amazon Braket jobs.
-    SearchQuantumTasksResponse:
-      type: object
-      required:
-        - quantumTasks
-      properties:
-        nextToken:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: 'A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.'
-        quantumTasks:
-          allOf:
-            - $ref: '#/components/schemas/QuantumTaskSummaryList'
-            - description: An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.
-    SearchQuantumTasksFilter:
-      type: object
-      required:
-        - name
-        - operator
-        - values
-      properties:
-        name:
-          allOf:
-            - $ref: '#/components/schemas/String64'
-            - description: The name of the device used for the task.
-        operator:
-          allOf:
-            - $ref: '#/components/schemas/SearchQuantumTasksFilterOperator'
-            - description: An operator to use in the filter.
-        values:
-          allOf:
-            - $ref: '#/components/schemas/SearchQuantumTasksFilterValuesList'
-            - description: The values to use for the filter.
-      description: A filter to use to search for tasks.
-    TagResourceResponse:
-      type: object
-      properties: {}
-    UntagResourceResponse:
-      type: object
-      properties: {}
-    AlgorithmSpecification:
-      type: object
-      properties:
-        containerImage:
-          allOf:
-            - $ref: '#/components/schemas/ContainerImage'
-            - description: The container image used to create an Amazon Braket job.
-        scriptModeConfig:
-          allOf:
-            - $ref: '#/components/schemas/ScriptModeConfig'
-            - description: Configures the paths to the Python scripts used for entry and training.
-      description: Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.
-    JobArn:
-      type: string
-      pattern: '^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$'
-    CancelJobRequest:
-      type: object
-      title: CancelJobRequest
-      properties: {}
-    CancellationStatus:
-      type: string
-      enum:
-        - CANCELLING
-        - CANCELLED
-    String64:
-      type: string
-      minLength: 1
-      maxLength: 64
-    QuantumTaskArn:
-      type: string
-      minLength: 1
-      maxLength: 256
-    CancelQuantumTaskRequest:
-      type: object
-      required:
-        - clientToken
-      title: CancelQuantumTaskRequest
-      properties:
-        clientToken:
-          allOf:
-            - $ref: '#/components/schemas/String64'
-            - description: The client token associated with the request.
-    CompressionType:
-      type: string
-      enum:
-        - NONE
-        - GZIP
-    Uri:
-      type: string
-      pattern: '\d{10,14}\.dkr\.ecr.[a-z0-9-]+\.amazonaws\.com\/.+(@sha256)?:.+'
-      minLength: 1
-      maxLength: 255
-    JobCheckpointConfig:
-      type: object
-      required:
-        - s3Uri
-      properties:
-        localPath:
-          allOf:
-            - $ref: '#/components/schemas/String4096'
-            - description: (Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.
-        s3Uri:
-          allOf:
-            - $ref: '#/components/schemas/S3Path'
-            - description: 'Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.'
-      description: Contains information about the output locations for job checkpoint data.
-    DeviceConfig:
-      type: object
-      required:
-        - device
-      properties:
-        device:
-          allOf:
-            - $ref: '#/components/schemas/String256'
-            - description: The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.
-      description: Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.
-    HyperParameters:
-      type: object
-      minProperties: 0
-      maxProperties: 100
-      additionalProperties:
-        $ref: '#/components/schemas/HyperParametersValueString'
-    CreateJobRequestInputDataConfigList:
-      type: array
-      items:
-        $ref: '#/components/schemas/InputFileConfig'
-      minItems: 0
-      maxItems: 20
-    InstanceConfig:
-      type: object
-      required:
-        - instanceType
-        - volumeSizeInGb
-      properties:
-        instanceCount:
-          allOf:
-            - $ref: '#/components/schemas/InstanceConfigInstanceCountInteger'
-            - description: Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.
-        instanceType:
-          allOf:
-            - $ref: '#/components/schemas/InstanceType'
-            - description: Configures the type resource instances to use while running an Amazon Braket hybrid job.
-        volumeSizeInGb:
-          allOf:
-            - $ref: '#/components/schemas/InstanceConfigVolumeSizeInGbInteger'
-            - description: 'The size of the storage volume, in GB, that user wants to provision.'
-      description: Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon Braket.
-    CreateJobRequestJobNameString:
-      type: string
-      pattern: '^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$'
-      minLength: 1
-      maxLength: 50
-    JobOutputDataConfig:
-      type: object
-      required:
-        - s3Path
-      properties:
-        kmsKeyId:
-          allOf:
-            - $ref: '#/components/schemas/String2048'
-            - description: The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.
-        s3Path:
-          allOf:
-            - $ref: '#/components/schemas/S3Path'
-            - description: 'Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.'
-      description: Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.
-    RoleArn:
-      type: string
-      pattern: '^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$'
-    JobStoppingCondition:
-      type: object
-      properties:
-        maxRuntimeInSeconds:
-          allOf:
-            - $ref: '#/components/schemas/JobStoppingConditionMaxRuntimeInSecondsInteger'
-            - description: 'The maximum length of time, in seconds, that an Amazon Braket job can run.'
-      description: 'Specifies limits for how long an Amazon Braket job can run. '
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    CreateJobRequest:
-      type: object
-      required:
-        - algorithmSpecification
-        - clientToken
-        - deviceConfig
-        - instanceConfig
-        - jobName
-        - outputDataConfig
-        - roleArn
-      title: CreateJobRequest
-      properties:
-        algorithmSpecification:
-          allOf:
-            - $ref: '#/components/schemas/AlgorithmSpecification'
-            - description: Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.
-        checkpointConfig:
-          allOf:
-            - $ref: '#/components/schemas/JobCheckpointConfig'
-            - description: Information about the output locations for job checkpoint data.
-        clientToken:
-          allOf:
-            - $ref: '#/components/schemas/String64'
-            - description: A unique token that guarantees that the call to this API is idempotent.
-        deviceConfig:
-          allOf:
-            - $ref: '#/components/schemas/DeviceConfig'
-            - description: The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.
-        hyperParameters:
-          allOf:
-            - $ref: '#/components/schemas/HyperParameters'
-            - description: 'Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.'
-        inputDataConfig:
-          allOf:
-            - $ref: '#/components/schemas/CreateJobRequestInputDataConfigList'
-            - description: A list of parameters that specify the name and type of input data and where it is located.
-        instanceConfig:
-          allOf:
-            - $ref: '#/components/schemas/InstanceConfig'
-            - description: Configuration of the resource instances to use while running the hybrid job on Amazon Braket.
-        jobName:
-          allOf:
-            - $ref: '#/components/schemas/CreateJobRequestJobNameString'
-            - description: The name of the Amazon Braket job.
-        outputDataConfig:
-          allOf:
-            - $ref: '#/components/schemas/JobOutputDataConfig'
-            - description: The path to the S3 location where you want to store job artifacts and the encryption key used to store them.
-        roleArn:
-          allOf:
-            - $ref: '#/components/schemas/RoleArn'
-            - description: 'The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users'' s3 buckets.'
-        stoppingCondition:
-          allOf:
-            - $ref: '#/components/schemas/JobStoppingCondition'
-            - description: ' The user-defined criteria that specifies when a job stops running.'
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: 'A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.'
-    JsonValue:
-      type: string
-    DeviceArn:
-      type: string
-      minLength: 1
-      maxLength: 256
-    CreateQuantumTaskRequestDeviceParametersString:
-      type: string
-      minLength: 1
-      maxLength: 48000
-    JobToken:
-      type: string
-      minLength: 1
-      maxLength: 128
-    CreateQuantumTaskRequestOutputS3BucketString:
-      type: string
-      minLength: 3
-      maxLength: 63
-    CreateQuantumTaskRequestOutputS3KeyPrefixString:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    CreateQuantumTaskRequestShotsLong:
-      type: integer
-      minimum: 0
-    CreateQuantumTaskRequest:
-      type: object
-      required:
-        - action
-        - clientToken
-        - deviceArn
-        - outputS3Bucket
-        - outputS3KeyPrefix
-        - shots
-      title: CreateQuantumTaskRequest
-      properties:
-        action:
-          allOf:
-            - $ref: '#/components/schemas/JsonValue'
-            - description: The action associated with the task.
-        clientToken:
-          allOf:
-            - $ref: '#/components/schemas/String64'
-            - description: The client token associated with the request.
-        deviceArn:
-          allOf:
-            - $ref: '#/components/schemas/DeviceArn'
-            - description: The ARN of the device to run the task on.
-        deviceParameters:
-          allOf:
-            - $ref: '#/components/schemas/CreateQuantumTaskRequestDeviceParametersString'
-            - description: The parameters for the device to run the task on.
-        jobToken:
-          allOf:
-            - $ref: '#/components/schemas/JobToken'
-            - description: The token for an Amazon Braket job that associates it with the quantum task.
-        outputS3Bucket:
-          allOf:
-            - $ref: '#/components/schemas/CreateQuantumTaskRequestOutputS3BucketString'
-            - description: The S3 bucket to store task result files in.
-        outputS3KeyPrefix:
-          allOf:
-            - $ref: '#/components/schemas/CreateQuantumTaskRequestOutputS3KeyPrefixString'
-            - description: The key prefix for the location in the S3 bucket to store task results in.
-        shots:
-          allOf:
-            - $ref: '#/components/schemas/CreateQuantumTaskRequestShotsLong'
-            - description: The number of shots to use for the task.
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: Tags to be added to the quantum task you're creating.
-    S3DataSource:
-      type: object
-      required:
-        - s3Uri
-      properties:
-        s3Uri:
-          allOf:
-            - $ref: '#/components/schemas/S3Path'
-            - description: 'Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.'
-      description: Information about the data stored in Amazon S3 used by the Amazon Braket job.
-    DataSource:
-      type: object
-      required:
-        - s3DataSource
-      properties:
-        s3DataSource:
-          allOf:
-            - $ref: '#/components/schemas/S3DataSource'
-            - description: Information about the data stored in Amazon S3 used by the Amazon Braket job.
-      description: Information about the source of the data used by the Amazon Braket job.
-    DeviceStatus:
-      type: string
-      enum:
-        - ONLINE
-        - OFFLINE
-        - RETIRED
-    DeviceType:
-      type: string
-      enum:
-        - QPU
-        - SIMULATOR
-    DeviceSummary:
-      type: object
-      required:
-        - deviceArn
-        - deviceName
-        - deviceStatus
-        - deviceType
-        - providerName
-      properties:
-        deviceArn:
-          allOf:
-            - $ref: '#/components/schemas/DeviceArn'
-            - description: The ARN of the device.
-        deviceName:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The name of the device.
-        deviceStatus:
-          allOf:
-            - $ref: '#/components/schemas/DeviceStatus'
-            - description: The status of the device.
-        deviceType:
-          allOf:
-            - $ref: '#/components/schemas/DeviceType'
-            - description: The type of the device.
-        providerName:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The provider of the device.
-      description: Includes information about the device.
-    DeviceSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DeviceSummary'
-    GetDeviceRequest:
-      type: object
-      title: GetDeviceRequest
-      properties: {}
-    GetJobRequest:
-      type: object
-      title: GetJobRequest
-      properties: {}
-    Integer:
-      type: integer
-    SyntheticTimestamp_date_time:
-      type: string
-      format: date-time
-    JobEvents:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobEventDetails'
-      minItems: 0
-      maxItems: 20
-    String1024:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    InputConfigList:
-      type: array
-      items:
-        $ref: '#/components/schemas/InputFileConfig'
-    GetJobResponseJobNameString:
-      type: string
-      pattern: '^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$'
-      minLength: 1
-      maxLength: 50
-    JobPrimaryStatus:
-      type: string
-      enum:
-        - QUEUED
-        - RUNNING
-        - COMPLETED
-        - FAILED
-        - CANCELLING
-        - CANCELLED
-    GetQuantumTaskRequest:
-      type: object
-      title: GetQuantumTaskRequest
-      properties: {}
-    Long:
-      type: integer
-    QuantumTaskStatus:
-      type: string
-      enum:
-        - CREATED
-        - QUEUED
-        - RUNNING
-        - COMPLETED
-        - FAILED
-        - CANCELLING
-        - CANCELLED
-    InputFileConfigChannelNameString:
-      type: string
-      pattern: '^[A-Za-z0-9\.\-_]+$'
-      minLength: 1
-      maxLength: 64
-    JobEventType:
-      type: string
-      enum:
-        - WAITING_FOR_PRIORITY
-        - QUEUED_FOR_EXECUTION
-        - STARTING_INSTANCE
-        - DOWNLOADING_DATA
-        - RUNNING
-        - DEPRIORITIZED_DUE_TO_INACTIVITY
-        - UPLOADING_RESULTS
-        - COMPLETED
-        - FAILED
-        - MAX_RUNTIME_EXCEEDED
-        - CANCELLED
-    JobEventDetailsMessageString:
-      type: string
-      minLength: 0
-      maxLength: 2500
-    JobEventDetails:
-      type: object
-      properties:
-        eventType:
-          allOf:
-            - $ref: '#/components/schemas/JobEventType'
-            - description: The type of event that occurred related to the Amazon Braket job.
-        message:
-          allOf:
-            - $ref: '#/components/schemas/JobEventDetailsMessageString'
-            - description: A message describing the event that occurred related to the Amazon Braket job.
-        timeOfEvent:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: TThe type of event that occurred related to the Amazon Braket job.
-      description: Details about the type and time events occurred related to the Amazon Braket job.
-    JobSummary:
-      type: object
-      required:
-        - createdAt
-        - device
-        - jobArn
-        - jobName
-        - status
-      properties:
-        createdAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The date and time that the Amazon Braket job was created.
-        device:
-          allOf:
-            - $ref: '#/components/schemas/String256'
-            - description: Provides summary information about the primary device used by an Amazon Braket job.
-        endedAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The date and time that the Amazon Braket job ended.
-        jobArn:
-          allOf:
-            - $ref: '#/components/schemas/JobArn'
-            - description: The ARN of the Amazon Braket job.
-        jobName:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The name of the Amazon Braket job.
-        startedAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The date and time that the Amazon Braket job was started.
+        date_completed:
+          description: The time, given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, when the update successfully completed and the new settings were applied to the SIM.
+          format: date-time
+          nullable: true
+          type: string
+        date_created:
+          description: The date that this Settings Update was created, given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date that this Settings Update was updated, given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        iccid:
+          description: The [ICCID](https://en.wikipedia.org/wiki/SIM_card#ICCID) associated with the SIM.
+          nullable: true
+          type: string
+        packages:
+          description: Array containing the different Settings Packages that will be applied to the SIM after the update completes. Each object within the array indicates the name and the version of the Settings Package that will be on the SIM if the update is successful.
+          items: {}
+          nullable: true
+          type: array
+        sid:
+          description: The unique identifier of this Settings Update.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^OB[0-9a-fA-F]{32}$
+          type: string
+        sim_sid:
+          description: The SID of the Super SIM to which this Settings Update was applied.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HS[0-9a-fA-F]{32}$
+          type: string
         status:
-          allOf:
-            - $ref: '#/components/schemas/JobPrimaryStatus'
-            - description: The status of the Amazon Braket job.
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: 'A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.'
-      description: Provides summary information about an Amazon Braket job.
-    JobSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobSummary'
-    ListTagsForResourceRequest:
+          $ref: "#/components/schemas/settings_update_enum_status"
+          description: The Status of this Settings Update. One of `scheduled`, `in-progress`, `successful` or `failed`.
+          nullable: true
+          type: string
       type: object
-      title: ListTagsForResourceRequest
-      properties: {}
-    QuantumTaskSummary:
-      type: object
-      required:
-        - createdAt
-        - deviceArn
-        - outputS3Bucket
-        - outputS3Directory
-        - quantumTaskArn
-        - shots
-        - status
+    supersim.v1.sim:
       properties:
-        createdAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The time at which the task was created.
-        deviceArn:
-          allOf:
-            - $ref: '#/components/schemas/DeviceArn'
-            - description: The ARN of the device the task ran on.
-        endedAt:
-          allOf:
-            - $ref: '#/components/schemas/SyntheticTimestamp_date_time'
-            - description: The time at which the task finished.
-        outputS3Bucket:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The S3 bucket where the task result file is stored..
-        outputS3Directory:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: The folder in the S3 bucket where the task result file is stored.
-        quantumTaskArn:
-          allOf:
-            - $ref: '#/components/schemas/QuantumTaskArn'
-            - description: The ARN of the task.
-        shots:
-          allOf:
-            - $ref: '#/components/schemas/Long'
-            - description: The shots used for the task.
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the Super SIM belongs to.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        date_created:
+          description: The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        fleet_sid:
+          description: The unique ID of the Fleet configured for this SIM.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HF[0-9a-fA-F]{32}$
+          type: string
+        iccid:
+          description: The [ICCID](https://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID) associated with the SIM.
+          nullable: true
+          type: string
+        links:
+          format: uri-map
+          nullable: true
+          type: object
+        sid:
+          description: The unique string that identifies the Sim resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HS[0-9a-fA-F]{32}$
+          type: string
         status:
-          allOf:
-            - $ref: '#/components/schemas/QuantumTaskStatus'
-            - description: The status of the task.
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: 'Displays the key, value pairs of tags associated with this quantum task.'
-      description: Includes information about a quantum task.
-    QuantumTaskSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/QuantumTaskSummary'
-    SearchDevicesFilterNameString:
-      type: string
-      minLength: 1
-      maxLength: 64
-    SearchDevicesFilterValuesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String256'
-      minItems: 1
-      maxItems: 10
-    SearchDevicesRequestFiltersList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SearchDevicesFilter'
-      minItems: 0
-      maxItems: 10
-    SearchDevicesRequestMaxResultsInteger:
-      type: integer
-      minimum: 1
-      maximum: 100
-    SearchDevicesRequest:
+          $ref: "#/components/schemas/sim_enum_status"
+          description: The status of the Super SIM. Can be `new`, `ready`, `active`, `inactive`, or `scheduled`. See the [Super SIM Status Values](https://www.twilio.com/docs/iot/supersim/api/sim-resource#status-values) for a description of each.
+          nullable: true
+          type: string
+        unique_name:
+          description: An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
+          nullable: true
+          type: string
+        url:
+          description: The absolute URL of the Sim Resource.
+          format: uri
+          nullable: true
+          type: string
       type: object
-      required:
-        - filters
-      title: SearchDevicesRequest
+    supersim.v1.sim.billing_period:
       properties:
-        filters:
-          allOf:
-            - $ref: '#/components/schemas/SearchDevicesRequestFiltersList'
-            - description: The filter values to use to search for a device.
-        maxResults:
-          allOf:
-            - $ref: '#/components/schemas/SearchDevicesRequestMaxResultsInteger'
-            - description: The maximum number of results to return in the response.
-        nextToken:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.
-    SearchJobsFilterOperator:
-      type: string
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) the Super SIM belongs to.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        date_created:
+          description: The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        end_time:
+          description: The end time of the Billing Period specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        period_type:
+          $ref: "#/components/schemas/billing_period_enum_bp_type"
+          description: The type of Billing Period. Can be `ready` or `active`.
+          nullable: true
+          type: string
+        sid:
+          description: The SID of the Billing Period.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HB[0-9a-fA-F]{32}$
+          type: string
+        sim_sid:
+          description: The SID of the Super SIM the Billing Period belongs to.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HS[0-9a-fA-F]{32}$
+          type: string
+        start_time:
+          description: The start time of the Billing Period specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+      type: object
+    supersim.v1.sim.sim_ip_address:
+      properties:
+        ip_address:
+          description: IP address assigned to the given Super SIM
+          nullable: true
+          type: string
+        ip_address_version:
+          $ref: "#/components/schemas/sim_ip_address_enum_ip_address_version"
+          description: IP address version of the corresponding IP address
+          nullable: true
+          type: string
+      type: object
+    supersim.v1.sms_command:
+      properties:
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the SMS Command resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        date_created:
+          description: The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        date_updated:
+          description: The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          format: date-time
+          nullable: true
+          type: string
+        direction:
+          $ref: "#/components/schemas/sms_command_enum_direction"
+          description: The direction of the SMS Command. Can be `to_sim` or `from_sim`. The value of `to_sim` is synonymous with the term `mobile terminated`, and `from_sim` is synonymous with the term `mobile originated`.
+          nullable: true
+          type: string
+        payload:
+          description: The message body of the SMS Command sent to or from the SIM. For text mode messages, this can be up to 160 characters.
+          nullable: true
+          type: string
+        sid:
+          description: The unique string that we created to identify the SMS Command resource.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HC[0-9a-fA-F]{32}$
+          type: string
+        sim_sid:
+          description: The SID of the [SIM](https://www.twilio.com/docs/iot/supersim/api/sim-resource) that this SMS Command was sent to or from.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HS[0-9a-fA-F]{32}$
+          type: string
+        status:
+          $ref: "#/components/schemas/sms_command_enum_status"
+          description: "The status of the SMS Command. Can be: `queued`, `sent`, `delivered`, `received` or `failed`. See the [SMS Command Status Values](https://www.twilio.com/docs/iot/supersim/api/smscommand-resource#status-values) for a description of each."
+          nullable: true
+          type: string
+        url:
+          description: The absolute URL of the SMS Command resource.
+          format: uri
+          nullable: true
+          type: string
+      type: object
+    supersim.v1.usage_record:
+      properties:
+        account_sid:
+          description: The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that incurred the usage.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^AC[0-9a-fA-F]{32}$
+          type: string
+        billed_unit:
+          description: The currency in which the billed amounts are measured, specified in the 3 letter ISO 4127 format (e.g. `USD`, `EUR`, `JPY`). This can be null when data_toal_billed is 0 and we do not yet have billing information for the corresponding data usage. Refer to [Data Usage Processing](https://www.twilio.com/docs/iot/supersim/api/usage-record-resource#data-usage-processing) for more details.
+          format: currency
+          nullable: true
+          type: string
+        data_download:
+          description: Total data downloaded in bytes, aggregated by the query parameters.
+          format: int64
+          nullable: true
+          type: integer
+        data_total:
+          description: Total of data_upload and data_download.
+          format: int64
+          nullable: true
+          type: integer
+        data_total_billed:
+          description: Total amount in the `billed_unit` that was charged for the data uploaded or downloaded. Will return 0 for usage prior to February 1, 2022. Value may be 0 despite `data_total` being greater than 0 if the data usage is still being processed by Twilio's billing system. Refer to [Data Usage Processing](https://www.twilio.com/docs/iot/supersim/api/usage-record-resource#data-usage-processing) for more details.
+          nullable: true
+          type: number
+        data_upload:
+          description: Total data uploaded in bytes, aggregated by the query parameters.
+          format: int64
+          nullable: true
+          type: integer
+        fleet_sid:
+          description: SID of the Fleet resource the usage occurred on. Value will only be present when either a value for the `Fleet` query parameter is provided or when UsageRecords are grouped by `fleet`. Otherwise, the value will be `null`.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HF[0-9a-fA-F]{32}$
+          type: string
+        iso_country:
+          description: Alpha-2 ISO Country Code that the usage occurred in. Value will only be present when either a value for the `IsoCountry` query parameter is provided or when UsageRecords are grouped by `isoCountry`. Otherwise, the value will be `null`.
+          format: iso-country-code
+          nullable: true
+          type: string
+        network_sid:
+          description: SID of the Network resource the usage occurred on. Value will only be present when either a value for the `Network` query parameter is provided or when UsageRecords are grouped by `network`. Otherwise, the value will be `null`.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HW[0-9a-fA-F]{32}$
+          type: string
+        period:
+          description: The time period for which the usage is reported. The period is represented as a pair of `start_time` and `end_time` timestamps specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          nullable: true
+        sim_sid:
+          description: SID of a Sim resource to which the UsageRecord belongs. Value will only be present when either a value for the `Sim` query parameter is provided or when UsageRecords are grouped by `sim`. Otherwise, the value will be `null`.
+          maxLength: 34
+          minLength: 34
+          nullable: true
+          pattern: ^HS[0-9a-fA-F]{32}$
+          type: string
+      type: object
+    usage_record_enum_granularity:
       enum:
-        - LT
-        - LTE
-        - EQUAL
-        - GT
-        - GTE
-        - BETWEEN
-        - CONTAINS
-    SearchJobsFilterValuesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String256'
-      minItems: 1
-      maxItems: 10
-    SearchJobsRequestFiltersList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SearchJobsFilter'
-      minItems: 0
-      maxItems: 10
-    SearchJobsRequestMaxResultsInteger:
-      type: integer
-      minimum: 1
-      maximum: 100
-    SearchJobsRequest:
-      type: object
-      required:
-        - filters
-      title: SearchJobsRequest
-      properties:
-        filters:
-          allOf:
-            - $ref: '#/components/schemas/SearchJobsRequestFiltersList'
-            - description: The filter values to use when searching for a job.
-        maxResults:
-          allOf:
-            - $ref: '#/components/schemas/SearchJobsRequestMaxResultsInteger'
-            - description: The maximum number of results to return in the response.
-        nextToken:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.
-    SearchQuantumTasksFilterOperator:
+        - hour
+        - day
+        - all
       type: string
+    usage_record_enum_group:
       enum:
-        - LT
-        - LTE
-        - EQUAL
-        - GT
-        - GTE
-        - BETWEEN
-    SearchQuantumTasksFilterValuesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String256'
-      minItems: 1
-      maxItems: 10
-    SearchQuantumTasksRequestFiltersList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SearchQuantumTasksFilter'
-      minItems: 0
-      maxItems: 10
-    SearchQuantumTasksRequestMaxResultsInteger:
-      type: integer
-      minimum: 1
-      maximum: 100
-    SearchQuantumTasksRequest:
-      type: object
-      required:
-        - filters
-      title: SearchQuantumTasksRequest
-      properties:
-        filters:
-          allOf:
-            - $ref: '#/components/schemas/SearchQuantumTasksRequestFiltersList'
-            - description: Array of <code>SearchQuantumTasksFilter</code> objects.
-        maxResults:
-          allOf:
-            - $ref: '#/components/schemas/SearchQuantumTasksRequestMaxResultsInteger'
-            - description: Maximum number of results to return in the response.
-        nextToken:
-          allOf:
-            - $ref: '#/components/schemas/String'
-            - description: A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.
-    TagKeys:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    TagResourceRequest:
-      type: object
-      required:
-        - tags
-      title: TagResourceRequest
-      properties:
-        tags:
-          allOf:
-            - $ref: '#/components/schemas/TagsMap'
-            - description: Specify the tags to add to the resource.
-    UntagResourceRequest:
-      type: object
-      title: UntagResourceRequest
-      properties: {}
-security:
-  - hmac: []
+        - sim
+        - fleet
+        - network
+        - isoCountry
+      type: string
+    usage_record_enum_sort_by:
+      enum:
+        - time
+      type: string
+  securitySchemes:
+    accountSid_authToken:
+      scheme: basic
+      type: http
+x-maturity:
+  - description: This product is Generally Available.
+    name: GA
+  - description: PLEASE NOTE that this is a Beta product that is subject to change. Use it with caution.
+    name: Beta

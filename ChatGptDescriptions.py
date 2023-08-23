@@ -1,7 +1,10 @@
 import openai
 import time
+import Files
 
-statement = "Dado el siguiente endpoint perteneciente a un archivo de openApi, generar una descripcion que explique resumidamente la funcionalidad del endpoint. Se debe generar en una unica oracion: "
+language = model = str(Files.openTxt("./entries.txt")[11])
+
+statement = "Dado el siguiente endpoint perteneciente a un archivo de openApi, generar una descripcion que explique resumidamente la funcionalidad del endpoint. Se debe generar en una unica oracion en el idioma " + language + ": "
 
 
 def consult(prompt):

@@ -8,7 +8,7 @@ commonWords:10
 k:30
 nInit:10
 # OpenApi
-openApiKey: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
+openApiKey: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
 # Clustering intermedio
 k:25
 nInit:10
@@ -16,3 +16,5 @@ nInit:10
 metodo:2
 # 
 umbral:0.6
+# Soporte para espanol/ingles
+language:ingles

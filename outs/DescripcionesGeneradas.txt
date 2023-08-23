@@ -1,0 +1,18 @@
+path: /v1/Faxes:
+operacion: x-twilio
+{"className": "fax", "defaultOutputProperties": ["sid", "from", "to", "status", "date_created"], "pathType": "list"}
+
+Descripcion generada: This endpoint allows the user to access and manipulate fax resources, including details such as sender, recipient, status, and creation date.
+
+path: /v1/Faxes/{FaxSid}/Media:
+operacion: x-twilio
+{"className": "fax_media", "defaultOutputProperties": ["content_type", "url"], "pathType": "list"}
+
+Descripcion generada: This endpoint allows users to manage the media files associated with a specific fax identified by its FaxSid.
+
+path: /v1/Faxes/{FaxSid}/Media/{Sid}:
+operacion: x-twilio
+{"className": "fax_media", "defaultOutputProperties": ["content_type", "url"], "pathType": "instance"}
+
+Descripcion generada: This endpoint allows access to the media content of a specific fax message identified by its Sid within the Twilio API version 1.
+
