@@ -66,7 +66,7 @@ def _addVectors(vectors):
         # print(vector)
         addition = addition + vector
         # Evaluar cuando se haga el clustering si conviene hacer esta division
-        addition = addition #/ len(vectors)
+        addition = addition / len(vectors)
     return addition
 
 

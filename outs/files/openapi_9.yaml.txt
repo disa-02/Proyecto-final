@@ -1,0 +1,491 @@
+/v1/Configuration:
+  get:
+    Descripcion: fetch global configuration conversation account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update global configuration conversation account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: configuration endpoint v1 retrieve update setting specifically default output property
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Configuration/Addresses:
+  get:
+    Descripcion: retrieve list address configuration account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new address configuration
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: address endpoint v1 configuration addresses retrieve list twilio respective property
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Configuration/Addresses/{Sid}:
+  delete:
+    Descripcion: remove exist address configuration
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch address configuration
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist address configuration
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow retrieving update delete specific address configuration identify sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Configuration/Webhooks:
+  get:
+    Descripcion: endpoint retrieve configuration webhook setting conversationsv1webhook json format
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: webhook event send request endpoint allow update configuration setting service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: webhook url endpoint v1 configuration webhooks configure manage twilio specify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations:
+  get:
+    Descripcion: retrieve list conversation account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new conversation account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: conversation property endpoint allow retrieval list output include unique identifier
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Messages:
+  get:
+    Descripcion: retrieve list message conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: add new message conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list message associate specific conversation identify conversationsid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Messages/{MessageSid}/Receipts:
+  get:
+    Descripcion: retrieve list delivery read receipt conversation message
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve delivery receipt specific message conversation identify conversationsid messagesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Messages/{MessageSid}/Receipts/{Sid}:
+  get:
+    Descripcion: fetch delivery read receipt conversation message
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: receipt endpoint retrieve delivery specific message conversation identify conversationsid information
+    Vector de grupo: [0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Messages/{Sid}:
+  delete:
+    Descripcion: remove message conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch message conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist message conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: message conversation sid property endpoint retrieve specific identify conversationsid twilio
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Participants:
+  get:
+    Descripcion: retrieve list participant conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: add new participant conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow retrieve list participant conversation identify conversationsid
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Participants/{Sid}:
+  delete:
+    Descripcion: remove participant conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch participant conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist participant conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: participant endpoint retrieve manage detail conversation provide conversationsid sid
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Webhooks:
+  get:
+    Descripcion: retrieve list webhook scope conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new webhook scope conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow manage webhook relate specific conversation twilio api
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{ConversationSid}/Webhooks/{Sid}:
+  delete:
+    Descripcion: remove exist webhook scope conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch configuration conversation scope webhook
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist conversation scope webhook
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow access manage webhook associate specific conversation twilio api
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Conversations/{Sid}:
+  delete:
+    Descripcion: remove conversation account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch conversation account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist conversation account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: conversation property relate id endpoint provide access specific identify sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Credentials:
+  get:
+    Descripcion: retrieve list push notification credential account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: add new push notification credential account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: credential v1 endpoint allow access twilio ability list default output
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Credentials/{Sid}:
+  delete:
+    Descripcion: remove push notification credential account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch push notification credential account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist push notification credential account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: sid type endpoint retrieve credential associate specific relate twilio include
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/ParticipantConversations:
+  get:
+    Descripcion: retrieve list conversation participant belong identity address parameter specify
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: retrieve list participant conversation twilio chat service version 1
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Roles:
+  get:
+    Descripcion: retrieve list user role account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new user role account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: role endpoint v1 retrieve list corresponding information sid friendly type
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Roles/{Sid}:
+  delete:
+    Descripcion: remove user role account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch user role account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist user role account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve information specific role provide unique sid identifier
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services:
+  get:
+    Descripcion: retrieve list conversation service account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new conversation service account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow user retrieve list service twilio api
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Bindings:
+  get:
+    Descripcion: retrieve list push notification binding conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow manage binding relate specific chat service provide chatservicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Bindings/{Sid}:
+  delete:
+    Descripcion: remove push notification bind conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch push notification bind conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: service sid endpoint allow retrieve update delete specific binding associate
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Configuration:
+  get:
+    Descripcion: fetch configuration conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update configuration setting conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint v1 serviceschatservicesidconfiguration allow manage configuration setting relate specific chat
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Configuration/Notifications:
+  get:
+    Descripcion: fetch push notification service setting
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update push notification service setting
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow access manage notification setting specific chat service twilio
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Configuration/Webhooks:
+  get:
+    Descripcion: fetch specific service webhook configuration
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update specific webhook
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow user manage webhook configuration specific chat service identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations:
+  get:
+    Descripcion: retrieve list conversation service
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list conversation associate specific chat service
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Messages:
+  get:
+    Descripcion: retrieve list message conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: add new message conversation specific service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list message belong specific conversation chat service base
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Messages/{MessageSid}/Receipts:
+  get:
+    Descripcion: retrieve list delivery read receipt conversation message
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: message endpoint retrieve delivery receipt specific conversation chat service provide
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Messages/{MessageSid}/Receipts/{Sid}:
+  get:
+    Descripcion: fetch delivery read receipt conversation message
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve status creation date delivery receipt specific message conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Messages/{Sid}:
+  delete:
+    Descripcion: remove message conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch message conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist message conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: id message conversation service endpoint retrieve specific particular chat
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Participants:
+  get:
+    Descripcion: retrieve list participant conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: add new participant conversation specific service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow retrieval participant conversation chat service specify provide chatservicesid
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Participants/{Sid}:
+  delete:
+    Descripcion: remove participant conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch participant conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist participant conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow access manage participant specific conversation chat service twilio
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Webhooks:
+  get:
+    Descripcion: retrieve list webhook scope conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new webhook scope conversation specific service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow manage webhook relate conversation chat service identify chatservicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{ConversationSid}/Webhooks/{Sid}:
+  delete:
+    Descripcion: remove exist webhook scope conversation
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch configuration conversation scope webhook
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist conversation scope webhook
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: conversation endpoint manage webhook associate specific chat service allow user
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Conversations/{Sid}:
+  delete:
+    Descripcion: remove conversation service
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist conversation service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve specific conversation chat service identify give chatservicesid sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/ParticipantConversations:
+  get:
+    Descripcion: retrieve list conversation participant belong identity address parameter specify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list participant conversation chat service identify chatservicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Roles:
+  get:
+    Descripcion: retrieve list user role service
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new user role service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list role associate specific chat service identify unique
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Roles/{Sid}:
+  delete:
+    Descripcion: remove user role service
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch user role service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist user role service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow retrieve update delete specific role chat service identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Users:
+  get:
+    Descripcion: retrieve list conversation user service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: add new conversation user service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow list manage user associate specific chat service identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Users/{Sid}:
+  delete:
+    Descripcion: remove conversation user service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch conversation user service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist conversation user service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint sid property allow access manipulate specific user chat service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Users/{UserSid}/Conversations:
+  get:
+    Descripcion: user retrieve list conversations
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list conversation associate specific user chat service identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ChatServiceSid}/Users/{UserSid}/Conversations/{ConversationSid}:
+  delete:
+    Descripcion: delete specific user conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch specific user conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update specific user conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve specific conversation belong user chat service identify conversationsid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{Sid}:
+  delete:
+    Descripcion: remove conversation service nested resource account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch conversation service account
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow user access manipulate datum relate specific service identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Users:
+  get:
+    Descripcion: retrieve list conversation user account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: add new conversation user account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: user retrieve sid endpoint allow list profile require output property
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Users/{Sid}:
+  delete:
+    Descripcion: remove conversation user account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch conversation user account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update exist conversation user account default service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve information relate specific user identify give sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Users/{UserSid}/Conversations:
+  get:
+    Descripcion: user retrieve list conversations
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: sid conversation user chat service endpoint retrieve list specific identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Users/{UserSid}/Conversations/{ConversationSid}:
+  delete:
+    Descripcion: delete specific user conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch specific user conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update specific user conversation
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve specific conversation belong user conversationsid twilio api version
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

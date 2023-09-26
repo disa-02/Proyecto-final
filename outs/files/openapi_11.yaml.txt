@@ -1,0 +1,34 @@
+/v1/Faxes:
+  get:
+    Descripcion: retrieve list fax
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: fax endpoint allow user access manipulate resource order send receive
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Faxes/{FaxSid}/Media:
+  get:
+    Descripcion: fax retrieve list medium instance specified
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve medium associate specific fax provide faxsid
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Faxes/{FaxSid}/Media/{Sid}:
+  delete:
+    Descripcion: delete specific fax medium instance
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch specific fax medium instance
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: medium endpoint allow access specific fax identify faxsid mediasid response
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Faxes/{Sid}:
+  delete:
+    Descripcion: delete specific fax associated medium
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch specific fax
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow access manipulate specific fax instance identify unique sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

@@ -1,0 +1,11 @@
+/v3/Services/{ServiceSid}/Channels:
+  x-twilio:
+    Descripcion: endpoint retrieve list channel associate specific servicesid twilio property type
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v3/Services/{ServiceSid}/Channels/{Sid}:
+  post:
+    Descripcion: update specific channel
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve specific channel property sid unique_name friendly_name belong service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

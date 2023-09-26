@@ -1,0 +1,54 @@
+/v2/Trunking/Countries:
+  get:
+    Descripcion: page endpoint retrieve list trunke country allow user specify size
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: country endpoint retrieve list support trunking service include name unit
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Trunking/Countries/{IsoCountry}:
+  get:
+    Descripcion: fetch specific country
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion:  endpoint v2 trunking countriesisocountry retrieve default output property path
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Trunking/Numbers:
+  x-twilio:
+    Descripcion: trunking number price endpoint v2 retrieve list twilio phone available
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Trunking/Numbers/{DestinationNumber}:
+  get:
+    Descripcion: fetch price information specific destination optionally origination phone number
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: price endpoint retrieve detail specific destination number trunking include country
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Voice:
+  x-twilio:
+    Descripcion: voice endpoint v2 x twilio property support handling relate functionality
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Voice/Countries:
+  get:
+    Descripcion: page voice country endpoint v2 retrieve list pagination support allow
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list country available voice call corresponding price default
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Voice/Countries/{IsoCountry}:
+  get:
+    Descripcion: fetch specific country
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: country endpoint retrieve default output property price unit specific iso
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Voice/Numbers:
+  x-twilio:
+    Descripcion: price endpoint retrieve list available voice number country inbound unit
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v2/Voice/Numbers/{DestinationNumber}:
+  get:
+    Descripcion: fetch price information specific destination optionally origination phone number
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: number price endpoint retrieve voice associate specify destination twilio provide
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

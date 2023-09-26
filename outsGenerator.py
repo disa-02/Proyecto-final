@@ -20,10 +20,12 @@ def generateOutVectorization(res,filesNames):
     # Genera la salida del resultado de vectorizar los documentos
     out = ""
     for i in range(0,len(res)):
-        out = out + str(filesNames[i]) + ": " + str(res[i]) + "\n"
+        vector = ["{:.2e}".format(num) for num in res[i]]
+
+        out = out + str(filesNames[i]) + ": " + str(vector) + "\n"
     return out
 
-def generateOutCluster(data,sse,centroids,k,filesNames):
+def generateOutCluster(data,error,centroids,k,filesNames):
     # Genera la salida del resultado de aplicar clustering sobre los documentos,es la salida final del programa
     out = ""
     for i in range(0,k):#k
@@ -33,6 +35,9 @@ def generateOutCluster(data,sse,centroids,k,filesNames):
                 out = out + str(filesNames[num]) + "\n"
         out = out + "\n"
     out = out + "\n"
-    out = out + "SSE: " + str(sse) + "\n\n"
-    out = out + "Centroides: \n" + str(centroids)
+    if(centroids is not None):
+        out = out + "SSE: " + str(error) + "\n\n"
+        out = out + "Centroides: \n" + str(centroids)
+    else:
+        out = out + "Silhoutte: " + str(error) + "\n\n"
     return out

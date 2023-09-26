@@ -1,0 +1,122 @@
+/v1/Schemas:
+  x-twilio:
+    Descripcion: property endpoint retrieve list schemas default output d dependent relate
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Schemas/{Id}:
+  get:
+    Descripcion: fetch specific schema nested version
+    Vector de grupo: [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve schema detail specific id version 1 api
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Schemas/{Id}/Versions:
+  get:
+    Descripcion: retrieve paginated list version schema
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: schema endpoint allow user retrieve list version associate specific id
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Schemas/{Id}/Versions/{SchemaVersion}:
+  get:
+    Descripcion: fetch specific schema version
+    Vector de grupo: [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve specified version schema give id
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Sinks:
+  get:
+    Descripcion: retrieve paginated list sink belong account request
+    Vector de grupo: [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new sink
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: sink endpoint manage twilio allow user retrieve list access property
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Sinks/{Sid}:
+  delete:
+    Descripcion: delete specific sink
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch specific sink
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update specific sink
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: sink endpoint retrieve information specific identify sid twilio include creation
+    Vector de grupo: [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Sinks/{Sid}/Test:
+  post:
+    Descripcion: sink create new test event give
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow test particular sink identify sid order validate functionality
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Sinks/{Sid}/Validate:
+  post:
+    Descripcion: validate test event sink receive
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow validation sink identify sid twilio api return result
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Subscriptions:
+  get:
+    Descripcion: retrieve paginated list subscription belong account request
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new subscription
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: subscription sid v1 endpoint allow user manage twilio provide property
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Subscriptions/{Sid}:
+  delete:
+    Descripcion: delete specific subscription
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: fetch specific subscription
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update subscription
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: subscription endpoint allow user retrieve detailed information specific provide id
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Subscriptions/{SubscriptionSid}/SubscribedEvents:
+  get:
+    Descripcion: retrieve list subscribed event type subscription
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: create new subscribed event type subscription
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list subscribe event specific subscription identify subscriptionsid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Subscriptions/{SubscriptionSid}/SubscribedEvents/{Type}:
+  delete:
+    Descripcion: remove event type subscription
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: read event subscription
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update event subscription
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: event subscription endpoint allow user manage retrieve information specific subscribe
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Types:
+  get:
+    Descripcion: retrieve paginated list available event types
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: type v1 types endpoint allow user retrieve list available associated
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Types/{Type}:
+  get:
+    Descripcion: fetch specific event type
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow retrieve default output property specific type version 1
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

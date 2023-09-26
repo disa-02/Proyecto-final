@@ -1,0 +1,188 @@
+/v1/Credentials:
+  get:
+    Descripcion: credential v1 endpoint allow user retrieve list option pagination customize
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: credential service endpoint v1 allow creation new push notification gcm
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: give endpoint v1 credential allow retrieve list default output property
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Credentials/{Sid}:
+  delete:
+    Descripcion: delete specific credential resource provide unique twilio string identifier
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: endpoint retrieve specific credential resource unique identifier provide twilio require
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: key endpoint update credential resource identify sid allow user modify
+    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: retrieve credential detail specific sid twilio api version 1
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services:
+  get:
+    Descripcion: page service endpoint retrieve list allow client specify number resource
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: endpoint allow creation service send post request form datum v1
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: service endpoint allow retrieve list property include id creation date
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels:
+  get:
+    Descripcion: page url channel public endpoint retrieve list belong specific service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: channel endpoint create specific service give servicesid option provide attribute
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: channel specific property endpoint allow user retrieve list associate service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites:
+  get:
+    Descripcion: page retrieve list invite specific service channel ability filter user
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: user channel service sid endpoint allow create invite specific require
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow retrieve list invite belong specific channel service provide
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}:
+  delete:
+    Descripcion: delete invite resource belong specific channel service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: invite detail belong particular service channel sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve information specific invite channel service include unique identifier
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members:
+  get:
+    Descripcion: channel service sid endpoint retrieve list member belong specific identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: member channel service sid create specific belong provide necessary information
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow list member specific channel service provide information unique
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}:
+  delete:
+    Descripcion: sid member channel service delete specific provide
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: member endpoint retrieve specific channel chat service identify provide servicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: member endpoint update channel chat service provide servicesid channelsid sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: member sid endpoint retrieve detail specific channel belong service specify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages:
+  get:
+    Descripcion: message page endpoint retrieve list belong specific channel service allow
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: message parameter endpoint allow creation new specific channel service require
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint v1 servicesservicesidchannelschannelsidmessages allow list retrieve message relate specific channel
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}:
+  delete:
+    Descripcion: delete specific message channel service twilio chat api
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: message fetchmessage endpoint retrieve specific resource channel service provide servicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion:  endpoint v1 servicesservicesidchannelschannelsidmessagessid allow update specific message belong channel
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: sid endpoint allow retrieve specific message belong channel service identify
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Channels/{Sid}:
+  delete:
+    Descripcion: delete specific channel service twilio chat api
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: channel endpoint allow fetch specific resource give service provide servicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: specific channel service sid update provide necessary attribute json string
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: channel endpoint allow access manage specific associate service twilio api
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Roles:
+  get:
+    Descripcion: endpoint retrieve list role specified service allow user paginate customize
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: role endpoint allow creation service require servicesid parameter friendlyname permission
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow access manage role associate specific service identify servicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Roles/{Sid}:
+  delete:
+    Descripcion: delete endpoint allow user specific role service identify servicesid sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: endpoint retrieve specific role resource service provide servicesid sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: endpoint allow user update specific role associate service provide servicesid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint allow user access manage specific role service identify respective
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Users:
+  get:
+    Descripcion: endpoint retrieve list user belong specific service allow pagination filter
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: service endpoint allow creation new user specific require sid provide
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list user belong specific service identify servicesid twilio
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Users/{Sid}:
+  delete:
+    Descripcion: user endpoint allow delete specific resource service provide servicesid sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: endpoint retrieve specific user resource chat service
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: user update request endpoint allow specific resource service send post
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: give endpoint represent individual user service provide access unique identifier
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{ServiceSid}/Users/{UserSid}/Channels:
+  get:
+    Descripcion: list channel give user
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: channel endpoint retrieve list belong specific user service provide information
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Services/{Sid}:
+  delete:
+    Descripcion: delete resource provide service identify twilio string path parameter sid
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  get:
+    Descripcion: endpoint allow fetch specific service resource provide unique twilio identifier
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  post:
+    Descripcion: update service resource give sid request body contain property
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: service endpoint v1 servicessid allow retrieval specific information sid friendly
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

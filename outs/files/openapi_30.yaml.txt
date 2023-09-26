@@ -1,0 +1,65 @@
+/v1/Messaging:
+  x-twilio:
+    Descripcion: endpoint handle message functionality twilio platform api version 1
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Messaging/Countries:
+  get:
+    Descripcion: endpoint retrieve list message country option pagination customization number resource
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: price country sms endpoint retrieve list support twilio messaging include
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Messaging/Countries/{IsoCountry}:
+  get:
+    Descripcion: country endpoint retrieve pricing information specific identify iso code
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: country endpoint allow retrieval specific information messaging capability pricing twilio
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/PhoneNumbers:
+  x-twilio:
+    Descripcion: v1 phonenumbers endpoint allow user retrieve list phone number associate
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/PhoneNumbers/Countries:
+  get:
+    Descripcion: endpoint retrieve list phone number country pagination option
+    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: country endpoint v1 phonenumber countries retrieve list associate property price
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/PhoneNumbers/Countries/{IsoCountry}:
+  get:
+    Descripcion: endpoint retrieve pricing information specific iso country code relate phone
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: country endpoint retrieve available phone number specific base iso code
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Voice:
+  x-twilio:
+    Descripcion: endpoint allow application interact twilio api manage voice relate functionality
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Voice/Countries:
+  get:
+    Descripcion: page listvoicecountry endpoint retrieve list voice country allow pagination control
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: endpoint retrieve list available country corresponding pricing unit twilio voice
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Voice/Countries/{IsoCountry}:
+  get:
+    Descripcion: country fetch voice pricing information specific iso code parameter
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: country endpoint retrieve information associated voice pricing unit iso code
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Voice/Numbers:
+  x-twilio:
+    Descripcion: number give endpoint v1 voice retrieve list available phone respective
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+/v1/Voice/Numbers/{Number}:
+  get:
+    Descripcion: number endpoint allow fetch voice provide phone parameter
+    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+  x-twilio:
+    Descripcion: price endpoint retrieve voice datum property specific phone number include
+    Vector de grupo: [0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

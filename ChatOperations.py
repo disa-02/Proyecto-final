@@ -41,6 +41,20 @@ def _checkRepeatedTopics(response):
             repeated.add(valor)
     return False
 
+def _delRepeatedTopics(response):
+    repeated = set()
+    dic = json.loads(response)
+    for key in dic:
+        valores = dic[key].copy()
+        i = 0
+        for valor in valores:
+            if valor in repeated:
+                del dic[key][i]
+            else:
+                i = i+1
+                repeated.add(valor)
+    return json.dumps(dic)
+
 def consult(prompt):
     # Realiza la consulta al chat
     condition = True
@@ -55,11 +69,12 @@ def consult(prompt):
             response = (completion.choices[0].message.content)
             response = JsonProcessing.contiene_json(response)
             if (response != None):
+                response = _delRepeatedTopics(response)
                 if (not _checkAttributes(response)):
-                    if (not _checkRepeatedTopics(response)):
-                            condition = False
-                    else:
-                        print("Error se genero un json con valores repetidos, reintentando ...")
+                    # if (not _checkRepeatedTopics(response)):
+                    condition = False
+                    # else:
+                    #     print("Error se genero un json con valores repetidos, reintentando ...")
                 else:
                     print("Error en la generacion de los nombres en la respuesta, reintentando ...")
                

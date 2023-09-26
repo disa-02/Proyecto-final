@@ -70,9 +70,9 @@ def procces(data,commonWords,numberSentences):
     descriptions = {}
     pathInfo = {}
     _extractDescriptions(data, descriptions, pathInfo)
-    _completeDescriptions(descriptions, pathInfo)
-    for path, endpoint in descriptions.items():
-        for method, description in endpoint.items():
-            generateSummary(numberSentences, path, method, description,descriptions)
-            _extract_main_topic(path, method, description, descriptions,commonWords)
+    # _completeDescriptions(descriptions, pathInfo)
+    # for path, endpoint in descriptions.items():
+    #     for method, description in endpoint.items():
+    #         generateSummary(numberSentences, path, method, description,descriptions)
+    #         _extract_main_topic(path, method, description, descriptions,commonWords)
     return descriptions

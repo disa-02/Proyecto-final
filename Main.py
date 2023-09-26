@@ -11,6 +11,9 @@ import time
 import sys
 import outsGenerator
 import prueba
+import ClusteringJerarquico
+import SemanticGrouping
+
 
 
 def enumDescriptions(filesDescriptions):
@@ -20,6 +23,8 @@ def enumDescriptions(filesDescriptions):
     for descriptions in filesDescriptions:
         for path, endpoint in descriptions.items():
             for method, description in endpoint.items():
+                if(description is None):
+                    description = "none"
                 enumFilesDescriptions.append('' + str(cont) + "-" + description)
                 cont += 1
     return enumFilesDescriptions 
@@ -36,7 +41,7 @@ Files.saveFile("", "DescripcionesGeneradas.txt", "./outs/", "w") #Lo escribo vac
 
 # Lectura de las entradas
 entries = Files.openTxt("./entries.txt")
-if (len(entries) < 12):
+if (len(entries) < 13):
     print("Error en la entrada, no se definieron todos los atributos")
     sys.exit()
 
@@ -49,16 +54,19 @@ nInit = int(entries[5])
 method=int(entries[9])
 kInt=int(entries[7])
 nInitInt = int(entries[8])
-umbral = float(entries[9])
+umbral = float(entries[10])
+finalClustering = int(entries[12])
 
-importDocs = 1
+importDocs = 0
 filesDescriptions = []
 filesNames = []
 time2 = 0
+
+
+print("Importando documentos:")
 if (importDocs == 1):
     
     # Importacion de los documentos
-    print("Importando documentos:")
     files, filesNames = Files.filesImport("./openApiDescriptions")
     time2I=time.time()
     # Procesamiento de los documentos
@@ -79,13 +87,18 @@ enumFilesDescriptions = enumDescriptions(filesDescriptions)
 
 
 # Agrupacion de las descripciones
+print("Realizando agrupamiento de las descripciones")
 groupings = {}
 if method == 0: # Usando el chat
     groupings = ChatGptGrouping.group(enumFilesDescriptions, chunks)
 elif method == 1: # Usando el chat de manera asistida
     groupings = ChatGptAssistedGrouping.group(enumFilesDescriptions,chunks,umbral)
-else: # Usando k-means
+elif method == 2: # Usando k-means
     groupings = KmeansClustering.groupDescriptions(enumFilesDescriptions, kInt, nInitInt)
+elif method == 3:
+    groupings = ClusteringJerarquico.groupDescriptions(enumFilesDescriptions, kInt) 
+else:
+    groupings = SemanticGrouping.group(enumFilesDescriptions,umbral)
 
 # Vectorizacion
 print("Vectorizando archivos...")
@@ -93,15 +106,17 @@ vectorsGroups, res = Vectorization.vectorize(groupings, filesDescriptions, metho
 
 # Clustering
 print("Realizando el clustering:")
-data,sse,centroids = KmeansClustering.cluster(res, k, nInit)
-
+if(finalClustering == 0):
+    data,error,centroids = KmeansClustering.cluster(res, k, nInit)
+else:
+    data,error,centroids = ClusteringJerarquico.cluster(res, k)
 # Save files
 Files.guardar_diccionario_en_json(filesDescriptions, "./outs/filesDescriptions.json")
 Files.saveFile("\n".join(enumFilesDescriptions), "DescripcionesProcesadas.txt", "./outs/", "w")
 Files.saveFile(str(groupings), "AgrupacionDeDescripciones.json", "./outs/", "w")
 out = outsGenerator.generateOutVectorization(res,filesNames)
 Files.saveFile(out, "vectorizacion.txt", "./outs/", "w")
-out = outsGenerator.generateOutCluster(data,sse,centroids,k,filesNames)
+out = outsGenerator.generateOutCluster(data,error,centroids,k,filesNames)
 Files.saveFile(out, "finalOut.txt", "./outs/", "w")
 outs = outsGenerator.generateOutFiles(filesDescriptions ,vectorsGroups)
 for i in range(0,len(outs)):
