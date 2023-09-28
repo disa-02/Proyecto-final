@@ -86,6 +86,8 @@ def consult(prompt):
         except openai.error.ServiceUnavailableError as e:
             print("Error: El servidor está sobrecargado o no está listo todavía, reintentando...")
             time.sleep(5)
+        except Exception as e:
+            print("Error inesperado, reintentando...")
     return response
 
 def generateResponseFinal(finalResponse):
