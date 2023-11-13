@@ -19,3 +19,6 @@ umbral:0.7
 # Soporte para espanol/ingles
 language:ingles
 finalClustering:0
+#
+generate:1
+importDocs:1

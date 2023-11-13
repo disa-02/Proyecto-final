@@ -10,7 +10,6 @@ import KmeansClustering
 import time
 import sys
 import outsGenerator
-import prueba
 import ClusteringJerarquico
 import SemanticGrouping
 
@@ -38,7 +37,7 @@ def initFiles():
 
 def readEntries():
     entries = Files.openTxt("./entries.txt")
-    if (len(entries) < 13):
+    if (len(entries) < 15):
         print("Error en la entrada, no se definieron todos los atributos")
         sys.exit()
 
@@ -53,7 +52,9 @@ def readEntries():
     nInitInt = int(entries[8])
     umbral = float(entries[10])
     finalClustering = int(entries[12])
-    return chunks,numberSentences,commonWords,k,nInit,method,kInt,nInitInt,umbral,finalClustering
+    generate = int(entries[13])
+    importDocs = int(entries[14])
+    return chunks,numberSentences,commonWords,k,nInit,method,kInt,nInitInt,umbral,finalClustering,generate,importDocs
 
 def docImport(importDocs, commonWords,numberSentences,generate):
     filesDescriptions = []
@@ -107,16 +108,14 @@ def saveFiles(filesDescriptions,enumFilesDescriptions,res,filesNames,data,error,
         Files.saveFile(outs[i], str(filesNames[i]) + ".txt", "./" + outFolder + "/" + "files/", "w")
 
 # -----------MAIN-----------
-generate = 0
 start_time = time.time()
 # Inicializacion de las carpetas de salida
 initFiles()
 
 # Lectura de las entradas
-chunks,numberSentences,commonWords,k,nInit,method,kInt,nInitInt,umbral,finalClustering = readEntries()
+chunks,numberSentences,commonWords,k,nInit,method,kInt,nInitInt,umbral,finalClustering,generate,importDocs = readEntries()
 
 #Importacion de los documentos de entrada
-importDocs = 0
 filesDescriptions,filesNames,time2 = docImport(importDocs, commonWords,numberSentences,generate)
 
 # Obtencion de las descripciones como una lista enumerada
