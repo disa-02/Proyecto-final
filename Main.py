@@ -24,9 +24,10 @@ def enumDescriptions(filesDescriptions):
         for path, endpoint in descriptions.items():
             for method, description in endpoint.items():
                 if(description is None):
-                    description = "none"
-                enumFilesDescriptions.append('' + str(cont) + "-" + description)
-                cont += 1
+                    cont = cont + 1
+                else:
+                    enumFilesDescriptions.append('' + str(cont) + "-" + description)
+                    cont += 1
     return enumFilesDescriptions 
 
 def initFiles():
@@ -54,7 +55,7 @@ def readEntries():
     finalClustering = int(entries[12])
     return chunks,numberSentences,commonWords,k,nInit,method,kInt,nInitInt,umbral,finalClustering
 
-def docImport(importDocs, commonWords,numberSentences):
+def docImport(importDocs, commonWords,numberSentences,generate):
     filesDescriptions = []
     filesNames = []
     time2 = 0
@@ -68,7 +69,7 @@ def docImport(importDocs, commonWords,numberSentences):
         # filesDescriptions = [] # Almacena todas las descripciones de todos los documentos
         print("\nProcesando documentos:")
         for d in tqdm(files, desc="Documento"):
-            filesDescriptions.append(textProcessing.procces(d,commonWords,numberSentences))
+            filesDescriptions.append(textProcessing.procces(d,commonWords,numberSentences,generate))
         time2F=time.time()
         time2=time2F - time2I
 
@@ -90,10 +91,10 @@ def groupDescriptions(enumFilesDescriptions,chunks,umbral,kInt,nInitInt,method):
     elif method == 3: # Usando clustering jerarquico
         groupings,score = ClusteringJerarquico.groupDescriptions(enumFilesDescriptions, kInt) 
     else: # Usando agrupacion semantica
-        groupings = SemanticGrouping.group(enumFilesDescriptions,umbral)
+        groupings,score = SemanticGrouping.group(enumFilesDescriptions,umbral)
     return groupings,score
 
-def saveFiles(filesDescriptions,enumFilesDescriptions,res,filesNames,data,error,k,vectorsGroups,outFolder,time,score):
+def saveFiles(filesDescriptions,enumFilesDescriptions,res,filesNames,data,error,k,vectorsGroups,outFolder,time,score,groupings):
     Files.guardar_diccionario_en_json(filesDescriptions, "./" + outFolder + "/filesDescriptions.json")
     Files.saveFile("\n".join(enumFilesDescriptions), "DescripcionesProcesadas.txt", "./" + outFolder + "/", "w")
     Files.saveFile(str(groupings), "AgrupacionDeDescripciones.json", "./" + outFolder + "/", "w")
@@ -105,7 +106,8 @@ def saveFiles(filesDescriptions,enumFilesDescriptions,res,filesNames,data,error,
     for i in range(0,len(outs)):
         Files.saveFile(outs[i], str(filesNames[i]) + ".txt", "./" + outFolder + "/" + "files/", "w")
 
-#-----------MAIN-----------
+# -----------MAIN-----------
+generate = 0
 start_time = time.time()
 # Inicializacion de las carpetas de salida
 initFiles()
@@ -115,7 +117,7 @@ chunks,numberSentences,commonWords,k,nInit,method,kInt,nInitInt,umbral,finalClus
 
 #Importacion de los documentos de entrada
 importDocs = 0
-filesDescriptions,filesNames,time2 = docImport(importDocs, commonWords,numberSentences)
+filesDescriptions,filesNames,time2 = docImport(importDocs, commonWords,numberSentences,generate)
 
 # Obtencion de las descripciones como una lista enumerada
 enumFilesDescriptions = enumDescriptions(filesDescriptions)
@@ -139,7 +141,7 @@ end_time = time.time()
 total_time = end_time - start_time
 
 # Save files
-saveFiles(filesDescriptions,enumFilesDescriptions,res,filesNames,data,error,k,vectorsGroups,"outs",total_time,score)
+saveFiles(filesDescriptions,enumFilesDescriptions,res,filesNames,data,error,k,vectorsGroups,"outs",total_time,score,groupings)
 
 # Fin del programa
 print("Tiempo de procesamiento de descripciones")

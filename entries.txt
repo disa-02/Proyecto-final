@@ -6,11 +6,11 @@ numberSentences:1
 commonWords:10
 # Clustering final
 k:10
-nInit:20
+nInit:10
 # OpenApi
-openApiKey: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
+openApiKey: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
 # Clustering intermedio
-k:15
+k:10
 nInit:5
 #
 metodo:3
@@ -18,4 +18,4 @@ metodo:3
 umbral:0.7
 # Soporte para espanol/ingles
 language:ingles
-finalClustering:1
+finalClustering:0

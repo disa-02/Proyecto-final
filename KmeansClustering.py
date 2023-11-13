@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
+from sklearn.cluster import MiniBatchKMeans as KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 import json
 from sklearn.preprocessing import normalize
@@ -10,7 +10,7 @@ from sklearn.metrics import silhouette_score
 
 def cluster(data,k,nInit):
     
-    data = normalize(data)
+    # data = normalize(data)
 
     # Realiza un clustering con el metodo k-means utilizando k clusters en un set de data
     kmeans = KMeans(n_clusters=k,n_init=nInit)

@@ -1,0 +1,69 @@
+Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Un tema no puede pertenecer a mas de un grupo; no puede haber temas no agrupados y no puede haber un mismo tema en grupos diferentes.
+La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que los grupos contengan un único tema.
+1944-retrieve list usage record belong account request
+1962-retrieve list usage trigger belong account request
+1963-create new usagetrigger
+1966-fetch instance usage trigger
+1967-update instance usage trigger
+1969-account fetch specify provide sid
+1970-modify property give account
+1972-retrieve list services
+1973-create new service resource
+1975-retrieve list asset
+1976-create new asset resource
+1978-retrieve list asset version
+1982-delete asset resource
+1986-retrieve list build
+1989-delete build resource
+1990-retrieve specific build resource
+1992-retrieve specific build resource
+1994-retrieve list environment
+1995-create new environment
+1997-retrieve list deployment
+1998-create new deployment
+2002-retrieve list log
+2004-retrieve specific log
+2006-retrieve list variable
+2007-create new variable
+2010-retrieve specific variable
+2016-retrieve list functions
+2017-create new function resource
+2029-delete service resource
+2055-fetch inbound processing region assign phone number
+2056-assign inbound processing region phone number
+2061-fetch inbound processing region assign sip trunk
+2062-assign inbound processing region sip trunk
+2065-update specific channel
+2164-retrieve list command account
+2165-send command sim
+2168-fetch command instance account
+2177-retrieve list sim resource account
+2179-delete sim resource account
+2180-fetch sim resource account
+2181-update give property sim resource account
+2204-conversation segment d
+2214-category
+2215-create category question
+2218-update category question
+2220-questionnaire question
+2221-create questionnaire
+2223-delete questionnaire
+2224-questionnaire detail
+2225-update questionnaire
+2227-question give category
+2228-create question category
+2231-update question
+2233-answer set setting account
+2237-segment give reservation ids
+2239-obtain session detail fetch report dashboard
+2241-flex ui quality management fetch insights role user
+2243-create new interaction
+2245-list channel interaction
+2247-list invites channel
+2248-invite agent taskqueue channel
+2250-list participant channel
+2251-add participant channel
+2253-update exist channel participant
+2255-fetch channel interaction
+2256-update exist interaction channel

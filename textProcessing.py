@@ -30,16 +30,22 @@ def _extractDescriptions(data, descriptions, pathInfo):
                     pathInfo[path] = methodInfo
         descriptions[path] = infoDescriptions
 
-def _completeDescriptions(descriptions, pathInfo):
+def _completeDescriptions(descriptions, pathInfo,generate):
     # Completa las descripciones faltantes utilizando chatGPT
     for path, endpoint in pathInfo.items():
         for method, description in endpoint.items():
-            # Request to chatGPT
-            prompt = str(path) + ": " + str(method) + ": " + str(description)
-            desc = ChatGptDescriptions.generateDescription(prompt)
+            desc = ""
+            if(generate == 1):
+                # Request to chatGPT
+                prompt = str(path) + ": " + str(method) + ": " + str(description)
+                desc = ChatGptDescriptions.generateDescription(prompt)
+                Files.saveFile("path: " + str(path) + ":\n" + "operacion: " + str(method) + "\n" + json.dumps(dict(description)) + "\n\n" + "Descripcion generada: " +
+                        desc + "\n\n", "DescripcionesGeneradas.txt", "./outs/", "a")
+            else:
+                desc = None
             descriptions[path][method] = desc
-            Files.saveFile("path: " + str(path) + ":\n" + "operacion: " + str(method) + "\n" + json.dumps(dict(description)) + "\n\n" + "Descripcion generada: " +
-                           desc + "\n\n", "DescripcionesGeneradas.txt", "./outs/", "a")
+
+        
 
  
 def _extract_main_topic(path, method, description, descriptions,commonWords):
@@ -65,14 +71,15 @@ def generateSummary(number_sentences, path, method, description, descriptions):
     descriptions[path][method] = summary
 
 
-def procces(data,commonWords,numberSentences):
+def procces(data,commonWords,numberSentences,generate):
     # Procesa las descripciones obteniendo los tokens mas relevantes
     descriptions = {}
     pathInfo = {}
     _extractDescriptions(data, descriptions, pathInfo)
-    # _completeDescriptions(descriptions, pathInfo)
-    # for path, endpoint in descriptions.items():
-    #     for method, description in endpoint.items():
-    #         generateSummary(numberSentences, path, method, description,descriptions)
-    #         _extract_main_topic(path, method, description, descriptions,commonWords)
+    _completeDescriptions(descriptions, pathInfo,generate)
+    for path, endpoint in descriptions.items():
+        for method, description in endpoint.items():
+            # generateSummary(numberSentences, path, method, description,descriptions)
+            if(description is not None):
+                _extract_main_topic(path, method, description, descriptions,commonWords)
     return descriptions

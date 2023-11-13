@@ -17,13 +17,13 @@ import Files
 
 def cluster(data,k):
     # Realiza un clustering con el metodo k-means utilizando k clusters en un set de data
-    data_scaled = normalize(data)
+    # data = normalize(data)
 
     cluster = AgglomerativeClustering(n_clusters=k,metric='euclidean', linkage='ward')
-    clust = cluster.fit_predict(data_scaled)
+    clust = cluster.fit_predict(data)
     labels = cluster.labels_
 
-    score = silhouette_score(data_scaled, labels)
+    score = silhouette_score(data, labels)
 
     return labels,score
 

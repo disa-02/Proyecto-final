@@ -1,7 +1,0 @@
-/v1/PhoneNumbers/{PhoneNumber}:
-  get:
-    Descripcion: phone number specify add endpoint retrieve information include carrier caller
-    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
-  x-twilio:
-    Descripcion: endpoint retrieve information specific phone number include caller country code
-    Vector de grupo: [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

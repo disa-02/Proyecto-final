@@ -1,7 +1,0 @@
-/v2/WebChats:
-  post:
-    Descripcion: web channel friendly endpoint allow creation new flex specify address
-    Vector de grupo: [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
-  x-twilio:
-    Descripcion: web property endpoint list chat available provide channel class default
-    Vector de grupo: [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]

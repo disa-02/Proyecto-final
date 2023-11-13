@@ -1,0 +1,232 @@
+Dada una lista de temas identificados numéricamente, agruparlos según su relación semántica en grupos bien definidos y representativos. Un tema no puede pertenecer a mas de un grupo; no puede haber temas no agrupados y no puede haber un mismo tema en grupos diferentes.
+La respuesta se presentará en formato JSON, donde cada atributo será el nombre del grupo y el valor una lista numérica de los temas correspondientes.
+Es importante que los nombres de los grupos sean descriptivos y representen claramente la temática de los temas que agrupan. Asimismo, trata de evitar de que los grupos contengan un único tema.
+542-retrieve paginated list version schema
+544-fetch specific schema version
+546-retrieve paginated list sink belong account request
+547-create new sink
+549-delete specific sink
+550-fetch specific sink
+551-update specific sink
+553-sink create new test event give
+555-validate test event sink receive
+557-retrieve paginated list subscription belong account request
+558-create new subscription
+560-delete specific subscription
+561-fetch specific subscription
+562-update subscription
+564-retrieve list subscribed event type subscription
+565-create new subscribed event type subscription
+567-remove event type subscription
+568-read event subscription
+569-update event subscription
+571-retrieve paginated list available event types
+573-fetch specific event type
+575-retrieve list authorizationdocuments belong account initiate request
+576-create authorizationdocument authorize hosting phone number capability twilio platform
+578-cancel authorizationdocument request
+579-fetch specific authorizationdocument
+581-retrieve list dependent hostednumberorder belong authorizationdocument
+583-retrieve list hostednumberorder belong account initiate request
+584-host phone number capability twilio platform
+586- cancel hostednumberorder available status receive
+587-fetch specific hostednumberorder
+590-retrieve list bundle account
+591-create new bundle
+593-bundle retrieve list copy
+594-bundle create copy new internally item identity document original
+596-retrieve list evaluation associate bundle resource
+597-create evaluation bundle
+599-fetch specific evaluation instance
+601-retrieve list assigned items account
+602-create new assigned item
+604-remove assignment item instance
+605-fetch specific assigned item instance
+607-bundle item specify replace target path source from_bundle_sid body param
+609-delete specific bundle
+610-fetch specific bundle instance
+611-update bundle account
+613-retrieve list end user type
+615-fetch specific end user type instance
+617-retrieve list end user account
+618-create new end user
+620-delete specific end user
+621-fetch specific end user instance
+622-update exist end user
+624-retrieve list regulation
+626-fetch specific regulation instance
+628-retrieve list support document type
+630-fetch specific support document type instance
+632-retrieve list support document account
+633-create new support document
+635-delete specific support document
+636-fetch specific support document instance
+637-update exist support document
+639-list recording compositionhook resource
+642-compositionhook  delete recording resource identify sid
+643-compositionhook return single resource identify sid
+649-list recording composition
+652-composition delete recording resource identify sid
+653-composition return single resource identify sid
+658-list track recording
+660-recording delete resource identify sid
+661-recording return single resource identify sid
+668-list track  return associate give participant currently publish resource
+670-return single track resource represent trackname sid
+672-return list subscribe rule participant
+673-update subscribe rule participant
+675-return list track subscribe participant
+677- track resource return single represent track_sid note video api
+684-return list recording rules room
+685-update recording rules room
+697-fetch list united states number deactivate specific date
+769-return list mediaprocessors
+772-return single mediaprocessor resource identify sid
+773-update mediaprocessor resource identify sid
+775-return list mediarecordings
+777-delete mediarecording resource identify sid
+778-return single mediarecording resource identify sid
+780-return list playerstreamers
+783-return single playerstreamer resource identify sid
+784-update playerstreamer resource identify sid
+786-method enable return single playbackgrant resource identify sid
+789-fetch frontline user
+790-update exist frontline user
+830-return style sheet json object assistant
+831- update style sheet assistant identify assistant_sid
+840-return json action task
+841-update action task identify tasksid taskuniquename
+874-fetch specific export
+876-fetch specific export configuration
+879-retrieve list day resource
+881-fetch specific day
+888-fetch eligibility bulk check request host twilio
+890-phone number allow check list port twilio asynchronous
+892-allow check single phone number port twilio
+894-fetch previous portability check return current status validation result number
+964-list channel give user
+966-remove user select channel
+978-event return list account sort date
+1060-delete record archived bulk export note voice api
+1084-country create bulk update request change voice dialing permission identify
+1086-retrieve voice dial country permission account
+1088-country retrieve voice dial permission identify give iso code
+1090-country fetch high risk special service prefix resource correspond iso
+1099-retrieve voice dialing permission inheritance sub account
+1100-update voice dialing permission inheritance sub account
+1109-retrieve list flow
+1111-retrieve list engagement flow
+1112-trigger new engagement flow
+1114-retrieve recent context engagement
+1116-retrieve list step engagement
+1118-retrieve step
+1120-retrieve context engagement step
+1122-delete engagement step relate
+1123-retrieve engagement
+1125-retrieve list execution flow
+1126-trigger new execution flow
+1128-retrieve recent context execution
+1130-retrieve list step execution
+1132-retrieve step
+1134-retrieve context execution step
+1136-delete execution step relate
+1137-retrieve execution
+1138- update status execution end
+1140-delete specific flow
+1141-retrieve specific flow
+1146-retrieve list address configuration account
+1147-create new address configuration
+1149-remove exist address configuration
+1150-fetch address configuration
+1151-update exist address configuration
+1156-retrieve list conversation account default service
+1157-create new conversation account default service
+1159-retrieve list message conversation
+1160-add new message conversation
+1162-retrieve list delivery read receipt conversation message
+1164-fetch delivery read receipt conversation message
+1166-remove message conversation
+1167-fetch message conversation
+1168-update exist message conversation
+1170-retrieve list participant conversation
+1171-add new participant conversation
+1173-remove participant conversation
+1174-fetch participant conversation
+1175-update exist participant conversation
+1177-retrieve list webhook scope conversation
+1178-create new webhook scope conversation
+1180-remove exist webhook scope conversation
+1181-fetch configuration conversation scope webhook
+1182-update exist conversation scope webhook
+1184-remove conversation account default service
+1185-fetch conversation account default service
+1186-update exist conversation account default service
+1188-retrieve list push notification credential account
+1189-add new push notification credential account
+1191-remove push notification credential account
+1192-fetch push notification credential account
+1193-update exist push notification credential account
+1195-retrieve list conversation participant belong identity address parameter specify
+1197-retrieve list user role account default service
+1198-create new user role account default service
+1200-remove user role account default service
+1201-fetch user role account default service
+1202-update exist user role account default service
+1204-retrieve list conversation service account
+1205-create new conversation service account
+1207-retrieve list push notification binding conversation service
+1209-remove push notification bind conversation service
+1210-fetch push notification bind conversation service
+1215-fetch push notification service setting
+1218-fetch specific service webhook configuration
+1219-update specific webhook
+1221-retrieve list conversation service
+1222-create new conversation service
+1224-retrieve list message conversation
+1225-add new message conversation specific service
+1227-retrieve list delivery read receipt conversation message
+1229-fetch delivery read receipt conversation message
+1231-remove message conversation
+1232-fetch message conversation
+1233-update exist message conversation
+1235-retrieve list participant conversation
+1236-add new participant conversation specific service
+1238-remove participant conversation
+1239-fetch participant conversation
+1240-update exist participant conversation
+1242-retrieve list webhook scope conversation
+1243-create new webhook scope conversation specific service
+1245-remove exist webhook scope conversation
+1246-fetch configuration conversation scope webhook
+1247-update exist conversation scope webhook
+1249-remove conversation service
+1250-fetch conversation service
+1251-update exist conversation service
+1253-retrieve list conversation participant belong identity address parameter specify
+1255-retrieve list user role service
+1256-create new user role service
+1258-remove user role service
+1259-fetch user role service
+1260-update exist user role service
+1262-retrieve list conversation user service
+1263-add new conversation user service
+1265-remove conversation user service
+1266-fetch conversation user service
+1267-update exist conversation user service
+1269-user retrieve list conversations
+1271-delete specific user conversation
+1272-fetch specific user conversation
+1273-update specific user conversation
+1275-remove conversation service nested resource account
+1276-fetch conversation service account
+1278-retrieve list conversation user account default service
+1279-add new conversation user account default service
+1281-remove conversation user account default service
+1282-fetch conversation user account default service
+1283-update exist conversation user account default service
+1285-user retrieve list conversations
+1287-delete specific user conversation
+1288-fetch specific user conversation
+1289-update specific user conversation
+1342-list channel give user
+1354-retrieve list permission apply sync document

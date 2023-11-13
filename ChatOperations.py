@@ -3,6 +3,7 @@ import JsonProcessing
 import json
 import Files
 import spac
+import time
 
 openai.api_key = str(Files.openTxt("./entries.txt")[6])
 
@@ -156,5 +157,12 @@ def getUngropedDescriptions(document, response, enumFilesDescriptions):
             ungroupedResponses.append(number)
     rta = []
     for ungrouped in ungroupedResponses:
-        rta.append(enumFilesDescriptions[ungrouped - 1])
+        pos = findDescription(enumFilesDescriptions,ungrouped)
+        rta.append(enumFilesDescriptions[pos]) #Los documentos empiezan con el indice 1
     return rta
+
+def findDescription(enumFilesDescriptions,ungrouped):
+    for cont in range(len(enumFilesDescriptions)):
+        number = int(enumFilesDescriptions[cont].split("-")[0])
+        if(number == ungrouped):
+            return cont

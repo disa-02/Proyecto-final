@@ -1,69 +1,69 @@
 Group 0:
-openapi_8.yaml
-openapi_32.yaml
-openapi_42.yaml
-openapi_15.yaml
-openapi_22.yaml
-openapi_21.yaml
-openapi_14.yaml
-openapi_6.yaml
-openapi_18.yaml
-openapi_44.yaml
-openapi_35.yaml
-openapi_5.yaml
 openapi_38.yaml
-openapi_17.yaml
-openapi_41.yaml
-openapi_1.yaml
-openapi_34.yaml
-openapi_25.yaml
-openapi_33.yaml
-openapi_7.yaml
-openapi_12.yaml
 
 Group 1:
 openapi_11.yaml
-openapi_13.yaml
-openapi_40.yaml
-openapi_3.yaml
-openapi_23.yaml
+openapi_42.yaml
+openapi_25.yaml
+openapi_33.yaml
+openapi_7.yaml
 
 Group 2:
-openapi_28.yaml
-openapi_10.yaml
-
-Group 3:
 openapi_19.yaml
 openapi_20.yaml
 openapi_26.yaml
-openapi_30.yaml
-openapi_31.yaml
 
-Group 4:
-openapi_9.yaml
-
-Group 5:
-openapi_37.yaml
-openapi_45.yaml
-
-Group 6:
-openapi_16.yaml
-openapi_2.yaml
-openapi_29.yaml
-openapi_43.yaml
-openapi_4.yaml
-openapi_24.yaml
-
-Group 7:
+Group 3:
+openapi_35.yaml
 openapi_36.yaml
 
-Group 8:
+Group 4:
+openapi_13.yaml
+openapi_6.yaml
+openapi_18.yaml
+openapi_5.yaml
+openapi_17.yaml
+
+Group 5:
+openapi_14.yaml
+openapi_9.yaml
+
+Group 6:
 openapi_39.yaml
 
-Group 9:
+Group 7:
+openapi_32.yaml
+openapi_37.yaml
+openapi_40.yaml
 openapi_27.yaml
+openapi_30.yaml
+openapi_31.yaml
+openapi_41.yaml
+openapi_1.yaml
+
+Group 8:
+openapi_29.yaml
+openapi_3.yaml
+
+Group 9:
+openapi_28.yaml
+openapi_16.yaml
+openapi_8.yaml
+openapi_2.yaml
+openapi_15.yaml
+openapi_10.yaml
+openapi_43.yaml
+openapi_22.yaml
+openapi_21.yaml
+openapi_4.yaml
+openapi_24.yaml
+openapi_44.yaml
+openapi_23.yaml
+openapi_34.yaml
+openapi_45.yaml
+openapi_12.yaml
 
 
-Silhoutte cluster intermedio: 0.01283618733818789
-Silhoutte: 0.8575083209481501
-Tiempo de ejecución: 12.409361 segundos
+Silhoutte cluster intermedio: 0.010204479395584611
+Silhoutte: 0.4729700209027535
+Tiempo de ejecución: 5.952556 segundos

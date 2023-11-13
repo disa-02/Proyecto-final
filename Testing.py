@@ -13,8 +13,9 @@ Main.initFiles()
 chunks,numberSentences,commonWords,k,nInit,method,kInt,nInitInt,umbral,finalClustering = Main.readEntries()
 
 #Importacion de los documentos de entrada
-importDocs = 0
-filesDescriptions,filesNames,time2 = Main.docImport(importDocs, commonWords,numberSentences)
+importDocs = 1
+generate = 0
+filesDescriptions,filesNames,time2 = Main.docImport(importDocs, commonWords,numberSentences,generate)
 
 # Obtencion de las descripciones como una lista enumerada
 enumFilesDescriptions = Main.enumDescriptions(filesDescriptions)
@@ -22,10 +23,6 @@ enumFilesDescriptions = Main.enumDescriptions(filesDescriptions)
 init_time = time.time() - init_time
 
 # Agrupacion de las descripciones
-groupTime = time.time()
-groupingsChatAssisted,scoreChat = ChatGptAssistedGrouping.group(enumFilesDescriptions,chunks,umbral)
-timeChat = time.time() - groupTime + init_time
-
 groupTime = time.time()
 groupingsKmeans,scoreKmeans = KmeansClustering.groupDescriptions(enumFilesDescriptions, kInt, nInitInt)
 timeKmeans = time.time() - groupTime + init_time
@@ -37,6 +34,11 @@ timeJerarquico = time.time() - groupTime + init_time
 groupTime = time.time()
 groupingsSemantic,scoreSemantic = SemanticGrouping.group(enumFilesDescriptions,umbral)
 timeSemantic = time.time() - groupTime + init_time
+
+groupTime = time.time()
+groupingsChatAssisted = ChatGptAssistedGrouping.group(enumFilesDescriptions,chunks,umbral)
+scoreChat = -5
+timeChat = time.time() - groupTime + init_time
 
 # Vectorizacion
 print("Vectorizando archivos...")
@@ -57,184 +59,184 @@ vectorsGroupsSemantic, resSemantic = Vectorization.vectorize(groupingsSemantic, 
 timeSemantic = time.time() - vectorTime + timeSemantic
 
 
-# Clustering
+# Clustering final
 print("Realizando el clustering:")
 # ChatAssisted
 k = 5
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resChatAssisted, k, nInit)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_5",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_5",finalTime,scoreChat,groupingsChatAssisted)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resChatAssisted, k)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_5",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_5",finalTime,scoreChat,groupingsChatAssisted)
 
 k = 10
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resChatAssisted, k, nInit)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_10",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_10",finalTime,scoreChat,groupingsChatAssisted)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resChatAssisted, k)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_10",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_10",finalTime,scoreChat,groupingsChatAssisted)
 
 k = 15
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resChatAssisted, k, nInit)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_15",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_15",finalTime,scoreChat,groupingsChatAssisted)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resChatAssisted, k)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_15",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_15",finalTime,scoreChat,groupingsChatAssisted)
 
 k = 20
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resChatAssisted, k, nInit)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_20",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Kmeans_20",finalTime,scoreChat,groupingsChatAssisted)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resChatAssisted, k)
-timeChat = time.time() - clusterTime + timeChat
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_20",timeChat,scoreChat)
+finalTime = time.time() - clusterTime + timeChat
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resChatAssisted,filesNames,data,error,k,vectorsGroupsChatAssisted,"outs_ChatAssisted_Jerarquico_20",finalTime,scoreChat,groupingsChatAssisted)
 
 # Kmeans
 k = 5
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resKmeans, k, nInit)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_5",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_5",finalTime,scoreKmeans,groupingsKmeans)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resKmeans, k)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_5",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_5",finalTime,scoreKmeans,groupingsKmeans)
 
 k = 10
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resKmeans, k, nInit)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_10",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_10",finalTime,scoreKmeans,groupingsKmeans)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resKmeans, k)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_10",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_10",finalTime,scoreKmeans,groupingsKmeans)
 
 k = 15
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resKmeans, k, nInit)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_15",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_15",finalTime,scoreKmeans,groupingsKmeans)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resKmeans, k)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_15",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_15",finalTime,scoreKmeans,groupingsKmeans)
 
 k = 20
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resKmeans, k, nInit)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_20",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Kmeans_20",finalTime,scoreKmeans,groupingsKmeans)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resKmeans, k)
-timeKmeans = time.time() - clusterTime + timeKmeans
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_20",timeKmeans,scoreKmeans)
+finalTime = time.time() - clusterTime + timeKmeans
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resKmeans,filesNames,data,error,k,vectorsGroupsKmeans,"outs_Kmeans_Jerarquico_20",finalTime,scoreKmeans,groupingsKmeans)
 
 # Jerarquico
 k=5
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resJerarquico, k, nInit)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_5",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_5",finalTime,scoreJerarquico,groupingsJerarquico)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resJerarquico, k)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_5",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_5",finalTime,scoreJerarquico,groupingsJerarquico)
 
 k = 10
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resJerarquico, k, nInit)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_10",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_10",finalTime,scoreJerarquico,groupingsJerarquico)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resJerarquico, k)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_10",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_10",finalTime,scoreJerarquico,groupingsJerarquico)
 
 k = 15
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resJerarquico, k, nInit)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_15",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_15",finalTime,scoreJerarquico,groupingsJerarquico)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resJerarquico, k)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_15",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_15",finalTime,scoreJerarquico,groupingsJerarquico)
 
 k = 20
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resJerarquico, k, nInit)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_20",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Kmeans_20",finalTime,scoreJerarquico,groupingsJerarquico)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resJerarquico, k)
-timeJerarquico = time.time() - clusterTime + timeJerarquico
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_20",timeSemantic,scoreJerarquico)
+finalTime = time.time() - clusterTime + timeJerarquico
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resJerarquico,filesNames,data,error,k,vectorsGroupsJerarquico,"outs_Jerarquico_Jerarquico_20",finalTime,scoreJerarquico,groupingsJerarquico)
 
 # Semantic
 k=5
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resSemantic, k, nInit)
-timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_5",timeSemantic,scoreSemantic)
+finalTime = time.time() - clusterTime + timeSemantic
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_5",finalTime,scoreSemantic,groupingsSemantic)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resSemantic, k)
-timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_5",timeSemantic,scoreSemantic)
+finalTime = time.time() - clusterTime + timeSemantic
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_5",finalTime,scoreSemantic,groupingsSemantic)
 
 k = 10
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resSemantic, k, nInit)
-timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_10",timeSemantic,scoreSemantic)
+finalTime = time.time() - clusterTime + timeSemantic
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_10",finalTime,scoreSemantic,groupingsSemantic)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resSemantic, k)
 timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_10",timeSemantic,scoreSemantic)
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_10",finalTime,scoreSemantic,groupingsSemantic)
 
 k = 15
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resSemantic, k, nInit)
-timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_15",timeSemantic,scoreSemantic)
+finalTime = time.time() - clusterTime + timeSemantic
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_15",finalTime,scoreSemantic,groupingsSemantic)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resSemantic, k)
-timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_15",timeSemantic,scoreSemantic)
+finalTime = time.time() - clusterTime + timeSemantic
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_15",finalTime,scoreSemantic,groupingsSemantic)
 
 k = 20
 clusterTime = time.time()
 data,error = KmeansClustering.cluster(resSemantic, k, nInit)
-timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_20",timeSemantic,scoreSemantic)
+finalTime = time.time() - clusterTime + timeSemantic
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Kmeans_20",finalTime,scoreSemantic,groupingsSemantic)
 
 clusterTime = time.time()
 data,error = ClusteringJerarquico.cluster(resSemantic, k)
-timeSemantic = time.time() - clusterTime + timeSemantic
-Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_20",timeSemantic,scoreSemantic)
+finalTime = time.time() - clusterTime + timeSemantic
+Main.saveFiles(filesDescriptions,enumFilesDescriptions,resSemantic,filesNames,data,error,k,vectorsGroupsSemantic,"outs_Semantic_Jerarquico_20",finalTime,scoreSemantic,groupingsSemantic)
