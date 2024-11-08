@@ -14,7 +14,7 @@ El archivo entries.txt permite configurar la herramienta de diferentes formas. T
   - 1: Importar nuevos documentos
 ## ChatGpt
 - chunks:  Cantidad de caracteres que se reconocen en una consulta al ChatGpt
-- openApiKey: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
+- openApiKey:Clave privada de usuario
 - language: Lenguaje que se esta utilizando en las documentaciones OpenApi
 
 ## Spacy - Procesamiento de descripciones
